@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Images/UI/StartScreen/WeedFarmTitleScreen.Background.default.0.Atlas.res" type="Texture" id=1]
+[ext_resource path="res://Scenes/Menus/MainMenu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Menus/CharacterCreator.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Images/UI/StartScreen/WeedFarmTitleScreen.Midground.default.0.Atlas.res" type="Texture" id=4]
+[ext_resource path="res://Scenes/Menus/Settings.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Menus/StartScreen.gd" type="Script" id=6]
+
+[node name="StartScreen" type="CanvasLayer"]
+script = ExtResource( 6 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="ParallaxBackground"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuRoot" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenu" parent="MenuRoot" instance=ExtResource( 2 )]
+
+[node name="CharacterCreator" parent="MenuRoot" instance=ExtResource( 3 )]
+visible = false
+
+[node name="SettingsMenu" parent="MenuRoot" instance=ExtResource( 5 )]
+visible = false
+
+[node name="Notifications" type="CanvasLayer" parent="."]
+pause_mode = 2
+layer = 2
+
+[connection signal="pressed" from="MenuRoot/MainMenu/Panel/Buttons/HBoxContainer/VBoxContainer/NewGameButton" to="." method="_on_NewGameButton_pressed"]
+[connection signal="pressed" from="MenuRoot/MainMenu/Panel/Buttons/HBoxContainer/VBoxContainer/ContinueButton" to="." method="_on_ContinueButton_pressed"]
+[connection signal="pressed" from="MenuRoot/MainMenu/Panel/Buttons/HBoxContainer/VBoxContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
+[connection signal="pressed" from="MenuRoot/MainMenu/Panel/Buttons/HBoxContainer/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="menu_closed" from="MenuRoot/CharacterCreator" to="." method="_on_CharacterCreator_menu_closed"]
+[connection signal="menu_closed" from="MenuRoot/SettingsMenu" to="." method="_on_SettingsMenu_menu_closed"]
+
+[editable path="MenuRoot/MainMenu"]

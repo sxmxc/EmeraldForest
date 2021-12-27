@@ -1,0 +1,402 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Images/Assets/SpriteSheets/UI/brass_theme_1a.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Menus/CharacterCreator.gd" type="Script" id=7]
+[ext_resource path="res://Fonts/Pixelade.tres" type="DynamicFont" id=8]
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 464, 384, 32, 32 )
+
+[node name="CharacterCreator" type="MarginContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -124.0
+margin_top = -135.0
+margin_right = 124.0
+margin_bottom = 135.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 248.0
+margin_bottom = 270.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+margin_right = 253.0
+margin_bottom = 254.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 10
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+margin_left = 20.0
+margin_top = 10.0
+margin_right = 233.0
+margin_bottom = 244.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+margin_right = 213.0
+margin_bottom = 38.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_right = 213.0
+margin_bottom = 14.0
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+margin_right = 27.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 8 )
+text = "Name:"
+align = 1
+valign = 1
+
+[node name="TextEdit" type="TextEdit" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 31.0
+margin_right = 213.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/line_spacing = 0
+custom_fonts/font = ExtResource( 8 )
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 213.0
+margin_bottom = 38.0
+custom_constants/separation = 32
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_top = 3.0
+margin_right = 36.0
+margin_bottom = 17.0
+custom_fonts/font = ExtResource( 8 )
+text = "Gender:"
+
+[node name="OptionButton" type="OptionButton" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 68.0
+margin_right = 117.0
+margin_bottom = 20.0
+custom_fonts/font = ExtResource( 8 )
+text = "Male"
+flat = true
+align = 1
+items = [ "Male", null, false, 0, null, "Female", null, false, 1, null, "Other", null, false, 2, null ]
+selected = 0
+
+[node name="Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 149.0
+margin_right = 213.0
+margin_bottom = 20.0
+text = "Random"
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/MarginContainer/VBoxContainer"]
+margin_top = 42.0
+margin_right = 213.0
+margin_bottom = 102.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Player" parent="Panel/MarginContainer/VBoxContainer/CenterContainer" instance=ExtResource( 1 )]
+position = Vector2( 107, 29 )
+scale = Vector2( 2, 2 )
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+margin_top = 106.0
+margin_right = 213.0
+margin_bottom = 234.0
+alignment = 1
+
+[node name="Hair" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_right = 213.0
+margin_bottom = 14.0
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Hair"]
+margin_right = 22.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 8 )
+text = "Hair:"
+align = 1
+
+[node name="HairPrev" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Hair"]
+margin_left = 26.0
+margin_right = 106.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+texture_normal = SubResource( 15 )
+expand = true
+stretch_mode = 5
+flip_h = true
+
+[node name="Current" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Hair"]
+margin_left = 110.0
+margin_right = 129.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 8 )
+text = "Hair"
+align = 1
+
+[node name="HairNext" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Hair"]
+margin_left = 133.0
+margin_right = 213.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+texture_normal = SubResource( 15 )
+expand = true
+stretch_mode = 5
+
+[node name="Beard" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_top = 18.0
+margin_right = 213.0
+margin_bottom = 32.0
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Beard"]
+margin_right = 30.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 8 )
+text = "Beard:"
+align = 1
+
+[node name="BeardPrev" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Beard"]
+margin_left = 34.0
+margin_right = 106.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+texture_normal = SubResource( 15 )
+expand = true
+stretch_mode = 5
+flip_h = true
+
+[node name="Current" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Beard"]
+margin_left = 110.0
+margin_right = 137.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 8 )
+text = "Beard"
+align = 1
+
+[node name="BeardNext" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Beard"]
+margin_left = 141.0
+margin_right = 213.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+texture_normal = SubResource( 15 )
+expand = true
+stretch_mode = 5
+
+[node name="Shirt" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_top = 36.0
+margin_right = 213.0
+margin_bottom = 50.0
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Shirt"]
+margin_right = 26.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 8 )
+text = "Shirt:"
+align = 1
+
+[node name="ShirtPrev" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Shirt"]
+margin_left = 30.0
+margin_right = 106.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+texture_normal = SubResource( 15 )
+expand = true
+stretch_mode = 5
+flip_h = true
+
+[node name="Current" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Shirt"]
+margin_left = 110.0
+margin_right = 133.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 8 )
+text = "Shirt"
+align = 1
+
+[node name="ShirtNext" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Shirt"]
+margin_left = 137.0
+margin_right = 213.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+texture_normal = SubResource( 15 )
+expand = true
+stretch_mode = 5
+
+[node name="Pants" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_top = 54.0
+margin_right = 213.0
+margin_bottom = 68.0
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Pants"]
+margin_right = 28.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 8 )
+text = "Pants:"
+align = 1
+
+[node name="PantsPrev" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Pants"]
+margin_left = 32.0
+margin_right = 106.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+texture_normal = SubResource( 15 )
+expand = true
+stretch_mode = 5
+flip_h = true
+
+[node name="Current" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Pants"]
+margin_left = 110.0
+margin_right = 135.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 8 )
+text = "Pants"
+align = 1
+
+[node name="PantsNext" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Pants"]
+margin_left = 139.0
+margin_right = 213.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+texture_normal = SubResource( 15 )
+expand = true
+stretch_mode = 5
+
+[node name="Shoes" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_top = 72.0
+margin_right = 213.0
+margin_bottom = 86.0
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Shoes"]
+margin_right = 30.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 8 )
+text = "Shoes:"
+align = 1
+
+[node name="ShoesPrev" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Shoes"]
+margin_left = 34.0
+margin_right = 106.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+texture_normal = SubResource( 15 )
+expand = true
+stretch_mode = 5
+flip_h = true
+
+[node name="Current" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Shoes"]
+margin_left = 110.0
+margin_right = 137.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 8 )
+text = "Shoes"
+align = 1
+
+[node name="ShoesNext" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Shoes"]
+margin_left = 141.0
+margin_right = 213.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+texture_normal = SubResource( 15 )
+expand = true
+stretch_mode = 5
+
+[node name="Acc" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_top = 90.0
+margin_right = 213.0
+margin_bottom = 104.0
+alignment = 1
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Acc"]
+margin_right = 45.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 8 )
+text = "Accesory:"
+align = 1
+
+[node name="AccPrev" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Acc"]
+margin_left = 49.0
+margin_right = 106.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+texture_normal = SubResource( 15 )
+expand = true
+stretch_mode = 5
+flip_h = true
+
+[node name="Current" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Acc"]
+margin_left = 110.0
+margin_right = 152.0
+margin_bottom = 14.0
+size_flags_vertical = 1
+size_flags_stretch_ratio = 0.0
+custom_fonts/font = ExtResource( 8 )
+text = "Accesory"
+align = 3
+valign = 3
+
+[node name="AccNext" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Acc"]
+margin_left = 156.0
+margin_right = 213.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+texture_normal = SubResource( 15 )
+expand = true
+stretch_mode = 5
+
+[node name="HSplitContainer" type="HSplitContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_top = 108.0
+margin_right = 213.0
+margin_bottom = 128.0
+split_offset = 58
+dragger_visibility = 1
+
+[node name="Back" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/HSplitContainer"]
+margin_right = 100.0
+margin_bottom = 20.0
+text = "Back"
+
+[node name="Begin" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/HSplitContainer"]
+margin_left = 112.0
+margin_right = 213.0
+margin_bottom = 20.0
+text = "Begin"
+
+[node name="Popups" type="CenterContainer" parent="."]
+margin_right = 248.0
+margin_bottom = 270.0
+mouse_filter = 2
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="Popups"]
+margin_left = 24.0
+margin_top = 100.0
+margin_right = 224.0
+margin_bottom = 170.0
+popup_exclusive = true
+dialog_text = "Save character and begin?"
+
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Hair/HairPrev" to="." method="_on_HairPrev_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Hair/HairNext" to="." method="_on_HairNext_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Beard/BeardPrev" to="." method="_on_BeardPrev_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Beard/BeardNext" to="." method="_on_BeardNext_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Shirt/ShirtPrev" to="." method="_on_ShirtPrev_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Shirt/ShirtNext" to="." method="_on_ShirtNext_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Pants/PantsPrev" to="." method="_on_PantsPrev_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Pants/PantsNext" to="." method="_on_PantsNext_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Shoes/ShoesPrev" to="." method="_on_ShoesPrev_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Shoes/ShoesNext" to="." method="_on_ShoesNext_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Acc/AccPrev" to="." method="_on_AccPrev_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Acc/AccNext" to="." method="_on_AccNext_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/HSplitContainer/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/HSplitContainer/Begin" to="." method="_on_Begin_pressed"]
+[connection signal="confirmed" from="Popups/ConfirmationDialog" to="." method="_on_ConfirmationDialog_confirmed"]

@@ -1,0 +1,284 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://inventory/Scenes/UI/InventoryPanel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Images/Assets/Aseprite/Container-Small.Container-Small.Atlas.res" type="Texture" id=2]
+[ext_resource path="res://Images/UI/Panel.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[node name="MainInventory" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -85.0
+margin_top = -40.0
+margin_right = 96.0
+margin_bottom = 46.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -122.5
+margin_top = -32.5
+margin_right = 122.5
+margin_bottom = 32.5
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 1.0
+margin_right = -7.0
+margin_bottom = -4.0
+custom_constants/margin_right = 2
+custom_constants/margin_top = 2
+custom_constants/margin_left = 2
+custom_constants/margin_bottom = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect/MarginContainer"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 228.0
+margin_bottom = 58.0
+custom_constants/hseparation = 3
+columns = 12
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel9" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 0.0
+margin_right = 16.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel10" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 19.0
+margin_right = 35.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel11" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 38.0
+margin_right = 54.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel12" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 57.0
+margin_right = 73.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel13" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 76.0
+margin_right = 92.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel14" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 95.0
+margin_right = 111.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel15" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 114.0
+margin_right = 130.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel16" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 133.0
+margin_right = 149.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel17" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel18" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 171.0
+margin_right = 187.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel19" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 190.0
+margin_right = 206.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel20" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 209.0
+margin_right = 225.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel21" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 0.0
+margin_top = 20.0
+margin_right = 16.0
+margin_bottom = 36.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel22" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 19.0
+margin_top = 20.0
+margin_right = 35.0
+margin_bottom = 36.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel23" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 38.0
+margin_top = 20.0
+margin_right = 54.0
+margin_bottom = 36.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel24" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 57.0
+margin_top = 20.0
+margin_right = 73.0
+margin_bottom = 36.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel25" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 76.0
+margin_top = 20.0
+margin_right = 92.0
+margin_bottom = 36.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel26" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 95.0
+margin_top = 20.0
+margin_right = 111.0
+margin_bottom = 36.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel27" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 114.0
+margin_top = 20.0
+margin_right = 130.0
+margin_bottom = 36.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel28" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 133.0
+margin_top = 20.0
+margin_right = 149.0
+margin_bottom = 36.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel29" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_top = 20.0
+margin_bottom = 36.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel30" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 171.0
+margin_top = 20.0
+margin_right = 187.0
+margin_bottom = 36.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel31" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 190.0
+margin_top = 20.0
+margin_right = 206.0
+margin_bottom = 36.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel32" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 209.0
+margin_top = 20.0
+margin_right = 225.0
+margin_bottom = 36.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel33" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 0.0
+margin_top = 40.0
+margin_right = 16.0
+margin_bottom = 56.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel34" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 19.0
+margin_top = 40.0
+margin_right = 35.0
+margin_bottom = 56.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel35" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 38.0
+margin_top = 40.0
+margin_right = 54.0
+margin_bottom = 56.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel36" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 57.0
+margin_top = 40.0
+margin_right = 73.0
+margin_bottom = 56.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel37" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 76.0
+margin_top = 40.0
+margin_right = 92.0
+margin_bottom = 56.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel38" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 95.0
+margin_top = 40.0
+margin_right = 111.0
+margin_bottom = 56.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel39" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 114.0
+margin_top = 40.0
+margin_right = 130.0
+margin_bottom = 56.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel40" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 133.0
+margin_top = 40.0
+margin_right = 149.0
+margin_bottom = 56.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel41" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_top = 40.0
+margin_bottom = 56.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel42" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 171.0
+margin_top = 40.0
+margin_right = 187.0
+margin_bottom = 56.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel43" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 190.0
+margin_top = 40.0
+margin_right = 206.0
+margin_bottom = 56.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Panel44" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 1 )]
+margin_left = 209.0
+margin_top = 40.0
+margin_right = 225.0
+margin_bottom = 56.0
+custom_styles/panel = SubResource( 1 )

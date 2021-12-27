@@ -1,0 +1,84 @@
+{
+	"0": {
+		"name": "window",
+		"default": {
+			"value": false,
+			"window_script_path": "res://Settings/window_resolution.gd",
+			"window_setting_index": 6
+		},
+		"current": {
+			"value": false,
+			"window_script_path": "res://Settings/window_resolution.gd",
+			"window_setting_index": 6
+		},
+		"logic": "res://Settings/fullscreen.gd"
+	},
+	"1": {
+		"name": "music_volume",
+		"default": {
+			"value": 1,
+			"bus_name": "Music"
+		},
+		"current": {
+			"value": 0.5,
+			"bus_name": "Music"
+		},
+		"logic": "res://Settings/audio_slider.gd"
+	},
+	"2": {
+		"name": "music_mute",
+		"default": {
+			"value": false,
+			"bus_name": "Music"
+		},
+		"current": {
+			"value": true,
+			"bus_name": "Music"
+		},
+		"logic": "res://Settings/music_mute.gd"
+	},
+	"3": {
+		"name": "sfx_volume",
+		"default": {
+			"value": 1,
+			"bus_name": "Sfx"
+		},
+		"current": {
+			"value": 0.5,
+			"bus_name": "Sfx"
+		},
+		"logic": "res://Settings/audio_slider.gd"
+	},
+	"4": {
+		"name": "sfx_mute",
+		"default": {
+			"value": false,
+			"bus_name": "Sfx"
+		},
+		"current": {
+			"value": true,
+			"bus_name": "Sfx"
+		},
+		"logic": "res://Settings/music_mute.gd"
+	},
+	"5": {
+		"name": "player_name",
+		"default": {
+			"value": "Steeb"
+		},
+		"current": {
+			"value": "Steeb"
+		},
+		"logic": "res://Settings/player_name.gd"
+	},
+	"6": {
+		"name": "resolution",
+		"default": {
+			"value": 0
+		},
+		"current": {
+			"value": 2
+		},
+		"logic": "res://Settings/window_resolution.gd"
+	}
+}

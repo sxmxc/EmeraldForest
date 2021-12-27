@@ -1,0 +1,471 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Images/UI/Panel.png" type="Texture" id=1]
+[ext_resource path="res://Images/Assets/Aseprite/Container-Small.Container-Small.Atlas.res" type="Texture" id=2]
+[ext_resource path="res://Images/Assets/Atlas/pickaxe.tres" type="Texture" id=3]
+[ext_resource path="res://Images/Assets/Aseprite/HighlightSquare.HighlightSquare.Atlas.res" type="Texture" id=4]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 2 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[node name="Quickbar" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -123.5
+margin_top = -11.5
+margin_right = 123.5
+margin_bottom = 11.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -122.5
+margin_top = -10.5
+margin_right = 122.5
+margin_bottom = 10.5
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, -4, 90, 106 )
+patch_margin_top = 5
+patch_margin_bottom = 5
+axis_stretch_vertical = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin" type="MarginContainer" parent="NinePatchRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_right = -8.0
+custom_constants/margin_right = 2
+custom_constants/margin_top = 2
+custom_constants/margin_left = 2
+custom_constants/margin_bottom = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Grid" type="GridContainer" parent="NinePatchRect/Margin"]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 227.0
+margin_bottom = 19.0
+custom_constants/hseparation = 3
+columns = 12
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="NinePatchRect/Margin/Grid"]
+margin_right = 16.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/Margin/Grid/Panel"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel/CenterContainer"]
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 15.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 14, 14 )
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Focus" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel/CenterContainer"]
+margin_right = 16.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="NinePatchRect/Margin/Grid"]
+margin_left = 19.0
+margin_right = 35.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/Margin/Grid/Panel2"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel2/CenterContainer"]
+margin_right = 14.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 14, 14 )
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Focus" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel2/CenterContainer"]
+visible = false
+margin_left = -1.0
+margin_top = -1.0
+margin_right = 15.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 16, 16 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel3" type="Panel" parent="NinePatchRect/Margin/Grid"]
+margin_left = 38.0
+margin_right = 54.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/Margin/Grid/Panel3"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel3/CenterContainer"]
+margin_right = 14.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 14, 14 )
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Focus" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel3/CenterContainer"]
+visible = false
+margin_left = -1.0
+margin_top = -1.0
+margin_right = 15.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 16, 16 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel4" type="Panel" parent="NinePatchRect/Margin/Grid"]
+margin_left = 57.0
+margin_right = 73.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/Margin/Grid/Panel4"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel4/CenterContainer"]
+margin_right = 14.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 14, 14 )
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Focus" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel4/CenterContainer"]
+visible = false
+margin_left = -1.0
+margin_top = -1.0
+margin_right = 15.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 16, 16 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel5" type="Panel" parent="NinePatchRect/Margin/Grid"]
+margin_left = 76.0
+margin_right = 92.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/Margin/Grid/Panel5"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel5/CenterContainer"]
+margin_right = 14.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 14, 14 )
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Focus" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel5/CenterContainer"]
+visible = false
+margin_left = -1.0
+margin_top = -1.0
+margin_right = 15.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 16, 16 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel6" type="Panel" parent="NinePatchRect/Margin/Grid"]
+margin_left = 95.0
+margin_right = 111.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/Margin/Grid/Panel6"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel6/CenterContainer"]
+margin_right = 14.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 14, 14 )
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Focus" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel6/CenterContainer"]
+visible = false
+margin_left = -1.0
+margin_top = -1.0
+margin_right = 15.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 16, 16 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel7" type="Panel" parent="NinePatchRect/Margin/Grid"]
+margin_left = 114.0
+margin_right = 130.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/Margin/Grid/Panel7"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel7/CenterContainer"]
+margin_right = 14.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 14, 14 )
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Focus" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel7/CenterContainer"]
+visible = false
+margin_left = -1.0
+margin_top = -1.0
+margin_right = 15.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 16, 16 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel8" type="Panel" parent="NinePatchRect/Margin/Grid"]
+margin_left = 133.0
+margin_right = 149.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/Margin/Grid/Panel8"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel8/CenterContainer"]
+margin_right = 14.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 14, 14 )
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Focus" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel8/CenterContainer"]
+visible = false
+margin_left = -1.0
+margin_top = -1.0
+margin_right = 15.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 16, 16 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel9" type="Panel" parent="NinePatchRect/Margin/Grid"]
+margin_left = 152.0
+margin_right = 168.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/Margin/Grid/Panel9"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel9/CenterContainer"]
+margin_right = 14.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 14, 14 )
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Focus" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel9/CenterContainer"]
+visible = false
+margin_left = -1.0
+margin_top = -1.0
+margin_right = 15.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 16, 16 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel10" type="Panel" parent="NinePatchRect/Margin/Grid"]
+margin_left = 171.0
+margin_right = 187.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/Margin/Grid/Panel10"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel10/CenterContainer"]
+margin_right = 14.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 14, 14 )
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Focus" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel10/CenterContainer"]
+visible = false
+margin_left = -1.0
+margin_top = -1.0
+margin_right = 15.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 16, 16 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel11" type="Panel" parent="NinePatchRect/Margin/Grid"]
+margin_left = 190.0
+margin_right = 206.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/Margin/Grid/Panel11"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel11/CenterContainer"]
+margin_right = 14.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 14, 14 )
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Focus" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel11/CenterContainer"]
+visible = false
+margin_left = -1.0
+margin_top = -1.0
+margin_right = 15.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 16, 16 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel12" type="Panel" parent="NinePatchRect/Margin/Grid"]
+margin_left = 209.0
+margin_right = 225.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 16, 16 )
+custom_styles/panel = SubResource( 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/Margin/Grid/Panel12"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Item" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel12/CenterContainer"]
+margin_right = 14.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 14, 14 )
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Focus" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel12/CenterContainer"]
+visible = false
+margin_left = -1.0
+margin_top = -1.0
+margin_right = 15.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 16, 16 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
