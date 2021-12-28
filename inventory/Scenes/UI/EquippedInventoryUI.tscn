@@ -8,7 +8,7 @@
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 16, 16 )
 
-[node name="Equipped" type="Control"]
+[node name="EquippedUI" type="Control"]
 margin_left = 2.0
 margin_top = 2.0
 margin_right = 162.0
@@ -51,45 +51,40 @@ margin_right = 39.0
 margin_bottom = 59.0
 columns = 2
 
-[node name="Panel9" type="Panel" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 2 )]
+[node name="Panel9" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 2 )]
+margin_left = 0.0
 margin_right = 16.0
-margin_bottom = 16.0
-rect_min_size = Vector2( 16, 16 )
 custom_styles/panel = SubResource( 1 )
 
-[node name="Panel10" type="Panel" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 2 )]
+[node name="Panel10" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 2 )]
 margin_left = 20.0
 margin_right = 36.0
-margin_bottom = 16.0
-rect_min_size = Vector2( 16, 16 )
 custom_styles/panel = SubResource( 1 )
 
-[node name="Panel11" type="Panel" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 2 )]
+[node name="Panel11" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 2 )]
+margin_left = 0.0
 margin_top = 20.0
 margin_right = 16.0
 margin_bottom = 36.0
-rect_min_size = Vector2( 16, 16 )
 custom_styles/panel = SubResource( 1 )
 
-[node name="Panel12" type="Panel" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 2 )]
+[node name="Panel12" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 2 )]
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 36.0
 margin_bottom = 36.0
-rect_min_size = Vector2( 16, 16 )
 custom_styles/panel = SubResource( 1 )
 
-[node name="Panel13" type="Panel" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 2 )]
+[node name="Panel13" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 2 )]
+margin_left = 0.0
 margin_top = 40.0
 margin_right = 16.0
 margin_bottom = 56.0
-rect_min_size = Vector2( 16, 16 )
 custom_styles/panel = SubResource( 1 )
 
-[node name="Panel14" type="Panel" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 2 )]
+[node name="Panel14" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 2 )]
 margin_left = 20.0
 margin_top = 40.0
 margin_right = 36.0
 margin_bottom = 56.0
-rect_min_size = Vector2( 16, 16 )
 custom_styles/panel = SubResource( 1 )

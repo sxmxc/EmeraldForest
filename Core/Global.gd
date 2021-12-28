@@ -2,8 +2,10 @@ extends Node2D
 
 
 # Declare member variables here. Examples:
+const GRASS_ID = 1
+const GRASS_NAME = "GrassSingle"
 const SOIL_ID = 7
-const SOIL_NAME = "FertileAuto.png"
+const SOIL_NAME = "FertileAuto"
 const TILLED_SOIL_ID = 2
 const TILLED_SOIL_NAME = "TilledSoilSingle" 
 const WET_SOIL_ID = 9 
@@ -22,6 +24,9 @@ onready var player_data = {
 	"facialhair" : 0,
 	"accessory": 0	
 }
+
+var tile_dict = {}
+var tile_properties = {}
 
 
 signal  player_menu_requested
@@ -124,11 +129,17 @@ func _quit():
 func _on_quit_request():
 	get_tree().notification(MainLoop.NOTIFICATION_WM_QUIT_REQUEST)
 
+func _return_to_main_menu():
+	SceneManager.change_scene('res://Scenes/Menus/StartScreen.tscn')
+	if get_tree().paused:
+		get_tree().paused = false
+
 func _on_console_toggled(visible):
 	if(visible):
 		get_tree().paused = true
 	else:
 		get_tree().paused = false
+
 	
 func _safety_meeting():
 	Print.line(Print.CYAN, "Wouldcha look at the time? SAFETY MEETING!" )

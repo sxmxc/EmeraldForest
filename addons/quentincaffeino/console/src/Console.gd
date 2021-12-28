@@ -138,7 +138,7 @@ func write(message):
 	message = str(message)
 	if self.Text:
 		self.Text.append_bbcode(message)
-	print(self._erase_bb_tags_regex.sub(message, '', true))
+	Print.line(Print.YELLOW,self._erase_bb_tags_regex.sub(message, '', true))
 
 # @param    String  message
 # @returns  void
@@ -146,7 +146,7 @@ func write_line(message = ''):
 	message = str(message)
 	if self.Text:
 		self.Text.append_bbcode(message + '\n')
-	print(self._erase_bb_tags_regex.sub(message, '', true))
+	Print.line(Print.YELLOW,self._erase_bb_tags_regex.sub(message, '', true))
 
 
 # @returns  void

@@ -27,3 +27,7 @@ func toggle_menu():
 
 func _on_ExitButton_pressed():
 	get_tree().notification(MainLoop.NOTIFICATION_WM_QUIT_REQUEST)
+
+
+func _on_QuitButton_pressed():
+	Global._confirm("Quit and return to Main Menu?", "_return_to_main_menu", "Confirmation")

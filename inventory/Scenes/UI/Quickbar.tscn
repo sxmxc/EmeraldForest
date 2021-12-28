@@ -1,12 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Images/UI/Panel.png" type="Texture" id=1]
-[ext_resource path="res://Images/Assets/Aseprite/Container-Small.Container-Small.Atlas.res" type="Texture" id=2]
+[ext_resource path="res://inventory/Scenes/UI/Quickbar.gd" type="Script" id=2]
 [ext_resource path="res://Images/Assets/Atlas/pickaxe.tres" type="Texture" id=3]
 [ext_resource path="res://Images/Assets/Aseprite/HighlightSquare.HighlightSquare.Atlas.res" type="Texture" id=4]
+[ext_resource path="res://Images/Assets/Aseprite/Container-Small.Container-Small.Atlas.res" type="Texture" id=5]
+[ext_resource path="res://inventory/Scenes/UI/InventoryPanel.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Images/Assets/Atlas/axe.tres" type="Texture" id=7]
+[ext_resource path="res://Images/Assets/Atlas/hoe.tres" type="Texture" id=8]
 
 [sub_resource type="StyleBoxTexture" id=1]
-texture = ExtResource( 2 )
+texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 16, 16 )
 
 [node name="Quickbar" type="Control"]
@@ -18,6 +22,7 @@ margin_left = -123.5
 margin_top = -11.5
 margin_right = 123.5
 margin_bottom = 11.5
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -71,6 +76,8 @@ rect_min_size = Vector2( 16, 16 )
 custom_styles/panel = SubResource( 1 )
 
 [node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/Margin/Grid/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -104,15 +111,19 @@ rect_min_size = Vector2( 16, 16 )
 custom_styles/panel = SubResource( 1 )
 
 [node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/Margin/Grid/Panel2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Item" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel2/CenterContainer"]
-margin_right = 14.0
-margin_bottom = 14.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 15.0
+margin_bottom = 15.0
 rect_min_size = Vector2( 14, 14 )
-texture = ExtResource( 3 )
+texture = ExtResource( 7 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -120,10 +131,8 @@ __meta__ = {
 
 [node name="Focus" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel2/CenterContainer"]
 visible = false
-margin_left = -1.0
-margin_top = -1.0
-margin_right = 15.0
-margin_bottom = 15.0
+margin_right = 16.0
+margin_bottom = 16.0
 rect_min_size = Vector2( 16, 16 )
 texture = ExtResource( 4 )
 __meta__ = {
@@ -138,15 +147,19 @@ rect_min_size = Vector2( 16, 16 )
 custom_styles/panel = SubResource( 1 )
 
 [node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/Margin/Grid/Panel3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Item" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel3/CenterContainer"]
-margin_right = 14.0
-margin_bottom = 14.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 15.0
+margin_bottom = 15.0
 rect_min_size = Vector2( 14, 14 )
-texture = ExtResource( 3 )
+texture = ExtResource( 8 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -154,10 +167,8 @@ __meta__ = {
 
 [node name="Focus" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel3/CenterContainer"]
 visible = false
-margin_left = -1.0
-margin_top = -1.0
-margin_right = 15.0
-margin_bottom = 15.0
+margin_right = 16.0
+margin_bottom = 16.0
 rect_min_size = Vector2( 16, 16 )
 texture = ExtResource( 4 )
 __meta__ = {
@@ -172,15 +183,18 @@ rect_min_size = Vector2( 16, 16 )
 custom_styles/panel = SubResource( 1 )
 
 [node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/Margin/Grid/Panel4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Item" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel4/CenterContainer"]
-margin_right = 14.0
-margin_bottom = 14.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 15.0
+margin_bottom = 15.0
 rect_min_size = Vector2( 14, 14 )
-texture = ExtResource( 3 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -188,10 +202,8 @@ __meta__ = {
 
 [node name="Focus" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel4/CenterContainer"]
 visible = false
-margin_left = -1.0
-margin_top = -1.0
-margin_right = 15.0
-margin_bottom = 15.0
+margin_right = 16.0
+margin_bottom = 16.0
 rect_min_size = Vector2( 16, 16 )
 texture = ExtResource( 4 )
 __meta__ = {
@@ -206,15 +218,18 @@ rect_min_size = Vector2( 16, 16 )
 custom_styles/panel = SubResource( 1 )
 
 [node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/Margin/Grid/Panel5"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Item" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel5/CenterContainer"]
-margin_right = 14.0
-margin_bottom = 14.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 15.0
+margin_bottom = 15.0
 rect_min_size = Vector2( 14, 14 )
-texture = ExtResource( 3 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -222,10 +237,8 @@ __meta__ = {
 
 [node name="Focus" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel5/CenterContainer"]
 visible = false
-margin_left = -1.0
-margin_top = -1.0
-margin_right = 15.0
-margin_bottom = 15.0
+margin_right = 16.0
+margin_bottom = 16.0
 rect_min_size = Vector2( 16, 16 )
 texture = ExtResource( 4 )
 __meta__ = {
@@ -240,15 +253,18 @@ rect_min_size = Vector2( 16, 16 )
 custom_styles/panel = SubResource( 1 )
 
 [node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/Margin/Grid/Panel6"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Item" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel6/CenterContainer"]
-margin_right = 14.0
-margin_bottom = 14.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 15.0
+margin_bottom = 15.0
 rect_min_size = Vector2( 14, 14 )
-texture = ExtResource( 3 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -256,10 +272,8 @@ __meta__ = {
 
 [node name="Focus" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel6/CenterContainer"]
 visible = false
-margin_left = -1.0
-margin_top = -1.0
-margin_right = 15.0
-margin_bottom = 15.0
+margin_right = 16.0
+margin_bottom = 16.0
 rect_min_size = Vector2( 16, 16 )
 texture = ExtResource( 4 )
 __meta__ = {
@@ -274,15 +288,18 @@ rect_min_size = Vector2( 16, 16 )
 custom_styles/panel = SubResource( 1 )
 
 [node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/Margin/Grid/Panel7"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Item" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel7/CenterContainer"]
-margin_right = 14.0
-margin_bottom = 14.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 15.0
+margin_bottom = 15.0
 rect_min_size = Vector2( 14, 14 )
-texture = ExtResource( 3 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -290,10 +307,8 @@ __meta__ = {
 
 [node name="Focus" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel7/CenterContainer"]
 visible = false
-margin_left = -1.0
-margin_top = -1.0
-margin_right = 15.0
-margin_bottom = 15.0
+margin_right = 16.0
+margin_bottom = 16.0
 rect_min_size = Vector2( 16, 16 )
 texture = ExtResource( 4 )
 __meta__ = {
@@ -308,15 +323,18 @@ rect_min_size = Vector2( 16, 16 )
 custom_styles/panel = SubResource( 1 )
 
 [node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/Margin/Grid/Panel8"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Item" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel8/CenterContainer"]
-margin_right = 14.0
-margin_bottom = 14.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 15.0
+margin_bottom = 15.0
 rect_min_size = Vector2( 14, 14 )
-texture = ExtResource( 3 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -324,10 +342,8 @@ __meta__ = {
 
 [node name="Focus" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel8/CenterContainer"]
 visible = false
-margin_left = -1.0
-margin_top = -1.0
-margin_right = 15.0
-margin_bottom = 15.0
+margin_right = 16.0
+margin_bottom = 16.0
 rect_min_size = Vector2( 16, 16 )
 texture = ExtResource( 4 )
 __meta__ = {
@@ -342,15 +358,18 @@ rect_min_size = Vector2( 16, 16 )
 custom_styles/panel = SubResource( 1 )
 
 [node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/Margin/Grid/Panel9"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Item" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel9/CenterContainer"]
-margin_right = 14.0
-margin_bottom = 14.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 15.0
+margin_bottom = 15.0
 rect_min_size = Vector2( 14, 14 )
-texture = ExtResource( 3 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -358,10 +377,8 @@ __meta__ = {
 
 [node name="Focus" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel9/CenterContainer"]
 visible = false
-margin_left = -1.0
-margin_top = -1.0
-margin_right = 15.0
-margin_bottom = 15.0
+margin_right = 16.0
+margin_bottom = 16.0
 rect_min_size = Vector2( 16, 16 )
 texture = ExtResource( 4 )
 __meta__ = {
@@ -376,15 +393,18 @@ rect_min_size = Vector2( 16, 16 )
 custom_styles/panel = SubResource( 1 )
 
 [node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/Margin/Grid/Panel10"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Item" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel10/CenterContainer"]
-margin_right = 14.0
-margin_bottom = 14.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 15.0
+margin_bottom = 15.0
 rect_min_size = Vector2( 14, 14 )
-texture = ExtResource( 3 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -392,10 +412,8 @@ __meta__ = {
 
 [node name="Focus" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel10/CenterContainer"]
 visible = false
-margin_left = -1.0
-margin_top = -1.0
-margin_right = 15.0
-margin_bottom = 15.0
+margin_right = 16.0
+margin_bottom = 16.0
 rect_min_size = Vector2( 16, 16 )
 texture = ExtResource( 4 )
 __meta__ = {
@@ -410,15 +428,18 @@ rect_min_size = Vector2( 16, 16 )
 custom_styles/panel = SubResource( 1 )
 
 [node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/Margin/Grid/Panel11"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Item" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel11/CenterContainer"]
-margin_right = 14.0
-margin_bottom = 14.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 15.0
+margin_bottom = 15.0
 rect_min_size = Vector2( 14, 14 )
-texture = ExtResource( 3 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -426,46 +447,12 @@ __meta__ = {
 
 [node name="Focus" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel11/CenterContainer"]
 visible = false
-margin_left = -1.0
-margin_top = -1.0
-margin_right = 15.0
-margin_bottom = 15.0
-rect_min_size = Vector2( 16, 16 )
-texture = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Panel12" type="Panel" parent="NinePatchRect/Margin/Grid"]
-margin_left = 209.0
-margin_right = 225.0
+margin_right = 16.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 16, 16 )
-custom_styles/panel = SubResource( 1 )
-
-[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/Margin/Grid/Panel12"]
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Item" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel12/CenterContainer"]
-margin_right = 14.0
-margin_bottom = 14.0
-rect_min_size = Vector2( 14, 14 )
-texture = ExtResource( 3 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Focus" type="TextureRect" parent="NinePatchRect/Margin/Grid/Panel12/CenterContainer"]
-visible = false
-margin_left = -1.0
-margin_top = -1.0
-margin_right = 15.0
-margin_bottom = 15.0
-rect_min_size = Vector2( 16, 16 )
 texture = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Panel12" parent="NinePatchRect/Margin/Grid" instance=ExtResource( 6 )]
