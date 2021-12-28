@@ -127,7 +127,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/AsepriteWizard/plugin.cfg", "res://addons/Dialogbox/plugin.cfg", "res://addons/GGS/plugin.cfg", "res://addons/ResolutionManager/plugin.cfg", "res://addons/github-integration/plugin.cfg", "res://addons/katuiche-colorful-console/plugin.cfg", "res://addons/orphan_import_file_cleaner/plugin.cfg", "res://addons/quentincaffeino/console-csharp/plugin.cfg", "res://addons/quentincaffeino/console/plugin.cfg", "res://addons/scene_manager/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/AsepriteWizard/plugin.cfg", "res://addons/Dialogbox/plugin.cfg", "res://addons/GGS/plugin.cfg", "res://addons/ResolutionManager/plugin.cfg", "res://addons/github-integration/plugin.cfg", "res://addons/katuiche-colorful-console/plugin.cfg", "res://addons/orphan_import_file_cleaner/plugin.cfg", "res://addons/quentincaffeino/console-csharp/plugin.cfg", "res://addons/quentincaffeino/console/plugin.cfg", "res://addons/scene_manager/plugin.cfg", "res://addons/terminal/plugin.cfg" )
 
 [gdnative]
 
