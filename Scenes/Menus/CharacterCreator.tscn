@@ -10,19 +10,10 @@ flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 464, 384, 32, 32 )
 
-[node name="CharacterCreator" type="MarginContainer"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -124.0
-margin_top = -135.0
-margin_right = 124.0
-margin_bottom = 135.0
+[node name="CharacterCreator" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Panel" type="Panel" parent="."]
 margin_right = 248.0
@@ -47,7 +38,7 @@ margin_bottom = 244.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
 margin_right = 213.0
-margin_bottom = 38.0
+margin_bottom = 42.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer"]
 margin_right = 213.0
@@ -70,10 +61,15 @@ size_flags_vertical = 3
 custom_constants/line_spacing = 0
 custom_fonts/font = ExtResource( 8 )
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer"]
 margin_top = 18.0
 margin_right = 213.0
-margin_bottom = 38.0
+margin_bottom = 18.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 22.0
+margin_right = 213.0
+margin_bottom = 42.0
 custom_constants/separation = 32
 
 [node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
@@ -100,21 +96,10 @@ margin_right = 213.0
 margin_bottom = 20.0
 text = "Random"
 
-[node name="CenterContainer" type="CenterContainer" parent="Panel/MarginContainer/VBoxContainer"]
-margin_top = 42.0
-margin_right = 213.0
-margin_bottom = 102.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Player" parent="Panel/MarginContainer/VBoxContainer/CenterContainer" instance=ExtResource( 1 )]
-position = Vector2( 107, 29 )
-scale = Vector2( 2, 2 )
-
 [node name="HBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
-margin_top = 106.0
+margin_top = 46.0
 margin_right = 213.0
-margin_bottom = 234.0
+margin_bottom = 174.0
 alignment = 1
 
 [node name="Hair" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
@@ -372,10 +357,41 @@ margin_right = 213.0
 margin_bottom = 20.0
 text = "Begin"
 
+[node name="CenterContainer" type="CenterContainer" parent="Panel"]
+margin_left = 302.0
+margin_top = 119.0
+margin_right = 302.0
+margin_bottom = 119.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+use_top_left = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="."]
+margin_left = 252.0
+margin_top = 47.0
+margin_right = 393.0
+margin_bottom = 205.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" parent="Panel2" instance=ExtResource( 1 )]
+position = Vector2( 69, 76 )
+scale = Vector2( 2, 2 )
+
+[node name="Camera2D" parent="Panel2/Player" index="0"]
+visible = false
+
 [node name="Popups" type="CenterContainer" parent="."]
 margin_right = 248.0
 margin_bottom = 270.0
 mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="Popups"]
 margin_left = 24.0
@@ -400,3 +416,5 @@ dialog_text = "Save character and begin?"
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/HSplitContainer/Back" to="." method="_on_Back_pressed"]
 [connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/HSplitContainer/Begin" to="." method="_on_Begin_pressed"]
 [connection signal="confirmed" from="Popups/ConfirmationDialog" to="." method="_on_ConfirmationDialog_confirmed"]
+
+[editable path="Panel2/Player"]

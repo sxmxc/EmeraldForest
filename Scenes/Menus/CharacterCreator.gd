@@ -4,7 +4,7 @@ extends "res://Scenes/Menus/Menu.gd"
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-onready var player = $Panel/MarginContainer/VBoxContainer/CenterContainer/Player
+onready var player = $Panel2/Player
 onready var confirmation = $Popups/ConfirmationDialog
 
 # Called when the node enters the scene tree for the first time.

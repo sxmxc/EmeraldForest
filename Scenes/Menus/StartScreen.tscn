@@ -57,7 +57,6 @@ layer = 2
 [connection signal="pressed" from="MenuRoot/MainMenu/Panel/Buttons/HBoxContainer/VBoxContainer/ContinueButton" to="." method="_on_ContinueButton_pressed"]
 [connection signal="pressed" from="MenuRoot/MainMenu/Panel/Buttons/HBoxContainer/VBoxContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="MenuRoot/MainMenu/Panel/Buttons/HBoxContainer/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
-[connection signal="menu_closed" from="MenuRoot/CharacterCreator" to="." method="_on_CharacterCreator_menu_closed"]
 [connection signal="menu_closed" from="MenuRoot/SettingsMenu" to="." method="_on_SettingsMenu_menu_closed"]
 
 [editable path="MenuRoot/MainMenu"]

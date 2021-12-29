@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://inventory/Models/Item.gd" type="Script" id=1]
+[ext_resource path="res://inventory/Scenes/Items/Pickaxe.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Images/Assets/SpriteSheets/Chopped/CopperPick.png" type="Texture" id=3]
+
+[resource]
+script = ExtResource( 1 )
+item_name = "Copper Pickaxe"
+item_type = 0
+item_description = ""
+stackable = false
+max_stack = 0
+item_icon = ExtResource( 3 )
+item_scene = ExtResource( 2 )

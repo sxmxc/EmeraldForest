@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Images/UI/Panel.png" type="Texture" id=1]
-[ext_resource path="res://inventory/Scenes/UI/InventoryPanel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://inventory/Scenes/UI/InventorySlot.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Images/Assets/Aseprite/Container-Small.Container-Small.Atlas.res" type="Texture" id=3]
 
 [sub_resource type="StyleBoxTexture" id=1]
@@ -47,8 +47,8 @@ __meta__ = {
 [node name="GridContainer" type="GridContainer" parent="NinePatchRect/MarginContainer"]
 margin_left = 2.0
 margin_top = 2.0
-margin_right = 39.0
-margin_bottom = 59.0
+margin_right = 42.0
+margin_bottom = 66.0
 columns = 2
 
 [node name="Panel9" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 2 )]
@@ -57,34 +57,34 @@ margin_right = 16.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="Panel10" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 2 )]
-margin_left = 20.0
-margin_right = 36.0
+margin_left = 24.0
+margin_right = 40.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="Panel11" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 2 )]
 margin_left = 0.0
-margin_top = 20.0
+margin_top = 24.0
 margin_right = 16.0
-margin_bottom = 36.0
+margin_bottom = 40.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="Panel12" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 2 )]
-margin_left = 20.0
-margin_top = 20.0
-margin_right = 36.0
-margin_bottom = 36.0
+margin_left = 24.0
+margin_top = 24.0
+margin_right = 40.0
+margin_bottom = 40.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="Panel13" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 2 )]
 margin_left = 0.0
-margin_top = 40.0
+margin_top = 48.0
 margin_right = 16.0
-margin_bottom = 56.0
+margin_bottom = 64.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="Panel14" parent="NinePatchRect/MarginContainer/GridContainer" instance=ExtResource( 2 )]
-margin_left = 20.0
-margin_top = 40.0
-margin_right = 36.0
-margin_bottom = 56.0
+margin_left = 24.0
+margin_top = 48.0
+margin_right = 40.0
+margin_bottom = 64.0
 custom_styles/panel = SubResource( 1 )

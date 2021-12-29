@@ -795,6 +795,7 @@ tracks/6/keys = {
 extents = Vector2( 5.33333, 5.33333 )
 
 [node name="Player" type="KinematicBody2D" groups=["Persist", "scene_manager_entity_nodes"]]
+position = Vector2( 49, 27 )
 scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 1 )
 __meta__ = {

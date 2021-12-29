@@ -45,8 +45,10 @@ func _ready():
 	e = Console.connect("toggled", self, "_on_console_toggled")
 	pause_mode = Node.PAUSE_MODE_PROCESS
 	get_tree().set_auto_accept_quit(false)
+	InventoryManager.connect("inventory_updated", self, "_on_inventory_update")
 
-
+func _on_inventory_update():
+	Print.line(Print.GREEN, "Inventory update signal received at Global")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 # warning-ignore:unused_argument
 func _process(delta):
