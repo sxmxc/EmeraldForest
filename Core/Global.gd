@@ -165,7 +165,7 @@ func _confirm(text: String, cb: String, title: String='Confirm') -> void:
 	dialog.connect('modal_closed', dialog, 'queue_free')
 	dialog.connect("confirmed", self, cb)
 	var scene_tree = Engine.get_main_loop()
-	scene_tree.current_scene.get_node("Notifications").add_child(dialog)
+	scene_tree.current_scene.get_node("Notifications/Alert").add_child(dialog)
 	dialog.set_exclusive(true)
 	dialog.popup_centered()
 

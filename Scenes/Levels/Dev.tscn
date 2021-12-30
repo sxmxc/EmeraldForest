@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Images/Assets/TileSets/SpringOutdoors.tres" type="TileSet" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scenes/Levels/TileMapExtended.gd" type="Script" id=9]
 [ext_resource path="res://inventory/Scenes/UI/InventorySlot.tscn" type="PackedScene" id=10]
 [ext_resource path="res://inventory/Data/Inventories/main_inventory.tres" type="Resource" id=11]
+[ext_resource path="res://Scenes/Menus/Default.tres" type="Theme" id=12]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
@@ -152,5 +153,13 @@ visible = false
 [node name="Notifications" type="CanvasLayer" parent="."]
 pause_mode = 2
 layer = 2
+
+[node name="Alert" type="Control" parent="Notifications"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [editable path="Buildings/Player"]

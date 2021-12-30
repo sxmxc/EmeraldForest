@@ -1,6 +1,9 @@
 extends Node
 
-var inventories = []
+onready var item_db = $ItemDatabase
+
+export(Array, Resource) var inventories = []
+
 
 signal inventory_updated
 
