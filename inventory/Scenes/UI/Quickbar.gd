@@ -10,11 +10,10 @@ const QUICKBAR_SLOT_SIZE = 12
 var current_slot = 0
 var prev_slot = 0
 
-
 func _ready():
 	self._initialize_slots()
-	$"/root/InventoryManager"._register_inventory(self)
-	$"/root/InventoryManager".connect("inventory_updated", self, "_refresh_style")
+	InventoryManager._register_inventory(self)
+	InventoryManager.connect("inventory_updated", self, "_refresh_slots")
 	for slot in slot_container.get_children():
 		slot.connect("gui_input", self, "_slot_gui_input", [slot])
 # Called when the node enters the scene tree for the first time.
@@ -36,23 +35,51 @@ func _initialize_slots():
 			if slots[x]:
 				slots[x]._add_item_to_slot(self.inventory.item_stacks[x])
 		x += 1
-
+	_refresh_slots()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
+func _slot_gui_input(event: InputEvent, slot: slot_class):
+	if event is InputEventMouseButton:
+		if Global.debug:
+			Print.line(Print.BLUE_BOLD, "Slot: " + slot.to_string() +" clicked on")
+		if event.button_index == BUTTON_LEFT && event.pressed:
+			if holding_item != null:
+				if !slot.slot_icon_ui && !slot.locked:
+					ferry.remove_child(holding_item)
+					slot._put_into_slot(holding_item)
+					holding_item = null
+					InventoryManager._inventory_updated()
+					_refresh_slots()
+				elif !slot.locked:
+					var temp = slot.slot_icon_ui
+					slot._pick_from_slot()
+					ferry.add_child(temp)
+					temp.global_position = event.global_position
+					ferry.remove_child(holding_item)
+					slot._put_into_slot(holding_item)
+			
+					holding_item = temp
+					InventoryManager._inventory_updated()
+					_refresh_slots()
+			elif slot.slot_icon_ui && !slot.locked:
+				holding_item = slot.slot_icon_ui
+				slot._pick_from_slot()
+				ferry.add_child(holding_item)
+				holding_item.global_position = get_global_mouse_position()
 func _input(event):
-	if event.is_action_pressed("quickbar_next"):
-		prev_slot = current_slot
-		current_slot = current_slot + 1 if current_slot + 1 < QUICKBAR_SLOT_SIZE else 0
-	if event.is_action_pressed("quickbar_prev"):
-		prev_slot = current_slot
-		current_slot = current_slot - 1 if current_slot - 1 >= 0 else QUICKBAR_SLOT_SIZE -1
-	slots[prev_slot].get_node("CenterContainer/Focus").visible = false
-	slots[current_slot].get_node("CenterContainer/Focus").visible = true
+	if !get_tree().paused:
+		if event.is_action_pressed("quickbar_next"):
+			prev_slot = current_slot
+			current_slot = current_slot + 1 if current_slot + 1 < QUICKBAR_SLOT_SIZE else 0
+		if event.is_action_pressed("quickbar_prev"):
+			prev_slot = current_slot
+			current_slot = current_slot - 1 if current_slot - 1 >= 0 else QUICKBAR_SLOT_SIZE -1
+		slots[prev_slot].get_node("CenterContainer/Focus").visible = false
+		slots[current_slot].get_node("CenterContainer/Focus").visible = true
 	
-func _refresh_style():
+func _refresh_slots():
 	Print.line(Print.YELLOW, "Refreshing Quickbar")
 	var x = 0
 	for i in QUICKBAR_SLOT_SIZE:
@@ -69,19 +96,3 @@ func _refresh_style():
 #func _process(delta: float) -> void:
 #	_refresh_style()
 
-func _pick_from_slot():
-	$CenterContainer.remove_child(self.slot_icon_ui)
-	var inventory_node = find_parent("Quickbar")
-	inventory_node.add_child(self.slot_icon_ui)
-	self.slot_icon_ui = null
-	_refresh_style()
-#	var inventory_manager = find_parent("InventoryManager")
-
-func _put_into_slot(slot_icon):
-	self.slot_icon_ui = slot_icon
-	self.slot_icon_ui.position = Vector2(0,0)
-	var inventory_node= find_parent("Quickbar")
-	inventory_node.remove_child("slot_icon_ui")
-	$CenterContainer.add_child(self.slot_icon_ui)
-	self.slot_icon_ui.set_owner($CenterContainer)
-	_refresh_style()

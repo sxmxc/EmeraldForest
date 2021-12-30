@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://inventory/Scenes/UI/InventorySlot.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Images/UI/Panel.png" type="Texture" id=3]
 [ext_resource path="res://inventory/Scenes/UI/InventoryUI.gd" type="Script" id=4]
 [ext_resource path="res://inventory/Data/Inventories/main_inventory.tres" type="Resource" id=5]
+[ext_resource path="res://inventory/Scenes/UI/ToolTip.gd" type="Script" id=6]
 
 [node name="MainInventoryUI" type="Control"]
 anchor_right = 1.0
@@ -31,7 +32,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect"]
+[node name="Margin" type="MarginContainer" parent="NinePatchRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 8.0
@@ -47,7 +48,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GridContainer" type="GridContainer" parent="NinePatchRect/MarginContainer"]
+[node name="Grid" type="GridContainer" parent="NinePatchRect/Margin"]
 margin_left = 2.0
 margin_top = 2.0
 margin_right = 228.0
@@ -57,3 +58,49 @@ columns = 12
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ToolTip" type="NinePatchRect" parent="NinePatchRect"]
+visible = false
+margin_right = 67.0
+margin_bottom = 67.0
+texture = ExtResource( 3 )
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 6
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect/ToolTip"]
+margin_right = 66.0
+margin_bottom = 67.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemName" type="Label" parent="NinePatchRect/ToolTip/VBoxContainer"]
+margin_right = 66.0
+margin_bottom = 20.0
+text = "Name"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemDescription" type="Label" parent="NinePatchRect/ToolTip/VBoxContainer"]
+margin_top = 24.0
+margin_right = 66.0
+margin_bottom = 67.0
+text = "Description
+blakdflkdj"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InventoryFerry" type="Node2D" parent="NinePatchRect"]

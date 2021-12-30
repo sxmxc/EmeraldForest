@@ -1,6 +1,6 @@
 extends Node
 
-onready var item_db = $ItemDatabase
+#onready var item_db = $ItemDatabase
 
 export(Array, Resource) var inventories = []
 
