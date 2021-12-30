@@ -13,6 +13,8 @@ const WET_SOIL_NAME = "WateredSoilAuto"
 const SEEDED_SOIL_ID = 10
 const SEEDED_SOIL_NAME = "SeedSingle"
 
+export(bool) var debug = true
+
 var player_name = "Steeb"
 onready var player_data = {
 	"playername" : player_name,
@@ -46,9 +48,14 @@ func _ready():
 	pause_mode = Node.PAUSE_MODE_PROCESS
 	get_tree().set_auto_accept_quit(false)
 	InventoryManager.connect("inventory_updated", self, "_on_inventory_update")
+	Console.add_command('set_debug', self, '_set_debug')\
+		.set_description('Sets debug option')\
+		.add_argument('value', TYPE_BOOL)\
+		.register()
 
 func _on_inventory_update():
-	Print.line(Print.GREEN, "Inventory update signal received at Global")
+	if debug:
+		Print.line(Print.GREEN, "Inventory update signal received at Global")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 # warning-ignore:unused_argument
 func _process(delta):
@@ -161,3 +168,9 @@ func _confirm(text: String, cb: String, title: String='Confirm') -> void:
 	scene_tree.current_scene.get_node("Notifications").add_child(dialog)
 	dialog.set_exclusive(true)
 	dialog.popup_centered()
+
+func _set_debug(value: bool):
+	debug = value
+	
+func _get_debug():
+	return debug

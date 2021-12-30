@@ -1,6 +1,7 @@
 extends Resource
 class_name Item
 
+export(int) var item_id
 export(String) var item_name
 export(ItemType.Type) var item_type
 export(String) var item_description

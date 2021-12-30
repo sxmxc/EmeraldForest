@@ -58,6 +58,11 @@ signal four_twenty_bb
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Console.add_command('pause_gameclock', self, '_set_gameclock_pause')\
+		.set_description('Pauses and unpauses gameclock')\
+		.add_argument('value', TYPE_BOOL)\
+		.register()
+	pause_mode = Node.PAUSE_MODE_PROCESS
 	game_clock = Timer.new()
 	add_child(game_clock)
 	
@@ -68,6 +73,14 @@ func _ready():
 	game_clock.set_one_shot(false)
 	game_clock.start()
 	_pause_game_clock()
+
+func _set_gameclock_pause(value: bool = true):
+	if value == null:
+		Console.write_line("Please provide true or false as argument")
+		return
+	game_clock.set_paused(value)
+	Console.write_line("Gameclock Paused: " + str(game_clock.is_paused()))
+	
 	
 func _reset_game_clock():
 	current_date.clear()
@@ -139,16 +152,17 @@ func _on_gameclock_tick():
 								current_date["Year"] += 1
 								current_date["Month"]= 1
 								emit_signal("year_end")
-		
-		Print.clear_console()
-		Print.line(Print.BLUE,_get_current_date(true))
+		if Global.debug:
+			Print.clear_console()
+			Print.line(Print.BLUE,_get_current_date(true))
 		if current_date.Hour == 0:
 			emit_signal("midnight")
 		if current_date.Day == 20 && current_date.Month == 4:
 			emit_signal("four_twenty_bb")
 		if current_date.Hour == 16 && current_date.Minutes == 20:
 			emit_signal("safety_meeting")	
-	Print.line(Print.YELLOW,"game_clock tick")
+	if Global.debug:
+		Print.line(Print.YELLOW,"game_clock tick")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

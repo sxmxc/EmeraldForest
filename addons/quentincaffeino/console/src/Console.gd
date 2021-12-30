@@ -87,6 +87,8 @@ func _ready():
 
 	# Init base commands
 	self.BaseCommands.new(self)
+	
+	pause_mode = Node.PAUSE_MODE_PROCESS
 
 
 # @param  InputEvent  e

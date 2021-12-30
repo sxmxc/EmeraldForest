@@ -6,6 +6,7 @@
 
 [resource]
 script = ExtResource( 1 )
+item_id = 0
 item_name = "Copper Pickaxe"
 item_type = 0
 item_description = ""
