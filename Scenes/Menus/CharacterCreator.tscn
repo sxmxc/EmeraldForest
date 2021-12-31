@@ -17,13 +17,20 @@ anchor_bottom = 1.0
 theme = ExtResource( 3 )
 script = ExtResource( 7 )
 
-[node name="Panel" type="Panel" parent="."]
-margin_right = 248.0
-margin_bottom = 270.0
+[node name="CreationPanel" type="Panel" parent="."]
+margin_left = 120.0
+margin_top = 1.0
+margin_right = 368.0
+margin_bottom = 272.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="MarginContainer" type="MarginContainer" parent="Panel"]
-margin_right = 253.0
-margin_bottom = 254.0
+[node name="MarginContainer" type="MarginContainer" parent="CreationPanel"]
+margin_left = 2.0
+margin_top = 4.0
+margin_right = 241.0
+margin_bottom = 264.0
 custom_constants/margin_right = 20
 custom_constants/margin_top = 10
 custom_constants/margin_left = 20
@@ -32,21 +39,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CreationPanel/MarginContainer"]
 margin_left = 20.0
 margin_top = 10.0
-margin_right = 233.0
-margin_bottom = 244.0
+margin_right = 219.0
+margin_bottom = 250.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
-margin_right = 213.0
+[node name="VBoxContainer" type="VBoxContainer" parent="CreationPanel/MarginContainer/VBoxContainer"]
+margin_right = 199.0
 margin_bottom = 48.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer"]
-margin_right = 213.0
+[node name="HBoxContainer" type="HBoxContainer" parent="CreationPanel/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_right = 199.0
 margin_bottom = 20.0
 
-[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
 margin_right = 31.0
 margin_bottom = 20.0
 custom_fonts/font = ExtResource( 8 )
@@ -54,33 +61,33 @@ text = "Name:"
 align = 1
 valign = 1
 
-[node name="TextEdit" type="TextEdit" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="TextEdit" type="TextEdit" parent="CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
 margin_left = 35.0
-margin_right = 213.0
+margin_right = 199.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/line_spacing = 0
 custom_fonts/font = ExtResource( 8 )
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="CreationPanel/MarginContainer/VBoxContainer/VBoxContainer"]
 margin_top = 24.0
-margin_right = 213.0
+margin_right = 199.0
 margin_bottom = 24.0
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="CreationPanel/MarginContainer/VBoxContainer/VBoxContainer"]
 margin_top = 28.0
-margin_right = 213.0
+margin_right = 199.0
 margin_bottom = 48.0
 custom_constants/separation = 32
 
-[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="Label" type="Label" parent="CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
 margin_right = 42.0
 margin_bottom = 20.0
 custom_fonts/font = ExtResource( 8 )
 text = "Gender:"
 
-[node name="OptionButton" type="OptionButton" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="OptionButton" type="OptionButton" parent="CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
 margin_left = 74.0
 margin_right = 111.0
 margin_bottom = 20.0
@@ -91,32 +98,51 @@ align = 1
 items = [ "Male", null, false, 0, null, "Female", null, false, 1, null, "Other", null, false, 2, null ]
 selected = 0
 
-[node name="Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+[node name="Button" type="Button" parent="CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
 margin_left = 143.0
 margin_right = 184.0
 margin_bottom = 20.0
 text = "Random"
 
-[node name="HBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="VBoxContainer" parent="CreationPanel/MarginContainer/VBoxContainer"]
 margin_top = 52.0
-margin_right = 213.0
-margin_bottom = 216.0
+margin_right = 199.0
+margin_bottom = 240.0
 alignment = 1
 
-[node name="Hair" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_right = 213.0
+[node name="Skin" type="HBoxContainer" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_right = 199.0
 margin_bottom = 20.0
 
-[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Hair"]
-margin_right = 26.0
+[node name="Label" type="Label" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Skin"]
+margin_right = 28.0
 margin_bottom = 20.0
+custom_fonts/font = ExtResource( 8 )
+text = "Skin:"
+align = 1
+
+[node name="Skin Color" type="ColorPickerButton" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Skin"]
+margin_left = 32.0
+margin_right = 48.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 16, 16 )
+
+[node name="Hair" type="HBoxContainer" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_top = 24.0
+margin_right = 199.0
+margin_bottom = 44.0
+
+[node name="Label" type="Label" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Hair"]
+margin_right = 36.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 8 )
 text = "Hair:"
 align = 1
 
-[node name="HairPrev" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Hair"]
-margin_left = 30.0
-margin_right = 106.0
+[node name="HairPrev" type="TextureButton" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Hair"]
+margin_left = 40.0
+margin_right = 77.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 texture_normal = SubResource( 15 )
@@ -124,38 +150,53 @@ expand = true
 stretch_mode = 5
 flip_h = true
 
-[node name="Current" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Hair"]
-margin_left = 110.0
-margin_right = 132.0
+[node name="Current" type="Label" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Hair"]
+margin_left = 81.0
+margin_right = 117.0
 margin_bottom = 20.0
+size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 8 )
 text = "Hair"
 align = 1
 
-[node name="HairNext" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Hair"]
-margin_left = 136.0
-margin_right = 213.0
+[node name="HairNext" type="TextureButton" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Hair"]
+margin_left = 121.0
+margin_right = 158.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 texture_normal = SubResource( 15 )
 expand = true
 stretch_mode = 5
 
-[node name="Beard" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_top = 24.0
-margin_right = 213.0
-margin_bottom = 44.0
-
-[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Beard"]
-margin_right = 35.0
+[node name="CenterContainer" type="CenterContainer" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Hair"]
+margin_left = 162.0
+margin_right = 199.0
 margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="HairColor" type="ColorPickerButton" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Hair/CenterContainer"]
+margin_left = 10.0
+margin_right = 26.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 16, 16 )
+
+[node name="Beard" type="HBoxContainer" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_top = 48.0
+margin_right = 199.0
+margin_bottom = 68.0
+
+[node name="Label" type="Label" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Beard"]
+margin_right = 36.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
 custom_fonts/font = ExtResource( 8 )
 text = "Beard:"
 align = 1
 
-[node name="BeardPrev" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Beard"]
-margin_left = 39.0
-margin_right = 106.0
+[node name="BeardPrev" type="TextureButton" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Beard"]
+margin_left = 40.0
+margin_right = 77.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 texture_normal = SubResource( 15 )
@@ -163,38 +204,52 @@ expand = true
 stretch_mode = 5
 flip_h = true
 
-[node name="Current" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Beard"]
-margin_left = 110.0
-margin_right = 141.0
+[node name="Current" type="Label" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Beard"]
+margin_left = 81.0
+margin_right = 117.0
 margin_bottom = 20.0
+size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 8 )
 text = "Beard"
 align = 1
 
-[node name="BeardNext" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Beard"]
-margin_left = 145.0
-margin_right = 213.0
+[node name="BeardNext" type="TextureButton" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Beard"]
+margin_left = 121.0
+margin_right = 158.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 texture_normal = SubResource( 15 )
 expand = true
 stretch_mode = 5
 
-[node name="Shirt" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_top = 48.0
-margin_right = 213.0
-margin_bottom = 68.0
-
-[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Shirt"]
-margin_right = 31.0
+[node name="CenterContainer" type="CenterContainer" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Beard"]
+margin_left = 162.0
+margin_right = 199.0
 margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="BeardColor" type="ColorPickerButton" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Beard/CenterContainer"]
+margin_left = 10.0
+margin_right = 26.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 16, 16 )
+
+[node name="Shirt" type="HBoxContainer" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_top = 72.0
+margin_right = 199.0
+margin_bottom = 92.0
+
+[node name="Label" type="Label" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shirt"]
+margin_right = 36.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 8 )
 text = "Shirt:"
 align = 1
 
-[node name="ShirtPrev" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Shirt"]
-margin_left = 35.0
-margin_right = 106.0
+[node name="ShirtPrev" type="TextureButton" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shirt"]
+margin_left = 40.0
+margin_right = 77.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 texture_normal = SubResource( 15 )
@@ -202,38 +257,47 @@ expand = true
 stretch_mode = 5
 flip_h = true
 
-[node name="Current" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Shirt"]
-margin_left = 110.0
-margin_right = 137.0
+[node name="Current" type="Label" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shirt"]
+margin_left = 81.0
+margin_right = 117.0
 margin_bottom = 20.0
+size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 8 )
 text = "Shirt"
 align = 1
 
-[node name="ShirtNext" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Shirt"]
-margin_left = 141.0
-margin_right = 213.0
+[node name="ShirtNext" type="TextureButton" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shirt"]
+margin_left = 121.0
+margin_right = 158.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 texture_normal = SubResource( 15 )
 expand = true
 stretch_mode = 5
 
-[node name="Pants" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_top = 72.0
-margin_right = 213.0
-margin_bottom = 92.0
-
-[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Pants"]
-margin_right = 33.0
+[node name="EmptyMargin" type="Control" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shirt"]
+margin_left = 162.0
+margin_right = 199.0
 margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="Pants" type="HBoxContainer" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_top = 96.0
+margin_right = 199.0
+margin_bottom = 116.0
+
+[node name="Label" type="Label" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Pants"]
+margin_right = 36.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
 custom_fonts/font = ExtResource( 8 )
 text = "Pants:"
 align = 1
 
-[node name="PantsPrev" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Pants"]
-margin_left = 37.0
-margin_right = 106.0
+[node name="PantsPrev" type="TextureButton" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Pants"]
+margin_left = 40.0
+margin_right = 77.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 texture_normal = SubResource( 15 )
@@ -241,38 +305,48 @@ expand = true
 stretch_mode = 5
 flip_h = true
 
-[node name="Current" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Pants"]
-margin_left = 110.0
-margin_right = 139.0
+[node name="Current" type="Label" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Pants"]
+margin_left = 81.0
+margin_right = 117.0
 margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
 custom_fonts/font = ExtResource( 8 )
 text = "Pants"
 align = 1
 
-[node name="PantsNext" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Pants"]
-margin_left = 143.0
-margin_right = 213.0
+[node name="PantsNext" type="TextureButton" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Pants"]
+margin_left = 121.0
+margin_right = 158.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 texture_normal = SubResource( 15 )
 expand = true
 stretch_mode = 5
 
-[node name="Shoes" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_top = 96.0
-margin_right = 213.0
-margin_bottom = 116.0
-
-[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Shoes"]
-margin_right = 35.0
+[node name="EmptyMargin" type="Control" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Pants"]
+margin_left = 162.0
+margin_right = 199.0
 margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="Shoes" type="HBoxContainer" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_top = 120.0
+margin_right = 199.0
+margin_bottom = 140.0
+
+[node name="Label" type="Label" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shoes"]
+margin_right = 36.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
 custom_fonts/font = ExtResource( 8 )
 text = "Shoes:"
 align = 1
 
-[node name="ShoesPrev" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Shoes"]
-margin_left = 39.0
-margin_right = 106.0
+[node name="ShoesPrev" type="TextureButton" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shoes"]
+margin_left = 40.0
+margin_right = 77.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 texture_normal = SubResource( 15 )
@@ -280,39 +354,48 @@ expand = true
 stretch_mode = 5
 flip_h = true
 
-[node name="Current" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Shoes"]
-margin_left = 110.0
-margin_right = 141.0
+[node name="Current" type="Label" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shoes"]
+margin_left = 81.0
+margin_right = 117.0
 margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
 custom_fonts/font = ExtResource( 8 )
 text = "Shoes"
 align = 1
 
-[node name="ShoesNext" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Shoes"]
-margin_left = 145.0
-margin_right = 213.0
+[node name="ShoesNext" type="TextureButton" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shoes"]
+margin_left = 121.0
+margin_right = 158.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 texture_normal = SubResource( 15 )
 expand = true
 stretch_mode = 5
 
-[node name="Acc" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_top = 120.0
-margin_right = 213.0
-margin_bottom = 140.0
-alignment = 1
+[node name="EmptyMargin" type="Control" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shoes"]
+margin_left = 162.0
+margin_right = 199.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Acc"]
+[node name="Acc" type="HBoxContainer" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_top = 144.0
+margin_right = 199.0
+margin_bottom = 164.0
+
+[node name="Label" type="Label" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Acc"]
 margin_right = 53.0
 margin_bottom = 20.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
 custom_fonts/font = ExtResource( 8 )
 text = "Accesory:"
 align = 1
 
-[node name="AccPrev" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Acc"]
+[node name="AccPrev" type="TextureButton" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Acc"]
 margin_left = 57.0
-margin_right = 106.0
+margin_right = 84.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 texture_normal = SubResource( 15 )
@@ -320,10 +403,11 @@ expand = true
 stretch_mode = 5
 flip_h = true
 
-[node name="Current" type="Label" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Acc"]
-margin_left = 110.0
-margin_right = 159.0
+[node name="Current" type="Label" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Acc"]
+margin_left = 88.0
+margin_right = 137.0
 margin_bottom = 20.0
+size_flags_horizontal = 3
 size_flags_vertical = 1
 size_flags_stretch_ratio = 0.0
 custom_fonts/font = ExtResource( 8 )
@@ -331,34 +415,40 @@ text = "Accesory"
 align = 3
 valign = 3
 
-[node name="AccNext" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/Acc"]
-margin_left = 163.0
-margin_right = 213.0
+[node name="AccNext" type="TextureButton" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Acc"]
+margin_left = 141.0
+margin_right = 168.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 texture_normal = SubResource( 15 )
 expand = true
 stretch_mode = 5
 
-[node name="HSplitContainer" type="HSplitContainer" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_top = 144.0
-margin_right = 213.0
-margin_bottom = 164.0
+[node name="EmptyMargin" type="Control" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Acc"]
+margin_left = 172.0
+margin_right = 199.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+
+[node name="HSplitContainer" type="HSplitContainer" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_top = 168.0
+margin_right = 199.0
+margin_bottom = 188.0
 split_offset = 58
 dragger_visibility = 1
 
-[node name="Back" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/HSplitContainer"]
+[node name="Back" type="Button" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/HSplitContainer"]
 margin_right = 83.0
 margin_bottom = 20.0
 text = "Back"
 
-[node name="Begin" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer/HSplitContainer"]
+[node name="Begin" type="Button" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/HSplitContainer"]
 margin_left = 95.0
-margin_right = 213.0
+margin_right = 199.0
 margin_bottom = 20.0
 text = "Begin"
 
-[node name="CenterContainer" type="CenterContainer" parent="Panel"]
+[node name="CenterContainer" type="CenterContainer" parent="CreationPanel"]
 margin_left = 302.0
 margin_top = 119.0
 margin_right = 302.0
@@ -370,52 +460,54 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel2" type="Panel" parent="."]
-margin_left = 252.0
-margin_top = 47.0
-margin_right = 393.0
-margin_bottom = 205.0
+[node name="CharPreview" type="Panel" parent="."]
+margin_left = 367.0
+margin_top = 46.0
+margin_right = 479.0
+margin_bottom = 214.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Player" parent="Panel2" instance=ExtResource( 1 )]
-position = Vector2( 69, 76 )
+[node name="Player" parent="CharPreview" instance=ExtResource( 1 )]
+position = Vector2( 52, 75 )
 scale = Vector2( 2, 2 )
 
-[node name="Camera2D" parent="Panel2/Player" index="0"]
+[node name="Camera2D" parent="CharPreview/Player" index="0"]
 visible = false
 
-[node name="Popups" type="CenterContainer" parent="."]
-margin_right = 248.0
-margin_bottom = 270.0
+[node name="Notifications" type="CanvasLayer" parent="."]
+
+[node name="Alerts" type="CenterContainer" parent="Notifications"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ConfirmationDialog" type="ConfirmationDialog" parent="Popups"]
-margin_left = 24.0
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="Notifications/Alerts"]
+margin_left = 140.0
 margin_top = 100.0
-margin_right = 224.0
+margin_right = 340.0
 margin_bottom = 170.0
 popup_exclusive = true
 dialog_text = "Save character and begin?"
 
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Hair/HairPrev" to="." method="_on_HairPrev_pressed"]
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Hair/HairNext" to="." method="_on_HairNext_pressed"]
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Beard/BeardPrev" to="." method="_on_BeardPrev_pressed"]
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Beard/BeardNext" to="." method="_on_BeardNext_pressed"]
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Shirt/ShirtPrev" to="." method="_on_ShirtPrev_pressed"]
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Shirt/ShirtNext" to="." method="_on_ShirtNext_pressed"]
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Pants/PantsPrev" to="." method="_on_PantsPrev_pressed"]
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Pants/PantsNext" to="." method="_on_PantsNext_pressed"]
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Shoes/ShoesPrev" to="." method="_on_ShoesPrev_pressed"]
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Shoes/ShoesNext" to="." method="_on_ShoesNext_pressed"]
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Acc/AccPrev" to="." method="_on_AccPrev_pressed"]
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/Acc/AccNext" to="." method="_on_AccNext_pressed"]
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/HSplitContainer/Back" to="." method="_on_Back_pressed"]
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/HBoxContainer/HSplitContainer/Begin" to="." method="_on_Begin_pressed"]
-[connection signal="confirmed" from="Popups/ConfirmationDialog" to="." method="_on_ConfirmationDialog_confirmed"]
+[connection signal="pressed" from="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Hair/HairPrev" to="." method="_on_HairPrev_pressed"]
+[connection signal="pressed" from="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Hair/HairNext" to="." method="_on_HairNext_pressed"]
+[connection signal="pressed" from="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Beard/BeardPrev" to="." method="_on_BeardPrev_pressed"]
+[connection signal="pressed" from="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Beard/BeardNext" to="." method="_on_BeardNext_pressed"]
+[connection signal="pressed" from="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shirt/ShirtPrev" to="." method="_on_ShirtPrev_pressed"]
+[connection signal="pressed" from="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shirt/ShirtNext" to="." method="_on_ShirtNext_pressed"]
+[connection signal="pressed" from="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Pants/PantsPrev" to="." method="_on_PantsPrev_pressed"]
+[connection signal="pressed" from="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Pants/PantsNext" to="." method="_on_PantsNext_pressed"]
+[connection signal="pressed" from="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shoes/ShoesPrev" to="." method="_on_ShoesPrev_pressed"]
+[connection signal="pressed" from="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shoes/ShoesNext" to="." method="_on_ShoesNext_pressed"]
+[connection signal="pressed" from="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Acc/AccPrev" to="." method="_on_AccPrev_pressed"]
+[connection signal="pressed" from="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Acc/AccNext" to="." method="_on_AccNext_pressed"]
+[connection signal="pressed" from="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/HSplitContainer/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/HSplitContainer/Begin" to="." method="_on_Begin_pressed"]
+[connection signal="confirmed" from="Notifications/Alerts/ConfirmationDialog" to="." method="_on_ConfirmationDialog_confirmed"]
 
-[editable path="Panel2/Player"]
+[editable path="CharPreview/Player"]

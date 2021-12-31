@@ -1,9 +1,0 @@
-[gd_resource type="Resource" load_steps=3 format=2]
-
-[ext_resource path="res://inventory/Models/ItemStack.gd" type="Script" id=1]
-[ext_resource path="res://inventory/Data/Items/test_resource_item.tres" type="Resource" id=2]
-
-[resource]
-script = ExtResource( 1 )
-item = ExtResource( 2 )
-quantity = 3
