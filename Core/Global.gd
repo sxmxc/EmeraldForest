@@ -47,7 +47,7 @@ func _ready():
 	e = Console.connect("toggled", self, "_on_console_toggled")
 	pause_mode = Node.PAUSE_MODE_PROCESS
 	get_tree().set_auto_accept_quit(false)
-	InventoryManager.connect("inventory_updated", self, "_on_inventory_update")
+	#InventoryManager.connect("inventory_updated", self, "_on_inventory_update")
 	Console.add_command('set_debug', self, '_set_debug')\
 		.set_description('Sets debug option')\
 		.add_argument('value', TYPE_BOOL)\

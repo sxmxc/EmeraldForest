@@ -19,36 +19,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/GGS/src/utils.gd"
 }, {
-"base": "Resource",
-"class": "Inventory",
-"language": "GDScript",
-"path": "res://inventory/Models/Inventory.gd"
-}, {
-"base": "Panel",
-"class": "InventorySlotUI",
-"language": "GDScript",
-"path": "res://inventory/Scenes/UI/InventorySlotUI.gd"
-}, {
-"base": "Control",
-"class": "InventoryUI",
-"language": "GDScript",
-"path": "res://inventory/Scenes/UI/InventoryUI.gd"
-}, {
-"base": "Resource",
-"class": "Item",
-"language": "GDScript",
-"path": "res://inventory/Models/Item.gd"
-}, {
-"base": "Resource",
-"class": "ItemStack",
-"language": "GDScript",
-"path": "res://inventory/Models/ItemStack.gd"
-}, {
-"base": "Resource",
-"class": "ItemType",
-"language": "GDScript",
-"path": "res://inventory/Models/ItemType.gd"
-}, {
 "base": "Reference",
 "class": "JSONBeautifier",
 "language": "GDScript",
@@ -87,12 +57,6 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "BaseInput": "",
 "GGSUtils": "",
-"Inventory": "",
-"InventorySlotUI": "",
-"InventoryUI": "",
-"Item": "",
-"ItemStack": "",
-"ItemType": "",
 "JSONBeautifier": "",
 "LayerGroup": "",
 "LayeredSprite": "",
@@ -116,11 +80,7 @@ Global="*res://Core/Global.gd"
 GameClock="*res://Core/GameClock.gd"
 Console="*res://addons/quentincaffeino/console/src/Console.tscn"
 CSharpConsole="*res://addons/quentincaffeino/console-csharp/src/Console.cs"
-InventoryManager="*res://inventory/InventoryManager.gd"
-
-[debug]
-
-settings/stdout/verbose_stdout=true
+JsonImporter="*res://Inventory/Data/JSONImporter.gd"
 
 [dialogue_editor]
 
@@ -303,6 +263,12 @@ quickbar_prev={
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":4,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="World"
+2d_physics/layer_3="Items"
 
 [physics]
 
