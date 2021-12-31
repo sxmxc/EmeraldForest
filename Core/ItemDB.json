@@ -1,0 +1,20 @@
+{
+  "Copper Pickaxe": {
+    "ID": 0,
+    "Type": "Tool",
+    "StackSize": 1,
+    "Description": "Well, it's better than using your hand"
+  },
+  "Copper Axe": {
+    "ID": 1,
+    "Type": "Tool",
+    "StackSize": 1,
+    "Description": "Well, it's better than using your hand"
+  },
+  "Copper Ore": {
+    "ID": 2,
+    "Type": "Resource",
+    "StackSize": 99,
+    "Description": "Can be smelted at smelter"
+  }
+}
