@@ -63,7 +63,7 @@ func _left_click_dif_item(slot: slot_class, event: InputEvent):
 	holding_item = temp_item
 
 func _left_click_same_item(slot: slot_class):
-	var stack_size = int(JsonImporter.item_data[slot.item.item_name]["StackSize"])
+	var stack_size = int(ItemImporter.item_data[slot.item.item_name]["StackSize"])
 	var stack_capacity = stack_size - slot.item.item_quantity
 	if stack_capacity >= holding_item.item_quantity:
 		PlayerInventory._add_item_quantity(slot, holding_item.item_quantity)

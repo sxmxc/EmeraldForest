@@ -29,7 +29,7 @@ func _ready():
 func _add_item(item_name, item_quantity):
 	for item in inventory:
 		if inventory[item][0] == item_name:
-			var stack_size = int(JsonImporter.item_data[item_name]["StackSize"])
+			var stack_size = int(ItemImporter.item_data[item_name]["StackSize"])
 			var stack_capacity = stack_size - inventory[item][1]
 			if stack_capacity >= item_quantity:
 				inventory[item][1] += item_quantity

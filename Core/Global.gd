@@ -15,6 +15,8 @@ const SEEDED_SOIL_NAME = "SeedSingle"
 
 export(bool) var debug = true
 
+var farm_map
+
 var player_name = "Steeb"
 var player
 onready var player_data = {
@@ -33,20 +35,19 @@ var tile_properties = {}
 
 
 signal player_menu_requested
+signal day_end
+signal new_day_start
 
 # var b = "text"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var e = GameClock.connect("safety_meeting", self, "_safety_meeting")
-	if e:
-		print_debug(e)
-	e = null
 	e = GameClock.connect("four_twenty_bb", self, "_four_twenty")
+	e = Console.connect("toggled", self, "_on_console_toggled")
+	e = GameClock.connect("day_end", self, "_end_day")
 	if e:
 		print_debug(e)
-	e = null
-	e = Console.connect("toggled", self, "_on_console_toggled")
 	pause_mode = Node.PAUSE_MODE_PROCESS
 	get_tree().set_auto_accept_quit(false)
 	Console.add_command('set_debug', self, '_set_debug')\
@@ -58,9 +59,12 @@ func _ready():
 func _process(delta):
 	_get_input()
 #	passss
-
-
-
+	
+func _end_day():
+	emit_signal("day_end")
+	_start_day()
+func _start_day():
+	emit_signal("new_day_start")
 func _get_input():
 	if Input.is_action_just_pressed("ui_player_menu") && !Console.is_console_shown:
 		emit_signal("player_menu_requested")

@@ -78,8 +78,9 @@ ggsManager="*res://addons/GGS/src/ggs_manager.gd"
 SceneManager="*res://addons/scene_manager/SceneManager.tscn"
 Global="*res://Core/Global.gd"
 GameClock="*res://Core/GameClock.gd"
-JsonImporter="*res://Inventory/Data/JSONImporter.gd"
 Console="*res://addons/quentincaffeino/console/src/Console.tscn"
+ItemImporter="*res://Inventory/Data/ItemImporter.gd"
+PlantImporter="*res://Farming/Data/PlantImporter.gd"
 PlayerInventory="*res://Inventory/Scripts/PlayerInventory.gd"
 
 [dialogue_editor]

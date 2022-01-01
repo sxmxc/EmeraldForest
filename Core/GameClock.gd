@@ -62,6 +62,9 @@ func _ready():
 		.set_description('Pauses and unpauses gameclock')\
 		.add_argument('value', TYPE_BOOL)\
 		.register()
+	Console.add_command('end_day', self, '_end_day')\
+		.set_description('Ends the day')\
+		.register()
 	pause_mode = Node.PAUSE_MODE_PROCESS
 	game_clock = Timer.new()
 	add_child(game_clock)
@@ -93,12 +96,29 @@ func _pause_game_clock():
 func _resume_game_clock():
 	game_clock.set_paused(false)
 	time_paused = false
+	
+func _end_day():
+	_pause_game_clock()
+	if current_date.Day < days_in_month:
+		current_date.Day += 1
+	else: 
+		current_date.Day = 1
+	if current_date.Weekday < days_in_week:
+		current_date.Weekday += 1
+	else: 
+		current_date.Weekday = 1
+	current_date.Hour = 0
+	current_date.Minutes = 0
+	current_date.Seconds = 0
+	emit_signal("day_end")
+	_resume_game_clock()
 
 func _get_time(format):
 	if(format):
+		
 		#12hour format
 		#is it midnight?
-		if current_date.Hour == 24:
+		if current_date.Hour == 24 || current_date.Hour == 0:
 			var string = "%d:%02d " + "AM"
 			var formatted = string % [12, current_date.Minutes]
 			return formatted
