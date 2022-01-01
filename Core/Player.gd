@@ -10,7 +10,10 @@ export var can_control = false
 
 var current_animation = "idle_" + direction
 
+var pickup_radius
+
 var player_name = Global.player_name
+
 onready var current = {
 	"playername" : player_name,
 	"body" : 0,
@@ -35,6 +38,7 @@ onready var spawn_parent = get_parent()
 onready var spawn_point = Vector2(0,0)
 
 const composite_sprites = preload("res://Scenes/Player/CompositeSprites.gd")
+
 
 func _ready():
 	body_sprite.texture = composite_sprites.body_spritesheets[current["body"] ][1]
@@ -66,7 +70,7 @@ func _save():
 	current["cash"] = 100
 	return current
 
-func get_input():
+func _get_input():
 	if can_control: 
 		velocity = Vector2.ZERO
 		if Input.is_action_pressed('right'):
@@ -85,6 +89,7 @@ func get_input():
 			velocity.y -= 1
 			direction = "up"
 			facing = Vector2.UP
+		
 		# Make sure diagonal movement isn't faster
 
 		velocity = velocity.normalized() * speed
@@ -98,16 +103,17 @@ func get_input():
 	
 
 func _physics_process(delta):
-	get_input()
+	_get_input()
+	_pickup_items()
 	if can_control:
 		$AnimationPlayer.play(current_animation)
 		velocity = move_and_slide(velocity) * delta
-func _input(_event):
+
+func _pickup_items():
 	if $PickupArea.items_in_range.size() > 0:
-		var pickup_item = $PickupArea.items_in_range.values()[0]
-		pickup_item._pick_up_item(self)
-		$PickupArea.items_in_range.erase(pickup_item)
-	pass
+		var item = $PickupArea.items_in_range.values()[0]
+		item._pick_up_item(self)
+		$PickupArea.items_in_range.erase(item)
 func _change_shirt(): 
 	current["shirt"] = (current["shirt"] + 1) % composite_sprites.shirts_spritesheets.size()
 	shirt_sprite.texture = composite_sprites.shirts_spritesheets[current["shirt"]][1]

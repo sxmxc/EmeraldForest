@@ -16,6 +16,7 @@ const SEEDED_SOIL_NAME = "SeedSingle"
 export(bool) var debug = true
 
 var player_name = "Steeb"
+var player
 onready var player_data = {
 	"playername" : player_name,
 	"body" : 0,
@@ -31,7 +32,8 @@ var tile_dict = {}
 var tile_properties = {}
 
 
-signal  player_menu_requested
+signal player_menu_requested
+
 # var b = "text"
 
 # Called when the node enters the scene tree for the first time.
@@ -47,20 +49,17 @@ func _ready():
 	e = Console.connect("toggled", self, "_on_console_toggled")
 	pause_mode = Node.PAUSE_MODE_PROCESS
 	get_tree().set_auto_accept_quit(false)
-	#InventoryManager.connect("inventory_updated", self, "_on_inventory_update")
 	Console.add_command('set_debug', self, '_set_debug')\
 		.set_description('Sets debug option')\
 		.add_argument('value', TYPE_BOOL)\
 		.register()
-
-func _on_inventory_update():
-	if debug:
-		Print.line(Print.GREEN, "Inventory update signal received at Global")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 # warning-ignore:unused_argument
 func _process(delta):
 	_get_input()
-#	pass
+#	passss
+
+
 
 func _get_input():
 	if Input.is_action_just_pressed("ui_player_menu") && !Console.is_console_shown:

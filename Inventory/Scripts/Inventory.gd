@@ -1,18 +1,21 @@
 extends Control
 
 const slot_class = preload("res://Inventory/Scripts/Slot.gd")
+const item_class = preload("res://Inventory/Scripts/Item.gd")
 onready var inventory_slots = $GridContainer
 var holding_item = null
 
 func _ready():
-	var e = Global.connect("player_menu_requested", self, "_refresh_inventory")
+	var e = Global.connect("player_menu_requested", self, "_initialize_inventory")
 	if(e):
 		Print.line(Print.RED,str(e))
 	var slots = inventory_slots.get_children()
 	for i in range(slots.size()):
 		slots[i].connect("gui_input", self, "_slot_gui_input", [slots[i]])
 		slots[i].slot_idx = i
-	_refresh_inventory()
+		slots[i].slot_type = slot_class.SlotType.BACKPACK
+		PlayerInventory._register_slot(slots[i])
+	_initialize_inventory()
 		
 func _slot_gui_input(event: InputEvent, slot: slot_class):
 	if event is InputEventMouseButton:
@@ -39,14 +42,14 @@ func _input(_event):
 	if holding_item:
 		holding_item.global_position = get_global_mouse_position()
 
-func _refresh_inventory():
+func _initialize_inventory():
 	var slots = inventory_slots.get_children()
 	for i in range(slots.size()):
 		if PlayerInventory.inventory.has(i):
 			slots[i]._initialize_item(PlayerInventory.inventory[i][0], PlayerInventory.inventory[i][1])
 
 func _left_click_empty_slot(slot: slot_class):
-	PlayerInventory._add_item_to_empty_slot(holding_item, slot)
+	PlayerInventory._add_item_to_empty_slot(holding_item,slot)
 	slot._put_into_slot(holding_item)
 	holding_item = null
 

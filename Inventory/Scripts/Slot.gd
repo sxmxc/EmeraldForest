@@ -17,6 +17,16 @@ var locked = false
 
 var slot_idx: int
 
+
+
+enum SlotType {
+	QUICKBAR = 0,
+	BACKPACK = 1,
+	EQUPPED = 2
+}
+
+var slot_type
+
 func _ready():
 	default_style = StyleBoxTexture.new()
 	empty_style = StyleBoxTexture.new()
@@ -35,7 +45,9 @@ func _ready():
 	pass
 	
 func _refresh_style():
-	if item == null:
+	if slot_type == SlotType.QUICKBAR && PlayerInventory.current_active_slot == slot_idx:
+		set('custom_styles/panel', selected_style)
+	elif item == null:
 		set('custom_styles/panel', empty_style)
 	elif locked:
 		set('custom_styles/panel', locked_style)
@@ -57,11 +69,18 @@ func _put_into_slot(new_item):
 	add_child(item)
 	_refresh_style()
 
+func _remove_item():
+	if slot_type == SlotType.QUICKBAR:
+		if is_instance_valid(item):
+			remove_child(item)
+			item = null
+			_refresh_style()
+
 func _initialize_item(item_name, item_quantity):
 	if item == null:
 		item = item_class.instance()
 		add_child(item)
-		item.set_item(item_name, item_quantity)
+		item._set_item(item_name, item_quantity)
 	else:
-		item.set_item(item_name,item_quantity)
+		item._set_item(item_name,item_quantity)
 	_refresh_style()

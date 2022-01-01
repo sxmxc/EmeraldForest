@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Images/Assets/TileSets/SpringOutdoors.tres" type="TileSet" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Inventory/WorldItems/WorldItem.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/UI/GridHelper.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Levels/TileMapExtended.gd" type="Script" id=9]
+[ext_resource path="res://Inventory/Scenes/Quickbar.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Menus/Default.tres" type="Theme" id=12]
 
 [node name="World" type="Node2D"]
@@ -140,6 +141,10 @@ valign = 1
 [node name="PlayerMenuUI" parent="UI" instance=ExtResource( 4 )]
 visible = false
 
+[node name="Quickbar" parent="UI" instance=ExtResource( 10 )]
+margin_left = -144.0
+margin_right = 120.0
+
 [node name="Notifications" type="CanvasLayer" parent="."]
 pause_mode = 2
 layer = 2
@@ -184,6 +189,76 @@ collision_mask = 2
 
 [node name="WorldItem7" parent="." instance=ExtResource( 7 )]
 position = Vector2( 112, 232 )
+collision_layer = 4
+collision_mask = 2
+
+[node name="WorldItem8" parent="." instance=ExtResource( 7 )]
+position = Vector2( 64, 296 )
+collision_layer = 4
+collision_mask = 2
+
+[node name="WorldItem9" parent="." instance=ExtResource( 7 )]
+position = Vector2( 136, 344 )
+collision_layer = 4
+collision_mask = 2
+
+[node name="WorldItem10" parent="." instance=ExtResource( 7 )]
+position = Vector2( 56, 376 )
+collision_layer = 4
+collision_mask = 2
+
+[node name="WorldItem11" parent="." instance=ExtResource( 7 )]
+position = Vector2( 104, 384 )
+collision_layer = 4
+collision_mask = 2
+
+[node name="WorldItem12" parent="." instance=ExtResource( 7 )]
+position = Vector2( 96, 360 )
+collision_layer = 4
+collision_mask = 2
+
+[node name="WorldItem13" parent="." instance=ExtResource( 7 )]
+position = Vector2( 40, 344 )
+collision_layer = 4
+collision_mask = 2
+
+[node name="WorldItem14" parent="." instance=ExtResource( 7 )]
+position = Vector2( 80, 336 )
+collision_layer = 4
+collision_mask = 2
+
+[node name="WorldItem15" parent="." instance=ExtResource( 7 )]
+position = Vector2( 208, 320 )
+collision_layer = 4
+collision_mask = 2
+
+[node name="WorldItem16" parent="." instance=ExtResource( 7 )]
+position = Vector2( 280, 368 )
+collision_layer = 4
+collision_mask = 2
+
+[node name="WorldItem17" parent="." instance=ExtResource( 7 )]
+position = Vector2( 200, 400 )
+collision_layer = 4
+collision_mask = 2
+
+[node name="WorldItem18" parent="." instance=ExtResource( 7 )]
+position = Vector2( 248, 408 )
+collision_layer = 4
+collision_mask = 2
+
+[node name="WorldItem19" parent="." instance=ExtResource( 7 )]
+position = Vector2( 240, 384 )
+collision_layer = 4
+collision_mask = 2
+
+[node name="WorldItem20" parent="." instance=ExtResource( 7 )]
+position = Vector2( 184, 368 )
+collision_layer = 4
+collision_mask = 2
+
+[node name="WorldItem21" parent="." instance=ExtResource( 7 )]
+position = Vector2( 224, 360 )
 collision_layer = 4
 collision_mask = 2
 
