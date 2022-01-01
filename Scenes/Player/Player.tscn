@@ -805,7 +805,6 @@ script = ExtResource( 1 )
 __meta__ = {
 "entity_name": "Player"
 }
-groups = [ "scene_manager_entity_nodes", "Persist", "root_canvas1691", "scene_manager_entity_nodes" ]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 editor_draw_limits = true

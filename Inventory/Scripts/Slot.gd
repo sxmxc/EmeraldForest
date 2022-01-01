@@ -15,6 +15,8 @@ var item = null
 
 var locked = false
 
+var slot_idx: int
+
 func _ready():
 	default_style = StyleBoxTexture.new()
 	empty_style = StyleBoxTexture.new()
@@ -26,9 +28,9 @@ func _ready():
 	locked_style.texture = locked_tex
 	selected_style.texture = selected_tex
 	
-	if randi() % 2 == 0:
-		item = item_class.instance()
-		add_child(item)
+	# if randi() % 2 == 0:
+	# 	item = item_class.instance()
+	# 	add_child(item)
 	_refresh_style()		
 	pass
 	
@@ -53,4 +55,13 @@ func _put_into_slot(new_item):
 	var inventory_node = find_parent("Inventory")
 	inventory_node.remove_child(item)
 	add_child(item)
+	_refresh_style()
+
+func _initialize_item(item_name, item_quantity):
+	if item == null:
+		item = item_class.instance()
+		add_child(item)
+		item.set_item(item_name, item_quantity)
+	else:
+		item.set_item(item_name,item_quantity)
 	_refresh_style()

@@ -107,7 +107,7 @@ text = "Random"
 [node name="HBoxContainer" type="VBoxContainer" parent="CreationPanel/MarginContainer/VBoxContainer"]
 margin_top = 52.0
 margin_right = 199.0
-margin_bottom = 240.0
+margin_bottom = 216.0
 alignment = 1
 
 [node name="Skin" type="HBoxContainer" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer"]
@@ -430,19 +430,19 @@ margin_right = 199.0
 margin_bottom = 20.0
 size_flags_horizontal = 3
 
-[node name="HSplitContainer" type="HSplitContainer" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_top = 168.0
+[node name="HSplitContainer" type="HSplitContainer" parent="CreationPanel/MarginContainer/VBoxContainer"]
+margin_top = 220.0
 margin_right = 199.0
-margin_bottom = 188.0
+margin_bottom = 240.0
 split_offset = 58
 dragger_visibility = 1
 
-[node name="Back" type="Button" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/HSplitContainer"]
+[node name="Back" type="Button" parent="CreationPanel/MarginContainer/VBoxContainer/HSplitContainer"]
 margin_right = 83.0
 margin_bottom = 20.0
 text = "Back"
 
-[node name="Begin" type="Button" parent="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/HSplitContainer"]
+[node name="Begin" type="Button" parent="CreationPanel/MarginContainer/VBoxContainer/HSplitContainer"]
 margin_left = 95.0
 margin_right = 199.0
 margin_bottom = 20.0
@@ -477,8 +477,9 @@ scale = Vector2( 2, 2 )
 visible = false
 
 [node name="Notifications" type="CanvasLayer" parent="."]
+layer = 3
 
-[node name="Alerts" type="CenterContainer" parent="Notifications"]
+[node name="Alert" type="CenterContainer" parent="Notifications"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -486,7 +487,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ConfirmationDialog" type="ConfirmationDialog" parent="Notifications/Alerts"]
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="Notifications/Alert"]
 margin_left = 140.0
 margin_top = 100.0
 margin_right = 340.0
@@ -506,8 +507,8 @@ dialog_text = "Save character and begin?"
 [connection signal="pressed" from="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shoes/ShoesNext" to="." method="_on_ShoesNext_pressed"]
 [connection signal="pressed" from="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Acc/AccPrev" to="." method="_on_AccPrev_pressed"]
 [connection signal="pressed" from="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Acc/AccNext" to="." method="_on_AccNext_pressed"]
-[connection signal="pressed" from="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/HSplitContainer/Back" to="." method="_on_Back_pressed"]
-[connection signal="pressed" from="CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/HSplitContainer/Begin" to="." method="_on_Begin_pressed"]
-[connection signal="confirmed" from="Notifications/Alerts/ConfirmationDialog" to="." method="_on_ConfirmationDialog_confirmed"]
+[connection signal="pressed" from="CreationPanel/MarginContainer/VBoxContainer/HSplitContainer/Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="CreationPanel/MarginContainer/VBoxContainer/HSplitContainer/Begin" to="." method="_on_Begin_pressed"]
+[connection signal="confirmed" from="Notifications/Alert/ConfirmationDialog" to="." method="_on_ConfirmationDialog_confirmed"]
 
 [editable path="CharPreview/Player"]

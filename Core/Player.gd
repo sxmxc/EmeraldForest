@@ -100,15 +100,14 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	if can_control:
-#		if !$AnimationPlayer.is_playing():
-#			$AnimationPlayer.play()	
 		$AnimationPlayer.play(current_animation)
 		velocity = move_and_slide(velocity) * delta
-#		for i in get_slide_count():
-#			var collision = get_slide_collision(i)
-#			print("Player collided with ", collision.collider.name)
-
-	
+func _input(_event):
+	if $PickupArea.items_in_range.size() > 0:
+		var pickup_item = $PickupArea.items_in_range.values()[0]
+		pickup_item._pick_up_item(self)
+		$PickupArea.items_in_range.erase(pickup_item)
+	pass
 func _change_shirt(): 
 	current["shirt"] = (current["shirt"] + 1) % composite_sprites.shirts_spritesheets.size()
 	shirt_sprite.texture = composite_sprites.shirts_spritesheets[current["shirt"]][1]

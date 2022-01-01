@@ -48,6 +48,9 @@ __meta__ = {
 [node name="CharacterCreator" parent="MenuRoot" instance=ExtResource( 3 )]
 visible = false
 
+[node name="OptionButton" parent="MenuRoot/CharacterCreator/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2" index="1"]
+items = [ "Male", null, false, 0, null, "Female", null, false, 1, null, "Other", null, false, 2, null ]
+
 [node name="SettingsMenu" parent="MenuRoot" instance=ExtResource( 5 )]
 visible = false
 
@@ -68,6 +71,9 @@ __meta__ = {
 [connection signal="pressed" from="MenuRoot/MainMenu/Panel/Buttons/HBoxContainer/VBoxContainer/ContinueButton" to="." method="_on_ContinueButton_pressed"]
 [connection signal="pressed" from="MenuRoot/MainMenu/Panel/Buttons/HBoxContainer/VBoxContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="MenuRoot/MainMenu/Panel/Buttons/HBoxContainer/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="menu_closed" from="MenuRoot/CharacterCreator" to="." method="_on_CharacterCreator_menu_closed"]
 [connection signal="menu_closed" from="MenuRoot/SettingsMenu" to="." method="_on_SettingsMenu_menu_closed"]
 
 [editable path="MenuRoot/MainMenu"]
+[editable path="MenuRoot/CharacterCreator"]
+[editable path="MenuRoot/CharacterCreator/CharPreview/Player"]

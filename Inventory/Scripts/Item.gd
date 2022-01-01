@@ -30,3 +30,16 @@ func _decrease_item_quantity(amount_to_remove):
 	item_quantity -= amount_to_remove
 	$Label.text = String(item_quantity)
 
+func set_item(name, quantity):
+	item_name = name
+	item_quantity = quantity
+	$TextureRect.texture = load("res://Images/Assets/SpriteSheets/Chopped/" \
+	+ JsonImporter.item_data[item_name]["Texture"])
+
+	var stack_size = int(JsonImporter.item_data[item_name]["StackSize"])
+	if stack_size == 1:
+		$Label.visible = false
+	else:
+		$Label.visible = true
+		$Label.text = String(item_quantity)
+	
