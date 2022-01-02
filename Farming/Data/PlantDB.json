@@ -1,0 +1,9 @@
+{
+  "1": {
+    "object_name": "Test Plant",
+    "phase_days": ["1","1","1","1","1","INF"],
+    "current_phase": 0,
+    "day_of_current_phase": 0,
+    "crop_age": 0
+  }
+}

@@ -19,5 +19,19 @@
     "Texture": "CopperOre.png",
     "StackSize": 99,
     "Description": "Can be smelted at smelter"
+  },
+  "Seed Pack": {
+    "ID": 3,
+    "Type": "Resource",
+    "Texture": "SeedPack.png",
+    "StackSize": 99,
+    "Description": "Can be smelted at smelter"
+  },
+  "Watering Can": {
+    "ID": 4,
+    "Type": "Resource",
+    "Texture": "WateringCan.png",
+    "StackSize": 1,
+    "Description": "Can be smelted at smelter"
   }
 }

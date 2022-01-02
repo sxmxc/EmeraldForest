@@ -5,7 +5,7 @@ extends "res://Scenes/Menus/Menu.gd"
 # var a = 2
 # var b = "text"
 onready var player = $CharPreview/Player
-onready var confirmation = $Notifications/Alerts/ConfirmationDialog
+onready var confirmation = $Notifications/Alert/ConfirmationDialog
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -29,19 +29,6 @@ func _get_front_tile(tm):
 #need to move this into tool specific
 func _unhandled_input(_event):
 	if Input.is_action_pressed("player_use_tool"):
-		var tile_id = tile_map.get_cellv(_get_front_tile(tile_map))
-		if tile_id == Global.SOIL_ID:
-			Print.line(Print.CYAN, "Tilling tileID: " + str(tile_id))
-			tile_map.set_cellv(_get_front_tile(tile_map), tile_map.get_tileset().find_tile_by_name(Global.TILLED_SOIL_NAME))
-			tile_map.tile_properties[_get_front_tile(tile_map)] = {"type": "dirt", "diggable": false,\
-				 "isWatered": false, "action": null, "isBuildable": true,\
-				 "waterSource": false, "water": false}
-		if tile_id == Global.TILLED_SOIL_ID:
-			Print.line(Print.CYAN, "Seeding tileID: " + str(tile_id))
-			tile_map.set_cellv(_get_front_tile(tile_map), tile_map.get_tileset().find_tile_by_name(Global.SEEDED_SOIL_NAME))
-	if Input.is_action_pressed("player_use_alternate"):
-		var tile_id = tile_map.get_cellv(_get_front_tile(tile_map))
-		if tile_id == Global.TILLED_SOIL_ID:
-			Print.line(Print.CYAN, "Watering tileID: " + str(tile_id))
-			tile_map.set_cellv(_get_front_tile(tile_map), tile_map.get_tileset().find_tile_by_name(Global.WET_SOIL_NAME))
-			tile_map.tile_properties[_get_front_tile(tile_map)]["isWatered"] = true
+		PlayerInventory._use_active_item(tile_map, _get_front_tile(tile_map))
+		
+		

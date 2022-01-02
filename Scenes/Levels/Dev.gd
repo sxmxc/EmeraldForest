@@ -12,8 +12,7 @@ func _ready():
 	SceneManager.get_entity("Player").can_control = true
 	SceneManager.get_entity("Player").get_node("Camera2D").make_current()
 	GameClock._resume_game_clock()
-
-
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

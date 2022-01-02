@@ -9,6 +9,7 @@ var tile_properties = {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.connect("new_day_start", self, '_refresh_tiles')
 	var used_cells = get_used_cells()
 	if (used_cells):
 		for i in used_cells:
@@ -33,6 +34,18 @@ func _ready():
 	Console.add_command('tile_cell_count', self, '_print_tile_cell_count')\
 		.set_description('Prints all current tiles/tileIDs')\
 		.register()
+
+func _refresh_tiles():
+	var used_cells = get_used_cells_by_id(Global.WET_SOIL_ID)
+	if (used_cells):
+		for i in used_cells:
+			var tile_id = get_cellv(i)
+			if tile_id == Global.WET_SOIL_ID:
+				if tile_properties[i]["isWatered"] == true:
+					tile_properties[i]["isWatered"] = false	
+					tile_properties[i]["type"] = "dirt"		
+				set_cellv(i, get_tileset().find_tile_by_name(Global.TILLED_SOIL_NAME))
+	Global.tile_properties = tile_properties
 	
 func _print_tile_cell_count():
 	Console.write_line("Total cells: " + str(Global.tile_properties.size()))

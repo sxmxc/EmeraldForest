@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Images/Assets/TileSets/SpringOutdoors.tres" type="TileSet" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Inventory/WorldItems/WorldItem.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/UI/GridHelper.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Levels/TileMapExtended.gd" type="Script" id=9]
+[ext_resource path="res://Inventory/Scenes/Quickbar.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Menus/Default.tres" type="Theme" id=12]
 
 [node name="World" type="Node2D"]
@@ -35,7 +36,6 @@ tile_data = PoolIntArray( 131077, 5, 0, 327685, 4, 0, 524308, 6, 0 )
 position = Vector2( 170, 90 )
 scale = Vector2( 1, 1 )
 collision_mask = 2
-groups = [ "scene_manager_entity_nodes", "Persist", "scene_manager_entity_nodes" ]
 
 [node name="Camera2D" parent="Buildings/Player" index="0"]
 limit_left = 0
@@ -140,6 +140,10 @@ valign = 1
 
 [node name="PlayerMenuUI" parent="UI" instance=ExtResource( 4 )]
 visible = false
+
+[node name="Quickbar" parent="UI" instance=ExtResource( 10 )]
+margin_left = -144.0
+margin_right = 120.0
 
 [node name="Notifications" type="CanvasLayer" parent="."]
 pause_mode = 2
