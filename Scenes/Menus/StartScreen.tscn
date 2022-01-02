@@ -14,6 +14,7 @@ script = ExtResource( 6 )
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="ParallaxBackground"]
+modulate = Color( 0.243137, 1, 0, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
@@ -26,6 +27,7 @@ __meta__ = {
 }
 
 [node name="TextureRect2" type="TextureRect" parent="ParallaxBackground"]
+modulate = Color( 0.243137, 1, 0, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 4 )
@@ -44,6 +46,12 @@ __meta__ = {
 }
 
 [node name="MainMenu" parent="MenuRoot" instance=ExtResource( 2 )]
+
+[node name="Title" parent="MenuRoot/MainMenu" index="0"]
+modulate = Color( 0.101961, 1, 0, 1 )
+
+[node name="Panel" parent="MenuRoot/MainMenu" index="1"]
+self_modulate = Color( 0.078125, 1, 0, 1 )
 
 [node name="CharacterCreator" parent="MenuRoot" instance=ExtResource( 3 )]
 visible = false
