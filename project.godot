@@ -101,7 +101,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/AsepriteWizard/plugin.cfg", "res://addons/Dialogbox/plugin.cfg", "res://addons/GGS/plugin.cfg", "res://addons/ResolutionManager/plugin.cfg", "res://addons/katuiche-colorful-console/plugin.cfg", "res://addons/orphan_import_file_cleaner/plugin.cfg", "res://addons/quentincaffeino/console-csharp/plugin.cfg", "res://addons/quentincaffeino/console/plugin.cfg", "res://addons/scene_manager/plugin.cfg", "res://addons/terminal/plugin.cfg", "res://addons/vnen.tiled_importer/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/AsepriteWizard/plugin.cfg", "res://addons/Dialogbox/plugin.cfg", "res://addons/GGS/plugin.cfg", "res://addons/ResolutionManager/plugin.cfg", "res://addons/frontrider.tiledtools/plugin.cfg", "res://addons/katuiche-colorful-console/plugin.cfg", "res://addons/orphan_import_file_cleaner/plugin.cfg", "res://addons/quentincaffeino/console-csharp/plugin.cfg", "res://addons/quentincaffeino/console/plugin.cfg", "res://addons/scene_manager/plugin.cfg", "res://addons/terminal/plugin.cfg", "res://addons/vnen.tiled_importer/plugin.cfg" )
 
 [gdnative]
 
@@ -269,6 +269,10 @@ quickbar_prev={
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":4,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
+
+[mono]
+
+export/include_scripts_content=true
 
 [physics]
 

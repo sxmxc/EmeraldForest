@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Core/Player.gd" type="Script" id=1]
 [ext_resource path="res://Images/Assets/SpriteSheets/Player/Base/male_base_0.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Images/Assets/SpriteSheets/Player/Shoes/shoes_0.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/Player/CompositeSprites.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/Player/PickupArea.gd" type="Script" id=8]
+[ext_resource path="res://Images/Assets/light.png" type="Texture" id=9]
 
 [sub_resource type="Animation" id=53]
 length = 0.001
@@ -793,13 +794,13 @@ tracks/6/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=52]
-extents = Vector2( 5.33333, 5.33333 )
+extents = Vector2( 6, 6 )
 
 [sub_resource type="CircleShape2D" id=62]
 radius = 54.7682
 
 [node name="Player" type="KinematicBody2D" groups=["Persist", "scene_manager_entity_nodes"]]
-position = Vector2( 49, 27 )
+position = Vector2( 239, 136 )
 scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 1 )
 __meta__ = {
@@ -849,11 +850,11 @@ anims/walk_right = SubResource( 60 )
 anims/walk_up = SubResource( 61 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 10.6667 )
+position = Vector2( 0, 10 )
 shape = SubResource( 52 )
 
 [node name="PlayerTileAnchor" type="Node2D" parent="."]
-position = Vector2( 0, 14.6667 )
+position = Vector2( 0, 16 )
 
 [node name="PickupArea" type="Area2D" parent="."]
 collision_layer = 0
@@ -862,6 +863,13 @@ script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
 shape = SubResource( 62 )
+
+[node name="Light2D" type="Light2D" parent="."]
+show_behind_parent = true
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 9 )
+color = Color( 1, 1, 1, 0.52549 )
+energy = 0.75
 
 [connection signal="body_entered" from="PickupArea" to="PickupArea" method="_on_PickupArea_body_entered"]
 [connection signal="body_exited" from="PickupArea" to="PickupArea" method="_on_PickupArea_body_exited"]

@@ -49,6 +49,10 @@ signal tick
 signal minute_tick
 signal hour_tick
 signal midnight
+signal morning
+signal noon
+signal evening
+signal night
 signal day_end
 signal month_end
 signal year_end
@@ -153,6 +157,14 @@ func _on_gameclock_tick():
 		if current_date["Minutes"] >= mins_in_hour:
 			current_date["Hour"] += 1
 			current_date["Minutes"] = 0
+			if current_date.Hour == 7:
+				emit_signal("morning")
+			if current_date.Hour == 12:
+				emit_signal("noon")
+			if current_date.Hour == 15:
+				emit_signal("evening")
+			if current_date.Hour == 19:
+				emit_signal("night")
 			emit_signal("hour_tick")
 			if current_date["Hour"] >= hours_in_day:
 				current_date["Day"] += 1
