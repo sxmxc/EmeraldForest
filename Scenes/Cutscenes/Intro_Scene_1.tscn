@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://addons/textalog/nodes/dialogue_bubble_node/dialog_bubble.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/textalog/assets/themes/default_bubble/default_bubble.tres" type="Theme" id=2]
+[ext_resource path="res://addons/textalog/nodes/dialogue_bubble_node/dialog_bubble.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Cutscenes/Test.gd" type="Script" id=4]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Dialog" type="CanvasLayer" parent="."]
+script = ExtResource( 4 )
+
+[node name="DialogBubble" type="Control" parent="Dialog" instance=ExtResource( 1 )]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 169.0
+margin_top = 144.0
+margin_right = -152.0
+margin_bottom = -88.0
+theme = ExtResource( 2 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+PortraitNode_Path = NodePath("Portraits")
+OptionsNode_Path = NodePath("Options")
+NameNode_path = NodePath("CharacterName")
