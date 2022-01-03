@@ -800,7 +800,7 @@ extents = Vector2( 6, 6 )
 radius = 54.7682
 
 [node name="Player" type="KinematicBody2D" groups=["Persist", "scene_manager_entity_nodes"]]
-position = Vector2( 239, 136 )
+position = Vector2( 681, 382 )
 scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 1 )
 __meta__ = {
@@ -808,6 +808,7 @@ __meta__ = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2( 0.3, 0.3 )
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
@@ -864,7 +865,7 @@ script = ExtResource( 8 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
 shape = SubResource( 62 )
 
-[node name="Light2D" type="Light2D" parent="."]
+[node name="Light2D" type="Light2D" parent="." groups=["Lights"]]
 show_behind_parent = true
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 9 )

@@ -10,6 +10,7 @@ func _ready():
 	yield(SceneManager, "scene_loaded")
 	SceneManager.get_entity("Player")._load_data(Global.player_data)
 	SceneManager.get_entity("Player").can_control = true
+	SceneManager.get_entity("Player").get_node("Light2D").visible = false
 	SceneManager.get_entity("Player").get_node("Camera2D").make_current()
 	GameClock._resume_game_clock()
 	

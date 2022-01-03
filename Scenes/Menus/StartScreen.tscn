@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Images/UI/StartScreen/WeedFarmTitleScreen.Background.default.0.Atlas.res" type="Texture" id=1]
 [ext_resource path="res://Scenes/Menus/MainMenu.tscn" type="PackedScene" id=2]
@@ -7,6 +7,12 @@
 [ext_resource path="res://Scenes/Menus/Settings.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Menus/StartScreen.gd" type="Script" id=6]
 [ext_resource path="res://Scenes/Menus/Default.tres" type="Theme" id=7]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+
+[sub_resource type="Animation" id=2]
+resource_name = "title_menu_transition_in"
 
 [node name="StartScreen" type="CanvasLayer"]
 script = ExtResource( 6 )
@@ -37,7 +43,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MenuRoot" type="Control" parent="."]
+[node name="MenuRoot" type="MarginContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 7 )
@@ -46,21 +52,31 @@ __meta__ = {
 }
 
 [node name="MainMenu" parent="MenuRoot" instance=ExtResource( 2 )]
-
-[node name="Title" parent="MenuRoot/MainMenu" index="0"]
-modulate = Color( 0.101961, 1, 0, 1 )
-
-[node name="Panel" parent="MenuRoot/MainMenu" index="1"]
-self_modulate = Color( 0.078125, 1, 0, 1 )
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1366.0
+margin_bottom = 768.0
 
 [node name="CharacterCreator" parent="MenuRoot" instance=ExtResource( 3 )]
 visible = false
-
-[node name="OptionButton" parent="MenuRoot/CharacterCreator/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2" index="1"]
-items = [ "Male", null, false, 0, null, "Female", null, false, 1, null, "Other", null, false, 2, null ]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 1366.0
+margin_bottom = 768.0
 
 [node name="SettingsMenu" parent="MenuRoot" instance=ExtResource( 5 )]
 visible = false
+anchor_left = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 1366.0
+margin_bottom = 768.0
 
 [node name="Notifications" type="CanvasLayer" parent="."]
 pause_mode = 2
@@ -75,6 +91,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 1 )
+anims/title_menu_transition_in = SubResource( 2 )
+
 [connection signal="pressed" from="MenuRoot/MainMenu/Panel/Buttons/HBoxContainer/VBoxContainer/NewGameButton" to="." method="_on_NewGameButton_pressed"]
 [connection signal="pressed" from="MenuRoot/MainMenu/Panel/Buttons/HBoxContainer/VBoxContainer/ContinueButton" to="." method="_on_ContinueButton_pressed"]
 [connection signal="pressed" from="MenuRoot/MainMenu/Panel/Buttons/HBoxContainer/VBoxContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
@@ -84,4 +104,4 @@ __meta__ = {
 
 [editable path="MenuRoot/MainMenu"]
 [editable path="MenuRoot/CharacterCreator"]
-[editable path="MenuRoot/CharacterCreator/CharPreview/Player"]
+[editable path="MenuRoot/CharacterCreator/HBoxContainer/CenterContainer/CharPreview/Player"]

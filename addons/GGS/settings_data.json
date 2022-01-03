@@ -44,7 +44,7 @@
 			"bus_name": "Sfx"
 		},
 		"current": {
-			"value": 1,
+			"value": 0.9,
 			"bus_name": "Sfx"
 		},
 		"logic": "res://Settings/audio_slider.gd"

@@ -29,8 +29,7 @@ export(NodePath) var NameNode_path:NodePath
 var dialog_manager:DialogManager
 var portrait_manager:PortraitManager
 var options_manager:OptionsManager
-
-onready var name_node:Label = get_node_or_null(NameNode_path)
+var name_node:Label
 
 var _used_scene = "res://addons/textalog/nodes/dialogue_base_node/dialogue_base_node.tscn"
 
@@ -39,6 +38,7 @@ func show_text(text:String, with_text_speed:float=0):
 	if not is_instance_valid(dialog_manager):
 		return
 	
+	show()
 	dialog_manager.set_text(text)
 	dialog_manager.display_text()
 
@@ -65,6 +65,10 @@ func _fake_ready() -> void:
 	_set_default_nodes()
 	_connect_dialog_manager_signals()
 	_connect_portrait_manager_signals()
+	_connect_options_manager_signals()
+	
+	if is_instance_valid(name_node):
+		name_node.add_stylebox_override("normal", get_stylebox("name", "DialogNode"))
 	
 	if not Engine.editor_hint:
 		hide()
@@ -96,6 +100,7 @@ func _set_default_nodes():
 	dialog_manager =  get_node_or_null(DialogNode_Path) as DialogManager
 	portrait_manager = get_node_or_null(PortraitNode_Path) as PortraitManager
 	options_manager = get_node_or_null(OptionsNode_Path) as OptionsManager
+	name_node = get_node_or_null(NameNode_path) as Label
 
 
 func _connect_dialog_manager_signals():
@@ -118,6 +123,15 @@ func _connect_portrait_manager_signals():
 	if not portrait_manager.is_connected("portrait_removed", self, "__on_PortraitManager_portrait_removed"):
 		portrait_manager.connect("portrait_removed", self, "__on_PortraitManager_portrait_removed")
 
+
+func _connect_options_manager_signals() -> void:
+	if not is_instance_valid(options_manager):
+		return
+	
+	if not options_manager.is_connected("option_added", self, "__on_OptionManager_option_added"):
+		options_manager.connect("option_added", self, "__on_OptionManager_option_added")
+	if not options_manager.is_connected("option_selected", self, "__on_OptionManager_option_selected"):
+		options_manager.connect("option_selected", self, "__on_OptionManager_option_selected")
 
 func _have_no_childs() -> bool:
 	return get_child_count() == 0
@@ -158,7 +172,6 @@ func _get_minimum_size() -> Vector2:
 # Signals
 ##########
 func __on_PortraitManager_portrait_added(character, portrait) -> void:
-	print(character)
 	emit_signal("portrait_added", character, portrait)
 
 func __on_PortraitManager_portrait_changed(character, portrait) -> void:
