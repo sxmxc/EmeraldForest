@@ -288,8 +288,8 @@ current = true
 position = Vector2( -27, 113 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 3 )
-hframes = 4
-frame = 1
+hframes = 8
+frame = 5
 
 [connection signal="event_finished" from="Dialog/EventManager" to="." method="_on_EventManager_event_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

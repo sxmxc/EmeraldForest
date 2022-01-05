@@ -19,56 +19,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/textalog/resources/character_class/character_class.gd"
 }, {
-"base": "PanelContainer",
-"class": "ChoiceBox",
-"language": "GDScript",
-"path": "res://addons/Dialog/ChoiceBox.gd"
-}, {
-"base": "PanelContainer",
-"class": "CustomGraphNode",
-"language": "GDScript",
-"path": "res://addons/Dialog/CustomGraphNode.gd"
-}, {
-"base": "CustomGraphNode",
-"class": "CustomGraphNode_01",
-"language": "GDScript",
-"path": "res://addons/Dialog/CustomGraphNode_01.gd"
-}, {
-"base": "CustomGraphNode",
-"class": "CustomGraphNode_02",
-"language": "GDScript",
-"path": "res://addons/Dialog/CustomGraphNode_02.gd"
-}, {
-"base": "CustomGraphNode",
-"class": "CustomGraphNode_03",
-"language": "GDScript",
-"path": "res://addons/Dialog/CustomGraphNode_03.gd"
-}, {
-"base": "CustomGraphNode",
-"class": "CustomGraphNode_04",
-"language": "GDScript",
-"path": "res://addons/Dialog/CustomGraphNode_04.gd"
-}, {
-"base": "TextureButton",
-"class": "CustomNodeDot",
-"language": "GDScript",
-"path": "res://addons/Dialog/CustomNodeDot.gd"
-}, {
-"base": "Control",
-"class": "CustomRichTextLabel",
-"language": "GDScript",
-"path": "res://addons/Dialog/DialogBox/CustomRichTextLabel.gd"
-}, {
-"base": "Panel",
-"class": "DefaultDialog",
-"language": "GDScript",
-"path": "res://addons/Dialog/default_dialog.gd"
-}, {
-"base": "CanvasLayer",
-"class": "DialogBox",
-"language": "GDScript",
-"path": "res://addons/Dialog/DialogBox/custom_dialog_node.gd"
-}, {
 "base": "DialogNode",
 "class": "DialogBubble",
 "language": "GDScript",
@@ -174,11 +124,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/GGS/src/utils.gd"
 }, {
-"base": "Control",
-"class": "GraphNodeMinimal",
-"language": "GDScript",
-"path": "res://addons/Dialog/CustomGraphNode_minimal.gd"
-}, {
 "base": "Reference",
 "class": "JSONBeautifier",
 "language": "GDScript",
@@ -237,16 +182,6 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "BaseInput": "",
 "Character": "res://addons/textalog/assets/icons/character_icon.png",
-"ChoiceBox": "",
-"CustomGraphNode": "",
-"CustomGraphNode_01": "",
-"CustomGraphNode_02": "",
-"CustomGraphNode_03": "",
-"CustomGraphNode_04": "",
-"CustomNodeDot": "",
-"CustomRichTextLabel": "",
-"DefaultDialog": "",
-"DialogBox": "",
 "DialogBubble": "",
 "DialogManager": "",
 "DialogNode": "",
@@ -268,7 +203,6 @@ _global_script_class_icons={
 "EventShow": "",
 "EventWait": "",
 "GGSUtils": "",
-"GraphNodeMinimal": "",
 "JSONBeautifier": "",
 "LayerGroup": "",
 "LayeredSprite": "",
@@ -307,10 +241,6 @@ CSharpConsole="*res://addons/quentincaffeino/console-csharp/src/Console.cs"
 ItemImporter="*res://Inventory/Data/ItemImporter.gd"
 PlantImporter="*res://Farming/Data/PlantImporter.gd"
 PlayerInventory="*res://Inventory/Scripts/PlayerInventory.gd"
-
-[debug]
-
-settings/stdout/verbose_stdout=true
 
 [display]
 
