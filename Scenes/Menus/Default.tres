@@ -1,6 +1,6 @@
-[gd_resource type="Theme" load_steps=29 format=2]
+[gd_resource type="Theme" load_steps=30 format=2]
 
-[ext_resource path="res://Fonts/Pixelade.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Fonts/PIXELADE.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Images/UI/Buttons/ButtonBase.ButtonBase.Button Pressed.1.Atlas.res" type="Texture" id=2]
 [ext_resource path="res://Images/UI/Buttons/ButtonBase.ButtonBase.Disabled.0.Atlas.res" type="Texture" id=3]
 [ext_resource path="res://Images/UI/Buttons/ButtonBase.ButtonBase.Button Pressed.0.Atlas.res" type="Texture" id=4]
@@ -61,8 +61,12 @@ region_rect = Rect2( 0, 0, 82, 20 )
 texture = ExtResource( 6 )
 region_rect = Rect2( 0, 0, 90, 103 )
 
+[sub_resource type="DynamicFont" id=24]
+size = 32
+font_data = ExtResource( 1 )
+
 [resource]
-default_font = ExtResource( 1 )
+default_font = SubResource( 24 )
 Button/colors/font_color = Color( 0, 0, 0, 1 )
 Button/colors/font_color_disabled = Color( 0.247059, 0.247059, 0.247059, 1 )
 Button/colors/font_color_focus = Color( 0.807843, 0.831373, 0.980392, 1 )

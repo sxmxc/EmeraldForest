@@ -4,7 +4,7 @@ extends "res://Scenes/Menus/Menu.gd"
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-onready var player = $CharPreview/Player
+onready var player = $HBoxContainer/CenterContainer/CharPreview/Player
 onready var confirmation = $Notifications/Alert/ConfirmationDialog
 
 # Called when the node enters the scene tree for the first time.
@@ -68,7 +68,7 @@ func _on_AccPrev_pressed():
 
 func _on_ConfirmationDialog_confirmed():
 	Global._store_player(player.current)
-	SceneManager.change_scene('res://Scenes/Levels/Dev.tscn')
+	SceneManager.change_scene('res://Scenes/Cutscenes/Intro_Scene_1.tscn')
 
 func _on_dialog_cancel():
 	confirmation.hide()

@@ -1,3 +1,4 @@
 [Custom Resolutions]
 
 Test_Resolution_1="600x400"
+"480 x 270"="480x270"

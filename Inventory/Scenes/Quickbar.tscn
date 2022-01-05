@@ -14,9 +14,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -112.0
-margin_top = -30.0
-margin_right = 152.0
+margin_left = -283.0
+margin_top = -56.0
+margin_right = 285.0
 margin_bottom = -6.0
 rect_pivot_offset = Vector2( -136, -56 )
 script = ExtResource( 4 )
@@ -38,10 +38,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -120.0
-margin_top = -9.0
-margin_right = 120.0
-margin_bottom = 9.0
+margin_left = -260.0
+margin_top = -25.0
+margin_right = 268.0
+margin_bottom = 23.0
 custom_constants/vseparation = 2
 custom_constants/hseparation = 2
 columns = 12
@@ -50,96 +50,118 @@ __meta__ = {
 }
 
 [node name="HotbarSlot1" type="Panel" parent="HotbarSlots"]
-margin_right = 18.0
-margin_bottom = 18.0
-rect_min_size = Vector2( 18, 18 )
+margin_right = 40.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 40, 40 )
 custom_styles/panel = SubResource( 1 )
 script = ExtResource( 3 )
 
 [node name="HotbarSlot2" type="Panel" parent="HotbarSlots"]
-margin_left = 20.0
-margin_right = 38.0
-margin_bottom = 18.0
-rect_min_size = Vector2( 18, 18 )
+margin_left = 42.0
+margin_right = 84.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 40, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_styles/panel = SubResource( 1 )
 script = ExtResource( 3 )
 
 [node name="HotbarSlot3" type="Panel" parent="HotbarSlots"]
-margin_left = 40.0
-margin_right = 58.0
-margin_bottom = 18.0
-rect_min_size = Vector2( 18, 18 )
+margin_left = 86.0
+margin_right = 128.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 40, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_styles/panel = SubResource( 1 )
 script = ExtResource( 3 )
 
 [node name="HotbarSlot4" type="Panel" parent="HotbarSlots"]
-margin_left = 60.0
-margin_right = 78.0
-margin_bottom = 18.0
-rect_min_size = Vector2( 18, 18 )
+margin_left = 130.0
+margin_right = 172.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 40, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_styles/panel = SubResource( 1 )
 script = ExtResource( 3 )
 
 [node name="HotbarSlot5" type="Panel" parent="HotbarSlots"]
-margin_left = 80.0
-margin_right = 98.0
-margin_bottom = 18.0
-rect_min_size = Vector2( 18, 18 )
+margin_left = 174.0
+margin_right = 216.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 40, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_styles/panel = SubResource( 1 )
 script = ExtResource( 3 )
 
 [node name="HotbarSlot6" type="Panel" parent="HotbarSlots"]
-margin_left = 100.0
-margin_right = 118.0
-margin_bottom = 18.0
-rect_min_size = Vector2( 18, 18 )
+margin_left = 218.0
+margin_right = 260.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 40, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_styles/panel = SubResource( 1 )
 script = ExtResource( 3 )
 
 [node name="HotbarSlot7" type="Panel" parent="HotbarSlots"]
-margin_left = 120.0
-margin_right = 138.0
-margin_bottom = 18.0
-rect_min_size = Vector2( 18, 18 )
+margin_left = 262.0
+margin_right = 304.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 40, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_styles/panel = SubResource( 1 )
 script = ExtResource( 3 )
 
 [node name="HotbarSlot8" type="Panel" parent="HotbarSlots"]
-margin_left = 140.0
-margin_right = 158.0
-margin_bottom = 18.0
-rect_min_size = Vector2( 18, 18 )
+margin_left = 306.0
+margin_right = 348.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 40, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_styles/panel = SubResource( 1 )
 script = ExtResource( 3 )
 
 [node name="HotbarSlot9" type="Panel" parent="HotbarSlots"]
-margin_left = 160.0
-margin_right = 178.0
-margin_bottom = 18.0
-rect_min_size = Vector2( 18, 18 )
+margin_left = 350.0
+margin_right = 392.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 40, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_styles/panel = SubResource( 1 )
 script = ExtResource( 3 )
 
 [node name="HotbarSlot10" type="Panel" parent="HotbarSlots"]
-margin_left = 180.0
-margin_right = 198.0
-margin_bottom = 18.0
-rect_min_size = Vector2( 18, 18 )
+margin_left = 394.0
+margin_right = 436.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 40, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_styles/panel = SubResource( 1 )
 script = ExtResource( 3 )
 
 [node name="HotbarSlot11" type="Panel" parent="HotbarSlots"]
-margin_left = 200.0
-margin_right = 218.0
-margin_bottom = 18.0
-rect_min_size = Vector2( 18, 18 )
+margin_left = 438.0
+margin_right = 480.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 40, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_styles/panel = SubResource( 1 )
 script = ExtResource( 3 )
 
 [node name="HotbarSlot12" type="Panel" parent="HotbarSlots"]
-margin_left = 220.0
-margin_right = 238.0
-margin_bottom = 18.0
-rect_min_size = Vector2( 18, 18 )
+margin_left = 482.0
+margin_right = 524.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 40, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_styles/panel = SubResource( 1 )
 script = ExtResource( 3 )

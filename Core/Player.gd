@@ -48,6 +48,8 @@ func _ready():
 	shoes_sprite.texture = composite_sprites.shoes_spritesheets[current["shoes"]][1]
 	#facialhair_sprite.texture = composite_sprites.facialhair_spritesheets[0]
 	#accessory_sprite.texture = composite_sprites.accessory_spritesheets[0]
+	GameClock.connect("night", self, "_on_night")
+	GameClock.connect("morning", self, "_on_morning")
 
 func _load_data(data):
 	current = data
@@ -143,3 +145,13 @@ func _prev_pants():
 func _prev_shoes():
 	current["shoes"] = (current["shoes"] - 1) if (current["shoes"] - 1) >= 0 else composite_sprites.shoes_spritesheets.size() - 1
 	shoes_sprite.texture = composite_sprites.shoes_spritesheets[current["shoes"]][1]
+	
+func _on_morning():
+	var light = $Light2D
+	if light.visible == true:
+		light.visible = false
+		
+func _on_night():
+	var light = $Light2D
+	if light.visible == false:
+		light.visible = true

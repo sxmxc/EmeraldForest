@@ -50,7 +50,6 @@ signal minute_tick
 signal hour_tick
 signal midnight
 signal morning
-signal noon
 signal evening
 signal night
 signal day_end
@@ -111,11 +110,12 @@ func _end_day():
 		current_date.Weekday += 1
 	else: 
 		current_date.Weekday = 1
-	current_date.Hour = 0
+	current_date.Hour = 7
 	current_date.Minutes = 0
 	current_date.Seconds = 0
 	emit_signal("day_end")
 	_resume_game_clock()
+	emit_signal("morning")
 
 func _get_time(format):
 	if(format):
@@ -157,14 +157,6 @@ func _on_gameclock_tick():
 		if current_date["Minutes"] >= mins_in_hour:
 			current_date["Hour"] += 1
 			current_date["Minutes"] = 0
-			if current_date.Hour == 7:
-				emit_signal("morning")
-			if current_date.Hour == 12:
-				emit_signal("noon")
-			if current_date.Hour == 15:
-				emit_signal("evening")
-			if current_date.Hour == 19:
-				emit_signal("night")
 			emit_signal("hour_tick")
 			if current_date["Hour"] >= hours_in_day:
 				current_date["Day"] += 1
@@ -187,6 +179,12 @@ func _on_gameclock_tick():
 		if Global.debug:
 			Print.clear_console()
 			Print.line(Print.BLUE,_get_current_date(true))
+		if current_date.Hour == 7:
+			emit_signal("morning")
+		if current_date.Hour == 15:
+			emit_signal("evening")
+		if current_date.Hour == 19:
+			emit_signal("night")
 		if current_date.Hour == 0:
 			emit_signal("midnight")
 		if current_date.Day == 20 && current_date.Month == 4:
