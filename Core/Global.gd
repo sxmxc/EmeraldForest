@@ -12,6 +12,7 @@ const WET_SOIL_ID = 9
 const WET_SOIL_NAME = "WateredSoilAuto"
 const SEEDED_SOIL_ID = 10
 const SEEDED_SOIL_NAME = "SeedSingle"
+const CELL_SIZE = Vector2(16,16)
 
 export(bool) var debug = true
 
