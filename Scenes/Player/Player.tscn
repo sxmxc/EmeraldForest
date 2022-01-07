@@ -111,7 +111,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
 "transitions": PoolRealArray( 0.90125, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 3, 4 ]
+"values": [ 0, 1, 2, 3, 0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("CompositeSprites/Hair:frame")
@@ -188,6 +188,8 @@ tracks/6/keys = {
 
 [sub_resource type="Animation" id=55]
 resource_name = "idle_left"
+length = 3.0
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("CompositeSprites/Body:frame")
 tracks/0/interp = 1
@@ -195,10 +197,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 0.90125 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 7 ]
+"values": [ 9, 10, 11, 12, 9 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("CompositeSprites/Hair:frame")
@@ -207,10 +209,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 3 ]
+"values": [ 9, 10, 11, 12 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("CompositeSprites/Shirt:frame")
@@ -219,10 +221,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 3 ]
+"values": [ 9, 10, 11, 12 ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("CompositeSprites/Pants:frame")
@@ -231,10 +233,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 3 ]
+"values": [ 9, 10, 11, 12 ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("CompositeSprites/Shoes:frame")
@@ -243,10 +245,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 3 ]
+"values": [ 9, 10, 11, 12 ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("CompositeSprites/FacialHair:frame")
@@ -255,10 +257,10 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0.1 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
 "update": 1,
-"values": [ 0 ]
+"values": [  ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("CompositeSprites/Accessory:frame")
@@ -275,6 +277,8 @@ tracks/6/keys = {
 
 [sub_resource type="Animation" id=56]
 resource_name = "idle_right"
+length = 3.0
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("CompositeSprites/Body:frame")
 tracks/0/interp = 1
@@ -282,10 +286,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 0.90125 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 0.90125, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 5 ]
+"values": [ 4, 5, 6, 7, 4 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("CompositeSprites/Hair:frame")
@@ -294,10 +298,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 1 ]
+"values": [ 4, 5, 6, 7 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("CompositeSprites/Shirt:frame")
@@ -306,10 +310,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 1 ]
+"values": [ 4, 5, 6, 7 ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("CompositeSprites/Pants:frame")
@@ -318,10 +322,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 1 ]
+"values": [ 4, 5, 6, 7 ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("CompositeSprites/Shoes:frame")
@@ -330,10 +334,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 1 ]
+"values": [ 4, 5, 6, 7 ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("CompositeSprites/FacialHair:frame")
@@ -372,7 +376,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 0.90125 ),
 "update": 1,
-"values": [ 6 ]
+"values": [ 8 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("CompositeSprites/Hair:frame")
@@ -384,7 +388,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 2 ]
+"values": [ 8 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("CompositeSprites/Shirt:frame")
@@ -396,7 +400,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 2 ]
+"values": [ 8 ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("CompositeSprites/Pants:frame")
@@ -408,7 +412,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 2 ]
+"values": [ 8 ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("CompositeSprites/Shoes:frame")
@@ -420,7 +424,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 2 ]
+"values": [ 8 ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("CompositeSprites/FacialHair:frame")
@@ -449,6 +453,8 @@ tracks/6/keys = {
 
 [sub_resource type="Animation" id=58]
 resource_name = "walk_down"
+length = 0.5
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("CompositeSprites/Body:frame")
 tracks/0/interp = 1
@@ -456,10 +462,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 0.90125 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 0.90125, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0 ]
+"values": [ 13, 14, 15, 16, 17, 18 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("CompositeSprites/Hair:frame")
@@ -468,10 +474,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0 ]
+"values": [ 13, 14, 15, 16, 17, 18 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("CompositeSprites/Shirt:frame")
@@ -480,10 +486,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0 ]
+"values": [ 13, 14, 15, 16, 17, 18 ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("CompositeSprites/Pants:frame")
@@ -492,10 +498,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0 ]
+"values": [ 13, 14, 15, 16, 17, 18 ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("CompositeSprites/Shoes:frame")
@@ -504,10 +510,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0 ]
+"values": [ 13, 14, 15, 16, 17, 18 ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("CompositeSprites/FacialHair:frame")
@@ -516,10 +522,10 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0.1 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
 "update": 1,
-"values": [ 0 ]
+"values": [  ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("CompositeSprites/Accessory:frame")
@@ -536,6 +542,8 @@ tracks/6/keys = {
 
 [sub_resource type="Animation" id=59]
 resource_name = "walk_left"
+length = 0.5
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("CompositeSprites/Body:frame")
 tracks/0/interp = 1
@@ -543,10 +551,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 0.90125 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 0.90125, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 7 ]
+"values": [ 25, 26, 27, 28, 29, 30 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("CompositeSprites/Hair:frame")
@@ -555,10 +563,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 3 ]
+"values": [ 25, 26, 27, 28, 29, 30 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("CompositeSprites/Shirt:frame")
@@ -567,10 +575,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 3 ]
+"values": [ 25, 26, 27, 28, 29, 30 ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("CompositeSprites/Pants:frame")
@@ -579,10 +587,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 3 ]
+"values": [ 25, 26, 27, 28, 29, 30 ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("CompositeSprites/Shoes:frame")
@@ -591,10 +599,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 3 ]
+"values": [ 25, 26, 27, 28, 29, 30 ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("CompositeSprites/FacialHair:frame")
@@ -603,10 +611,10 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0.1 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
 "update": 1,
-"values": [ 0 ]
+"values": [  ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("CompositeSprites/Accessory:frame")
@@ -623,6 +631,8 @@ tracks/6/keys = {
 
 [sub_resource type="Animation" id=60]
 resource_name = "walk_right"
+length = 0.5
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("CompositeSprites/Body:frame")
 tracks/0/interp = 1
@@ -630,10 +640,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 5 ]
+"values": [ 19, 20, 21, 22, 23, 24 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("CompositeSprites/Hair:frame")
@@ -642,10 +652,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 1 ]
+"values": [ 19, 20, 21, 22, 23, 24 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("CompositeSprites/Shirt:frame")
@@ -654,10 +664,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 1 ]
+"values": [ 19, 20, 21, 22, 23, 24 ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("CompositeSprites/Pants:frame")
@@ -666,10 +676,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 1 ]
+"values": [ 19, 20, 21, 22, 23, 24 ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("CompositeSprites/Shoes:frame")
@@ -678,10 +688,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 1 ]
+"values": [ 19, 20, 21, 22, 23, 24 ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("CompositeSprites/FacialHair:frame")
@@ -710,6 +720,8 @@ tracks/6/keys = {
 
 [sub_resource type="Animation" id=61]
 resource_name = "walk_up"
+length = 0.5
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("CompositeSprites/Body:frame")
 tracks/0/interp = 1
@@ -717,10 +729,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 0.90125 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 0.90125, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 6 ]
+"values": [ 31, 32, 33, 34, 35, 36 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("CompositeSprites/Hair:frame")
@@ -729,10 +741,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 2 ]
+"values": [ 31, 32, 33, 34, 35, 36 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("CompositeSprites/Shirt:frame")
@@ -741,10 +753,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 2 ]
+"values": [ 31, 32, 33, 34, 35, 36 ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("CompositeSprites/Pants:frame")
@@ -753,10 +765,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 2 ]
+"values": [ 31, 32, 33, 34, 35, 36 ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("CompositeSprites/Shoes:frame")
@@ -765,10 +777,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 2 ]
+"values": [ 31, 32, 33, 34, 35, 36 ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("CompositeSprites/FacialHair:frame")
@@ -819,23 +831,23 @@ script = ExtResource( 7 )
 
 [node name="Body" type="Sprite" parent="CompositeSprites"]
 texture = ExtResource( 2 )
-hframes = 8
+hframes = 38
 
 [node name="Hair" type="Sprite" parent="CompositeSprites"]
 texture = ExtResource( 3 )
-hframes = 4
+hframes = 38
 
 [node name="Shirt" type="Sprite" parent="CompositeSprites"]
 texture = ExtResource( 5 )
-hframes = 4
+hframes = 38
 
 [node name="Pants" type="Sprite" parent="CompositeSprites"]
 texture = ExtResource( 4 )
-hframes = 4
+hframes = 38
 
 [node name="Shoes" type="Sprite" parent="CompositeSprites"]
 texture = ExtResource( 6 )
-hframes = 4
+hframes = 38
 
 [node name="FacialHair" type="Sprite" parent="CompositeSprites"]
 
