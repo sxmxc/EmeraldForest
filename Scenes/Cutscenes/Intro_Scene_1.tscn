@@ -288,7 +288,7 @@ current = true
 position = Vector2( -27, 113 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 3 )
-hframes = 8
+hframes = 38
 frame = 5
 
 [connection signal="event_finished" from="Dialog/EventManager" to="." method="_on_EventManager_event_finished"]

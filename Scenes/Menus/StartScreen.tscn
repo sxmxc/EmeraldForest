@@ -1,12 +1,17 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://Images/UI/StartScreen/WeedFarmTitleScreen.Background.default.0.Atlas.res" type="Texture" id=1]
+[ext_resource path="res://Images/Assets/Parallax Mountains/layers/parallax-mountain-foreground-trees.png" type="Texture" id=1]
 [ext_resource path="res://Scenes/Menus/MainMenu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Menus/CharacterCreator.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Images/UI/StartScreen/WeedFarmTitleScreen.Midground.default.0.Atlas.res" type="Texture" id=4]
 [ext_resource path="res://Scenes/Menus/Settings.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Menus/StartScreen.gd" type="Script" id=6]
 [ext_resource path="res://Scenes/Menus/Default.tres" type="Theme" id=7]
+[ext_resource path="res://Images/Assets/Parallax Mountains/layers/parallax-mountain-bg.png" type="Texture" id=8]
+[ext_resource path="res://Images/Assets/Parallax Mountains/layers/parallax-mountain-trees.png" type="Texture" id=9]
+[ext_resource path="res://Images/Assets/Parallax Mountains/layers/parallax-mountain-montain-far.png" type="Texture" id=10]
+[ext_resource path="res://Images/Assets/Parallax Mountains/layers/parallax-mountain-mountains.png" type="Texture" id=11]
+[ext_resource path="res://Scenes/Menus/ParallaxBackground.gd" type="Script" id=12]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -19,20 +24,90 @@ script = ExtResource( 6 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
-[node name="TextureRect" type="TextureRect" parent="ParallaxBackground"]
-modulate = Color( 0.243137, 1, 0, 1 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-texture = ExtResource( 1 )
+[node name="Background" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1366, 0 )
+
+[node name="Background" type="TextureRect" parent="ParallaxBackground/Background"]
+margin_right = 1366.0
+margin_bottom = 768.0
+rect_min_size = Vector2( 1366, 768 )
+texture = ExtResource( 8 )
 expand = true
-stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect2" type="TextureRect" parent="ParallaxBackground"]
+[node name="ParallaxMidground" type="ParallaxBackground" parent="."]
+layer = -50
+scroll_limit_end = Vector2( 2732, 0 )
+script = ExtResource( 12 )
+
+[node name="Far" type="ParallaxLayer" parent="ParallaxMidground"]
+z_index = 1
+motion_scale = Vector2( 0.1, 1 )
+motion_mirroring = Vector2( 1366, 0 )
+
+[node name="Far" type="TextureRect" parent="ParallaxMidground/Far"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 1366, 768 )
+texture = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Near" type="ParallaxLayer" parent="ParallaxMidground"]
+z_index = 2
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 2732, 0 )
+
+[node name="Near" type="TextureRect" parent="ParallaxMidground/Near"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1366.0
+rect_min_size = Vector2( 2732, 768 )
+texture = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Trees" type="ParallaxLayer" parent="ParallaxMidground"]
+z_index = 3
+motion_scale = Vector2( 0.5, 1 )
+motion_mirroring = Vector2( 2732, 0 )
+
+[node name="Trees" type="TextureRect" parent="ParallaxMidground/Trees"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 2732.0
+margin_bottom = 768.0
+texture = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ForegroundTrees" type="ParallaxLayer" parent="ParallaxMidground"]
+z_index = 4
+motion_offset = Vector2( 1, 0 )
+motion_mirroring = Vector2( 2732, 0 )
+
+[node name="ForegroundTrees" type="TextureRect" parent="ParallaxMidground/ForegroundTrees"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 2732.0
+margin_bottom = 768.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Plant" type="CanvasLayer" parent="."]
+
+[node name="TextureRect2" type="TextureRect" parent="Plant"]
 modulate = Color( 0.243137, 1, 0, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -43,7 +118,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MenuRoot" type="MarginContainer" parent="."]
+[node name="Menu" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="MenuRoot" type="MarginContainer" parent="Menu"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 7 )
@@ -51,13 +129,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MainMenu" parent="MenuRoot" instance=ExtResource( 2 )]
+[node name="MainMenu" parent="Menu/MenuRoot" instance=ExtResource( 2 )]
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 1366.0
 margin_bottom = 768.0
 
-[node name="CharacterCreator" parent="MenuRoot" instance=ExtResource( 3 )]
+[node name="CharacterCreator" parent="Menu/MenuRoot" instance=ExtResource( 3 )]
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -68,10 +146,10 @@ margin_top = 0.0
 margin_right = 1366.0
 margin_bottom = 768.0
 
-[node name="OptionButton" parent="MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2" index="1"]
+[node name="OptionButton" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2" index="1"]
 items = [ "Male", null, false, 0, null, "Female", null, false, 1, null, "Other", null, false, 2, null ]
 
-[node name="SettingsMenu" parent="MenuRoot" instance=ExtResource( 5 )]
+[node name="SettingsMenu" parent="Menu/MenuRoot" instance=ExtResource( 5 )]
 visible = false
 anchor_left = 0.0
 anchor_right = 0.0
@@ -83,7 +161,7 @@ margin_bottom = 768.0
 
 [node name="Notifications" type="CanvasLayer" parent="."]
 pause_mode = 2
-layer = 2
+layer = 3
 
 [node name="Alert" type="Control" parent="Notifications"]
 anchor_right = 1.0
@@ -98,13 +176,13 @@ __meta__ = {
 anims/RESET = SubResource( 1 )
 anims/title_menu_transition_in = SubResource( 2 )
 
-[connection signal="pressed" from="MenuRoot/MainMenu/Panel/Buttons/HBoxContainer/VBoxContainer/NewGameButton" to="." method="_on_NewGameButton_pressed"]
-[connection signal="pressed" from="MenuRoot/MainMenu/Panel/Buttons/HBoxContainer/VBoxContainer/ContinueButton" to="." method="_on_ContinueButton_pressed"]
-[connection signal="pressed" from="MenuRoot/MainMenu/Panel/Buttons/HBoxContainer/VBoxContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
-[connection signal="pressed" from="MenuRoot/MainMenu/Panel/Buttons/HBoxContainer/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
-[connection signal="menu_closed" from="MenuRoot/CharacterCreator" to="." method="_on_CharacterCreator_menu_closed"]
-[connection signal="menu_closed" from="MenuRoot/SettingsMenu" to="." method="_on_SettingsMenu_menu_closed"]
+[connection signal="pressed" from="Menu/MenuRoot/MainMenu/Panel/Buttons/HBoxContainer/VBoxContainer/NewGameButton" to="." method="_on_NewGameButton_pressed"]
+[connection signal="pressed" from="Menu/MenuRoot/MainMenu/Panel/Buttons/HBoxContainer/VBoxContainer/ContinueButton" to="." method="_on_ContinueButton_pressed"]
+[connection signal="pressed" from="Menu/MenuRoot/MainMenu/Panel/Buttons/HBoxContainer/VBoxContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
+[connection signal="pressed" from="Menu/MenuRoot/MainMenu/Panel/Buttons/HBoxContainer/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="menu_closed" from="Menu/MenuRoot/CharacterCreator" to="." method="_on_CharacterCreator_menu_closed"]
+[connection signal="menu_closed" from="Menu/MenuRoot/SettingsMenu" to="." method="_on_SettingsMenu_menu_closed"]
 
-[editable path="MenuRoot/MainMenu"]
-[editable path="MenuRoot/CharacterCreator"]
-[editable path="MenuRoot/CharacterCreator/HBoxContainer/CenterContainer/CharPreview/Player"]
+[editable path="Menu/MenuRoot/MainMenu"]
+[editable path="Menu/MenuRoot/CharacterCreator"]
+[editable path="Menu/MenuRoot/CharacterCreator/HBoxContainer/CenterContainer/CharPreview/Player"]

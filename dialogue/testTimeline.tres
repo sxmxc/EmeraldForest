@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=27 format=2]
+[gd_resource type="Resource" load_steps=26 format=2]
 
 [ext_resource path="res://addons/event_system_plugin/resources/timeline_class/timeline_class.gd" type="Script" id=1]
 [ext_resource path="res://addons/textalog/events/dialog/text.gd" type="Script" id=2]
@@ -46,16 +46,6 @@ script = ExtResource( 4 )
 continue_at_end = true
 wait_time = 3.0
 
-[sub_resource type="Resource" id=6]
-script = ExtResource( 2 )
-continue_at_end = true
-continue_previous_text = false
-text_speed = 0.04
-display_name = ""
-text = "We now begin to tell a tale of our player. They are not happy at all. Slaving away. Similiar to how SDV starts. They are sitting at a desk. faced away from us. Big bad boss man comes in."
-audio_blip_strategy = 0
-translation_key = ""
-
 [sub_resource type="Resource" id=23]
 script = ExtResource( 2 )
 continue_at_end = true
@@ -78,7 +68,7 @@ script = ExtResource( 2 )
 continue_at_end = true
 continue_previous_text = false
 text_speed = 0.04
-display_name = "BigBossMan"
+display_name = "Big Boss Man"
 text = "You there. What's youre name? "
 audio_blip_strategy = 0
 translation_key = ""
@@ -133,8 +123,7 @@ continue_at_end = true
 continue_previous_text = false
 text_speed = 0.04
 display_name = "Player"
-text = "Fuck this. I quit. 
-"
+text = "Fuck this. I quit."
 audio_blip_strategy = 0
 translation_key = ""
 character = ExtResource( 5 )
@@ -149,8 +138,8 @@ script = ExtResource( 2 )
 continue_at_end = true
 continue_previous_text = false
 text_speed = 0.04
-display_name = "BigBossMan"
-text = "Excuse me? "
+display_name = "Big Boss Man"
+text = "Excuse me?"
 audio_blip_strategy = 0
 translation_key = ""
 character = ExtResource( 6 )
@@ -166,7 +155,7 @@ continue_at_end = true
 continue_previous_text = false
 text_speed = 0.04
 display_name = "Player"
-text = "eXcUsE mE.... You heard me. I quit. "
+text = "eXcUsE mE.... You heard me. I quit."
 audio_blip_strategy = 0
 translation_key = ""
 character = ExtResource( 5 )
@@ -181,4 +170,4 @@ args = [ "player_quits" ]
 [resource]
 resource_name = "Timeline"
 script = ExtResource( 1 )
-_events = [ SubResource( 1 ), SubResource( 3 ), SubResource( 4 ), SubResource( 2 ), SubResource( 12 ), SubResource( 6 ), SubResource( 23 ), SubResource( 11 ), SubResource( 10 ), SubResource( 24 ), SubResource( 25 ), SubResource( 21 ), SubResource( 13 ), SubResource( 22 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ]
+_events = [ SubResource( 1 ), SubResource( 3 ), SubResource( 4 ), SubResource( 2 ), SubResource( 12 ), SubResource( 23 ), SubResource( 11 ), SubResource( 10 ), SubResource( 24 ), SubResource( 25 ), SubResource( 21 ), SubResource( 13 ), SubResource( 22 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ]

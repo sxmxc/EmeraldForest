@@ -12,9 +12,9 @@ var settingsMenu
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	mainMenu = get_node("MenuRoot/MainMenu")
-	charCreator = get_node("MenuRoot/CharacterCreator")
-	settingsMenu = get_node("MenuRoot/SettingsMenu")
+	mainMenu = get_node("Menu/MenuRoot/MainMenu")
+	charCreator = get_node("Menu/MenuRoot/CharacterCreator")
+	settingsMenu = get_node("Menu/MenuRoot/SettingsMenu")
 	if (!GameClock.time_paused):
 		GameClock._pause_game_clock()
 
