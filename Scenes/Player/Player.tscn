@@ -12,7 +12,7 @@
 [ext_resource path="res://Core/StateMachine/StateMachine.gd" type="Script" id=10]
 [ext_resource path="res://Scenes/Player/PlayerDebugUI.gd" type="Script" id=11]
 
-[sub_resource type="Animation" id=53]
+[sub_resource type="Animation" id=1]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("CompositeSprites/Body:frame")
@@ -99,7 +99,7 @@ tracks/6/keys = {
 "values": [  ]
 }
 
-[sub_resource type="Animation" id=54]
+[sub_resource type="Animation" id=2]
 resource_name = "idle_down"
 length = 3.0
 loop = true
@@ -188,7 +188,7 @@ tracks/6/keys = {
 "values": [  ]
 }
 
-[sub_resource type="Animation" id=55]
+[sub_resource type="Animation" id=3]
 resource_name = "idle_left"
 length = 3.0
 loop = true
@@ -277,7 +277,7 @@ tracks/6/keys = {
 "values": [  ]
 }
 
-[sub_resource type="Animation" id=56]
+[sub_resource type="Animation" id=4]
 resource_name = "idle_right"
 length = 3.0
 loop = true
@@ -366,7 +366,7 @@ tracks/6/keys = {
 "values": [  ]
 }
 
-[sub_resource type="Animation" id=57]
+[sub_resource type="Animation" id=5]
 resource_name = "idle_up"
 tracks/0/type = "value"
 tracks/0/path = NodePath("CompositeSprites/Body:frame")
@@ -453,7 +453,7 @@ tracks/6/keys = {
 "values": [  ]
 }
 
-[sub_resource type="Animation" id=58]
+[sub_resource type="Animation" id=6]
 resource_name = "walk_down"
 length = 0.5
 loop = true
@@ -542,7 +542,7 @@ tracks/6/keys = {
 "values": [  ]
 }
 
-[sub_resource type="Animation" id=59]
+[sub_resource type="Animation" id=7]
 resource_name = "walk_left"
 length = 0.5
 loop = true
@@ -631,7 +631,7 @@ tracks/6/keys = {
 "values": [  ]
 }
 
-[sub_resource type="Animation" id=60]
+[sub_resource type="Animation" id=8]
 resource_name = "walk_right"
 length = 0.5
 loop = true
@@ -720,7 +720,7 @@ tracks/6/keys = {
 "values": [  ]
 }
 
-[sub_resource type="Animation" id=61]
+[sub_resource type="Animation" id=9]
 resource_name = "walk_up"
 length = 0.5
 loop = true
@@ -809,13 +809,16 @@ tracks/6/keys = {
 "values": [  ]
 }
 
-[sub_resource type="RectangleShape2D" id=52]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 6, 6 )
 
-[sub_resource type="CircleShape2D" id=62]
+[sub_resource type="CircleShape2D" id=11]
 radius = 54.7682
 
-[node name="Player" type="KinematicBody2D" groups=["Persist", "scene_manager_entity_nodes"]]
+[node name="Player" type="KinematicBody2D" groups=[
+"Persist",
+"scene_manager_entity_nodes",
+]]
 position = Vector2( 681, 382 )
 scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 1 )
@@ -856,19 +859,19 @@ hframes = 38
 [node name="Accessory" type="Sprite" parent="CompositeSprites"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/RESET = SubResource( 53 )
-anims/idle_down = SubResource( 54 )
-anims/idle_left = SubResource( 55 )
-anims/idle_right = SubResource( 56 )
-anims/idle_up = SubResource( 57 )
-anims/walk_down = SubResource( 58 )
-anims/walk_left = SubResource( 59 )
-anims/walk_right = SubResource( 60 )
-anims/walk_up = SubResource( 61 )
+anims/RESET = SubResource( 1 )
+anims/idle_down = SubResource( 2 )
+anims/idle_left = SubResource( 3 )
+anims/idle_right = SubResource( 4 )
+anims/idle_up = SubResource( 5 )
+anims/walk_down = SubResource( 6 )
+anims/walk_left = SubResource( 7 )
+anims/walk_right = SubResource( 8 )
+anims/walk_up = SubResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 10 )
-shape = SubResource( 52 )
+shape = SubResource( 10 )
 
 [node name="PlayerTileAnchor" type="Node2D" parent="."]
 position = Vector2( 0, 16 )
@@ -879,9 +882,11 @@ collision_mask = 4
 script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
-shape = SubResource( 62 )
+shape = SubResource( 11 )
 
-[node name="Light2D" type="Light2D" parent="." groups=["Lights"]]
+[node name="Light2D" type="Light2D" parent="." groups=[
+"Lights",
+]]
 show_behind_parent = true
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 9 )
@@ -894,34 +899,44 @@ script = ExtResource( 10 )
 [node name="PlayerDebugUI" type="CanvasLayer" parent="."]
 script = ExtResource( 11 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PlayerDebugUI"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -67.0
-margin_top = 193.0
-margin_right = 60.0
-margin_bottom = 264.0
+[node name="MarginContainer" type="MarginContainer" parent="PlayerDebugUI"]
+margin_right = 131.0
+margin_bottom = 63.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="PlayerDebugUI/MarginContainer"]
+margin_right = 131.0
+margin_bottom = 63.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerDebugUI/MarginContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CurrentState" type="Control" parent="PlayerDebugUI/VBoxContainer"]
-margin_right = 127.0
-margin_bottom = 33.0
+[node name="CurrentState" type="Control" parent="PlayerDebugUI/MarginContainer/Panel/VBoxContainer"]
+margin_right = 131.0
+margin_bottom = 29.0
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PlayerDebugUI/VBoxContainer/CurrentState"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerDebugUI/MarginContainer/Panel/VBoxContainer/CurrentState"]
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="PlayerDebugUI/VBoxContainer/CurrentState/HBoxContainer"]
+[node name="Label" type="Label" parent="PlayerDebugUI/MarginContainer/Panel/VBoxContainer/CurrentState/HBoxContainer"]
 margin_top = 13.0
 margin_right = 87.0
 margin_bottom = 27.0
@@ -930,7 +945,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="State" type="Label" parent="PlayerDebugUI/VBoxContainer/CurrentState/HBoxContainer"]
+[node name="State" type="Label" parent="PlayerDebugUI/MarginContainer/Panel/VBoxContainer/CurrentState/HBoxContainer"]
 margin_left = 91.0
 margin_top = 13.0
 margin_right = 116.0
@@ -940,23 +955,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CurrentDir" type="Control" parent="PlayerDebugUI/VBoxContainer"]
-margin_top = 37.0
-margin_right = 127.0
-margin_bottom = 71.0
+[node name="CurrentDir" type="Control" parent="PlayerDebugUI/MarginContainer/Panel/VBoxContainer"]
+margin_top = 33.0
+margin_right = 131.0
+margin_bottom = 63.0
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PlayerDebugUI/VBoxContainer/CurrentDir"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerDebugUI/MarginContainer/Panel/VBoxContainer/CurrentDir"]
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="PlayerDebugUI/VBoxContainer/CurrentDir/HBoxContainer"]
+[node name="Label" type="Label" parent="PlayerDebugUI/MarginContainer/Panel/VBoxContainer/CurrentDir/HBoxContainer"]
 margin_top = 13.0
 margin_right = 74.0
 margin_bottom = 27.0
@@ -965,7 +980,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Dir" type="Label" parent="PlayerDebugUI/VBoxContainer/CurrentDir/HBoxContainer"]
+[node name="Dir" type="Label" parent="PlayerDebugUI/MarginContainer/Panel/VBoxContainer/CurrentDir/HBoxContainer"]
 margin_left = 78.0
 margin_top = 13.0
 margin_right = 114.0
