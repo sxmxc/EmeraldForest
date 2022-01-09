@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Core/Player.gd" type="Script" id=1]
 [ext_resource path="res://Images/Assets/SpriteSheets/Player/Base/male_base_0.png" type="Texture" id=2]
@@ -9,8 +9,10 @@
 [ext_resource path="res://Scenes/Player/CompositeSprites.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/Player/PickupArea.gd" type="Script" id=8]
 [ext_resource path="res://Images/Assets/light.png" type="Texture" id=9]
+[ext_resource path="res://Core/StateMachine/StateMachine.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/Player/PlayerDebugUI.gd" type="Script" id=11]
 
-[sub_resource type="Animation" id=53]
+[sub_resource type="Animation" id=1]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("CompositeSprites/Body:frame")
@@ -97,7 +99,7 @@ tracks/6/keys = {
 "values": [  ]
 }
 
-[sub_resource type="Animation" id=54]
+[sub_resource type="Animation" id=2]
 resource_name = "idle_down"
 length = 3.0
 loop = true
@@ -186,7 +188,7 @@ tracks/6/keys = {
 "values": [  ]
 }
 
-[sub_resource type="Animation" id=55]
+[sub_resource type="Animation" id=3]
 resource_name = "idle_left"
 length = 3.0
 loop = true
@@ -275,7 +277,7 @@ tracks/6/keys = {
 "values": [  ]
 }
 
-[sub_resource type="Animation" id=56]
+[sub_resource type="Animation" id=4]
 resource_name = "idle_right"
 length = 3.0
 loop = true
@@ -364,7 +366,7 @@ tracks/6/keys = {
 "values": [  ]
 }
 
-[sub_resource type="Animation" id=57]
+[sub_resource type="Animation" id=5]
 resource_name = "idle_up"
 tracks/0/type = "value"
 tracks/0/path = NodePath("CompositeSprites/Body:frame")
@@ -451,7 +453,259 @@ tracks/6/keys = {
 "values": [  ]
 }
 
-[sub_resource type="Animation" id=58]
+[sub_resource type="Animation" id=12]
+resource_name = "using_tool_down"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CompositeSprites/Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CompositeSprites/Hair:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CompositeSprites/Shirt:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CompositeSprites/Pants:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CompositeSprites/Shoes:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "using_tool_left"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CompositeSprites/Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 9 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CompositeSprites/Hair:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 9 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CompositeSprites/Shirt:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 9 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CompositeSprites/Pants:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 9 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CompositeSprites/Shoes:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 9 ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "using_tool_right"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CompositeSprites/Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CompositeSprites/Hair:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CompositeSprites/Shirt:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CompositeSprites/Pants:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CompositeSprites/Shoes:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "using_tool_up"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CompositeSprites/Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 8 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CompositeSprites/Hair:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 8 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CompositeSprites/Shirt:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 8 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CompositeSprites/Pants:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 8 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CompositeSprites/Shoes:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 8 ]
+}
+
+[sub_resource type="Animation" id=6]
 resource_name = "walk_down"
 length = 0.5
 loop = true
@@ -540,7 +794,7 @@ tracks/6/keys = {
 "values": [  ]
 }
 
-[sub_resource type="Animation" id=59]
+[sub_resource type="Animation" id=7]
 resource_name = "walk_left"
 length = 0.5
 loop = true
@@ -629,7 +883,7 @@ tracks/6/keys = {
 "values": [  ]
 }
 
-[sub_resource type="Animation" id=60]
+[sub_resource type="Animation" id=8]
 resource_name = "walk_right"
 length = 0.5
 loop = true
@@ -718,7 +972,7 @@ tracks/6/keys = {
 "values": [  ]
 }
 
-[sub_resource type="Animation" id=61]
+[sub_resource type="Animation" id=9]
 resource_name = "walk_up"
 length = 0.5
 loop = true
@@ -807,10 +1061,10 @@ tracks/6/keys = {
 "values": [  ]
 }
 
-[sub_resource type="RectangleShape2D" id=52]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 6, 6 )
 
-[sub_resource type="CircleShape2D" id=62]
+[sub_resource type="CircleShape2D" id=11]
 radius = 54.7682
 
 [node name="Player" type="KinematicBody2D" groups=["Persist", "scene_manager_entity_nodes"]]
@@ -854,22 +1108,26 @@ hframes = 38
 [node name="Accessory" type="Sprite" parent="CompositeSprites"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/RESET = SubResource( 53 )
-anims/idle_down = SubResource( 54 )
-anims/idle_left = SubResource( 55 )
-anims/idle_right = SubResource( 56 )
-anims/idle_up = SubResource( 57 )
-anims/walk_down = SubResource( 58 )
-anims/walk_left = SubResource( 59 )
-anims/walk_right = SubResource( 60 )
-anims/walk_up = SubResource( 61 )
+anims/RESET = SubResource( 1 )
+anims/idle_down = SubResource( 2 )
+anims/idle_left = SubResource( 3 )
+anims/idle_right = SubResource( 4 )
+anims/idle_up = SubResource( 5 )
+anims/using_tool_down = SubResource( 12 )
+anims/using_tool_left = SubResource( 13 )
+anims/using_tool_right = SubResource( 14 )
+anims/using_tool_up = SubResource( 15 )
+anims/walk_down = SubResource( 6 )
+anims/walk_left = SubResource( 7 )
+anims/walk_right = SubResource( 8 )
+anims/walk_up = SubResource( 9 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 10 )
-shape = SubResource( 52 )
+shape = SubResource( 10 )
 
 [node name="PlayerTileAnchor" type="Node2D" parent="."]
-position = Vector2( 0, 16 )
+position = Vector2( 0, 10 )
 
 [node name="PickupArea" type="Area2D" parent="."]
 collision_layer = 0
@@ -877,7 +1135,7 @@ collision_mask = 4
 script = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
-shape = SubResource( 62 )
+shape = SubResource( 11 )
 
 [node name="Light2D" type="Light2D" parent="." groups=["Lights"]]
 show_behind_parent = true
@@ -885,6 +1143,138 @@ scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 9 )
 color = Color( 1, 1, 1, 0.52549 )
 energy = 0.75
+
+[node name="StateMachine" type="Node2D" parent="."]
+script = ExtResource( 10 )
+
+[node name="PlayerDebugUI" type="CanvasLayer" parent="."]
+script = ExtResource( 11 )
+
+[node name="MarginContainer" type="MarginContainer" parent="PlayerDebugUI"]
+margin_right = 131.0
+margin_bottom = 94.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="PlayerDebugUI/MarginContainer"]
+margin_right = 131.0
+margin_bottom = 94.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerDebugUI/MarginContainer/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrentState" type="Control" parent="PlayerDebugUI/MarginContainer/Panel/VBoxContainer"]
+margin_right = 131.0
+margin_bottom = 28.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerDebugUI/MarginContainer/Panel/VBoxContainer/CurrentState"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PlayerDebugUI/MarginContainer/Panel/VBoxContainer/CurrentState/HBoxContainer"]
+margin_top = 13.0
+margin_right = 87.0
+margin_bottom = 27.0
+text = "Current State:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="State" type="Label" parent="PlayerDebugUI/MarginContainer/Panel/VBoxContainer/CurrentState/HBoxContainer"]
+margin_left = 91.0
+margin_top = 13.0
+margin_right = 116.0
+margin_bottom = 27.0
+text = "Idle"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrentDir" type="Control" parent="PlayerDebugUI/MarginContainer/Panel/VBoxContainer"]
+margin_top = 32.0
+margin_right = 131.0
+margin_bottom = 61.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerDebugUI/MarginContainer/Panel/VBoxContainer/CurrentDir"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PlayerDebugUI/MarginContainer/Panel/VBoxContainer/CurrentDir/HBoxContainer"]
+margin_top = 13.0
+margin_right = 74.0
+margin_bottom = 27.0
+text = "Current Dir:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dir" type="Label" parent="PlayerDebugUI/MarginContainer/Panel/VBoxContainer/CurrentDir/HBoxContainer"]
+margin_left = 78.0
+margin_top = 13.0
+margin_right = 114.0
+margin_bottom = 27.0
+text = "Down"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrentCanControl" type="Control" parent="PlayerDebugUI/MarginContainer/Panel/VBoxContainer"]
+margin_top = 65.0
+margin_right = 131.0
+margin_bottom = 94.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerDebugUI/MarginContainer/Panel/VBoxContainer/CurrentCanControl"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PlayerDebugUI/MarginContainer/Panel/VBoxContainer/CurrentCanControl/HBoxContainer"]
+margin_top = 13.0
+margin_right = 77.0
+margin_bottom = 27.0
+text = "Can Control:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="canControl" type="Label" parent="PlayerDebugUI/MarginContainer/Panel/VBoxContainer/CurrentCanControl/HBoxContainer"]
+margin_left = 81.0
+margin_top = 13.0
+margin_right = 109.0
+margin_bottom = 27.0
+text = "True"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="body_entered" from="PickupArea" to="PickupArea" method="_on_PickupArea_body_entered"]
 [connection signal="body_exited" from="PickupArea" to="PickupArea" method="_on_PickupArea_body_exited"]

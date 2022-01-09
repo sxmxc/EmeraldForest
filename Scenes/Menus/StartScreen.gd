@@ -30,7 +30,8 @@ func _on_NewGameButton_pressed():
 
 
 func _on_ContinueButton_pressed():
-	pass
+	Global._load_game()
+	SceneManager.change_scene("res://Scenes/Levels/Dev.tscn")
 
 
 func _on_SettingsButton_pressed():

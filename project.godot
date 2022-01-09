@@ -124,6 +124,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/GGS/src/utils.gd"
 }, {
+"base": "State",
+"class": "IdleState",
+"language": "GDScript",
+"path": "res://Core/StateMachine/PlayerStates/IdleState.gd"
+}, {
 "base": "Reference",
 "class": "JSONBeautifier",
 "language": "GDScript",
@@ -169,6 +174,21 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/scene_manager/SceneManagerConstants.gd"
 }, {
+"base": "Node2D",
+"class": "State",
+"language": "GDScript",
+"path": "res://Core/StateMachine/State.gd"
+}, {
+"base": "Reference",
+"class": "StateFactory",
+"language": "GDScript",
+"path": "res://Core/StateMachine/StateFactory.gd"
+}, {
+"base": "Node2D",
+"class": "StateMachine",
+"language": "GDScript",
+"path": "res://Core/StateMachine/StateMachine.gd"
+}, {
 "base": "Resource",
 "class": "TilesetProperties",
 "language": "GDScript",
@@ -178,6 +198,16 @@ _global_script_classes=[ {
 "class": "Timeline",
 "language": "GDScript",
 "path": "res://addons/event_system_plugin/resources/timeline_class/timeline_class.gd"
+}, {
+"base": "State",
+"class": "UsingToolState",
+"language": "GDScript",
+"path": "res://Core/StateMachine/PlayerStates/UsingToolState.gd"
+}, {
+"base": "State",
+"class": "WalkState",
+"language": "GDScript",
+"path": "res://Core/StateMachine/PlayerStates/WalkState.gd"
 } ]
 _global_script_class_icons={
 "BaseInput": "",
@@ -203,6 +233,7 @@ _global_script_class_icons={
 "EventShow": "",
 "EventWait": "",
 "GGSUtils": "",
+"IdleState": "",
 "JSONBeautifier": "",
 "LayerGroup": "",
 "LayeredSprite": "",
@@ -212,8 +243,13 @@ _global_script_class_icons={
 "PortraitManager": "",
 "Print": "res://addons/katuiche-colorful-console/class/icons/class.svg",
 "SceneManagerConstants": "",
+"State": "",
+"StateFactory": "",
+"StateMachine": "",
 "TilesetProperties": "",
-"Timeline": "res://addons/event_system_plugin/assets/icons/timeline_icon.png"
+"Timeline": "res://addons/event_system_plugin/assets/icons/timeline_icon.png",
+"UsingToolState": "",
+"WalkState": ""
 }
 
 [application]
@@ -253,7 +289,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/AsepriteWizard/plugin.cfg", "res://addons/GGS/plugin.cfg", "res://addons/ResolutionManager/plugin.cfg", "res://addons/event_system_plugin/plugin.cfg", "res://addons/frontrider.tiledtools/plugin.cfg", "res://addons/gut/plugin.cfg", "res://addons/katuiche-colorful-console/plugin.cfg", "res://addons/orphan_import_file_cleaner/plugin.cfg", "res://addons/quentincaffeino/console-csharp/plugin.cfg", "res://addons/quentincaffeino/console/plugin.cfg", "res://addons/scene_manager/plugin.cfg", "res://addons/terminal/plugin.cfg", "res://addons/textalog/plugin.cfg", "res://addons/vnen.tiled_importer/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/AsepriteWizard/plugin.cfg", "res://addons/GGS/plugin.cfg", "res://addons/ResolutionManager/plugin.cfg", "res://addons/event_system_plugin/plugin.cfg", "res://addons/frontrider.tiledtools/plugin.cfg", "res://addons/katuiche-colorful-console/plugin.cfg", "res://addons/orphan_import_file_cleaner/plugin.cfg", "res://addons/quentincaffeino/console-csharp/plugin.cfg", "res://addons/quentincaffeino/console/plugin.cfg", "res://addons/scene_manager/plugin.cfg", "res://addons/terminal/plugin.cfg", "res://addons/textalog/plugin.cfg", "res://addons/vnen.tiled_importer/plugin.cfg" )
 
 [gdnative]
 

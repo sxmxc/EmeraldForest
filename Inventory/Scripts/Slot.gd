@@ -70,11 +70,11 @@ func _put_into_slot(new_item):
 	_refresh_style()
 
 func _remove_item():
-	if slot_type == SlotType.QUICKBAR:
-		if is_instance_valid(item):
-			remove_child(item)
-			item = null
-			_refresh_style()
+#	if slot_type == SlotType.QUICKBAR:
+	if is_instance_valid(item):
+		remove_child(item)
+		item = null
+		_refresh_style()
 
 func _initialize_item(item_name, item_quantity):
 	if item == null:

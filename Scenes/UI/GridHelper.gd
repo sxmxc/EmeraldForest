@@ -54,6 +54,8 @@ func _get_adjacent_tiles(tm):
 #need to move this into tool specific
 func _unhandled_input(_event):	
 	if Input.is_action_pressed("player_use_tool"):
-		PlayerInventory._use_active_item(tile_map, _get_active_tile(tile_map))
+		player.facing = _get_active_tile(tile_map) - tile_map.world_to_map(player.get_node("PlayerTileAnchor").global_position)
+		player._use_item(tile_map, _get_active_tile(tile_map))
+		
 		
 		

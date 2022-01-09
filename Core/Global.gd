@@ -22,6 +22,13 @@ var player_name = "Steeb"
 var player
 onready var player_data = {
 	"playername" : player_name,
+	"inventory" : { 0: ["Copper Pickaxe", 1],\
+	1: ["Copper Axe", 1],\
+	2: ["Copper Ore", 97],\
+	3: ["Watering Can", 1],\
+	4: ["Seed Pack", 9]
+#--> slot_index: [item_name, quantity]
+},
 	"body" : 0,
 	"hair" : 0,
 	"shirt" : 0,
@@ -75,7 +82,9 @@ func _store_player(data):
 
 func _retrieve_player():
 	return player_data
-
+func _clear_player():
+	player_data = null
+	
 func _save_game():
 	var save_game = File.new()
 	save_game.open("user://savegame.save", File.WRITE)
@@ -102,34 +111,22 @@ func _load_game():
 	var save_game = File.new()
 	if not save_game.file_exists("user://savegame.save"):
 		return # Error! We don't have a save to load.
-
-	# We need to revert the game state so we're not cloning objects
-	# during loading. This will vary wildly depending on the needs of a
-	# project, so take care with this step.
-	# For our example, we will accomplish this by deleting saveable objects.
-	var save_nodes = get_tree().get_nodes_in_group("Persist")
-	for i in save_nodes:
-		i.queue_free()
-
-	# Load the file line by line and process that dictionary to restore
-	# the object it represents.
+#	# Load the file line by line and process that dictionary to restore
+#	# the object it represents.
+	_clear_player()
 	save_game.open("user://savegame.save", File.READ)
 	while save_game.get_position() < save_game.get_len():
-		# Get the saved dictionary from the next line in the save file
+#		# Get the saved dictionary from the next line in the save file
 		var node_data = parse_json(save_game.get_line())
-
-		# Firstly, we need to create the object and add it to the tree and set its position.
-		var new_object = load(node_data["filename"]).instance()
-		get_node(node_data["spawn_parent"]).add_child(new_object)
-		new_object.position = node_data["spawn_point"]
-
-		# Now we set the remaining variables.
+		var player_data = {}
+#		# Now we set the remaining variables.
 		for i in node_data.keys():
 			if i == "filename" or i == "parent" or i == "pos_x" or i == "pos_y":
 				continue
-			new_object.set(i, node_data[i])
-			
+			player_data[i] = node_data[i]
+		_store_player(player_data)
 	save_game.close()
+	pass
 
 func _notification(notif):
 	if notif == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:

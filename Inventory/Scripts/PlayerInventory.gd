@@ -14,14 +14,16 @@ var qb_slots = []
 var current_active_slot = 0
 
 var inventory = {
-	0: ["Copper Pickaxe", 1],
-	1: ["Copper Axe", 1],
-	2: ["Copper Ore", 97],
-	3: ["Watering Can", 1],
-	4: ["Seed Pack", 97]
-#--> slot_index: [item_name, quantity]
 }
 
+func _save():
+	return inventory
+	
+func _load(data):
+	inventory = {}
+	for item in data:
+		_add_item(data[item][0], data[item][1])
+	emit_signal('inventory_updated')
 
 func _ready():
 	pass
@@ -66,6 +68,15 @@ func _remove_item(slot: slot_class):
 func _add_item_quantity(slot: slot_class, quantity_to_add):
 	inventory[slot.slot_idx][1] += quantity_to_add
 	emit_signal('inventory_updated')
+	
+func _remove_item_quantity(item_name, quantity_to_remove):
+	for i in inventory:
+		if inventory[i][0] == item_name:
+			inventory[i][1] -= quantity_to_remove
+			if inventory[i][1] <= 0:
+				inventory.erase(i)
+				slots[i]._remove_item()
+	emit_signal('inventory_updated')
 
 func _update_slot_visual(slot_index,item_name, item_quantity ):
 	var slot = slots[slot_index]
@@ -73,9 +84,12 @@ func _update_slot_visual(slot_index,item_name, item_quantity ):
 		slot.item._set_item(item_name, item_quantity)
 	else:
 		slot._initialize_item(item_name, item_quantity)
+		
 func _use_active_item(tm, ft):
 	if(slots[current_active_slot].item != null):
+		Print.line(Print.BLUE, "Attempting to use an item " + slots[current_active_slot].item.item_name)
 		slots[current_active_slot].item._use_item(tm, ft)
+		
 func _active_item_scroll_up():
 	current_active_slot = (current_active_slot + 1) % NUM_QUICKBAR_SLOTS
 	emit_signal("active_item_updated")
