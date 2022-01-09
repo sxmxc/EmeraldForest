@@ -149,6 +149,15 @@ margin_bottom = 768.0
 [node name="OptionButton" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2" index="1"]
 items = [ "Male", null, false, 0, null, "Female", null, false, 1, null, "Other", null, false, 2, null ]
 
+[node name="Skin Color" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Skin/Panel/MarginContainer" index="0"]
+margin_bottom = 32.0
+
+[node name="Skin Color" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Hair/CenterContainer/Panel/MarginContainer" index="0"]
+margin_bottom = 24.0
+
+[node name="Skin Color" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Beard/CenterContainer/Panel/MarginContainer" index="0"]
+margin_bottom = 24.0
+
 [node name="SettingsMenu" parent="Menu/MenuRoot" instance=ExtResource( 5 )]
 visible = false
 anchor_left = 0.0

@@ -815,7 +815,10 @@ extents = Vector2( 6, 6 )
 [sub_resource type="CircleShape2D" id=11]
 radius = 54.7682
 
-[node name="Player" type="KinematicBody2D" groups=["Persist", "scene_manager_entity_nodes"]]
+[node name="Player" type="KinematicBody2D" groups=[
+"Persist",
+"scene_manager_entity_nodes",
+]]
 position = Vector2( 681, 382 )
 scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 1 )
@@ -881,7 +884,9 @@ script = ExtResource( 8 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
 shape = SubResource( 11 )
 
-[node name="Light2D" type="Light2D" parent="." groups=["Lights"]]
+[node name="Light2D" type="Light2D" parent="." groups=[
+"Lights",
+]]
 show_behind_parent = true
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 9 )
@@ -918,7 +923,7 @@ __meta__ = {
 
 [node name="CurrentState" type="Control" parent="PlayerDebugUI/MarginContainer/Panel/VBoxContainer"]
 margin_right = 131.0
-margin_bottom = 29.0
+margin_bottom = 18.0
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
@@ -951,9 +956,9 @@ __meta__ = {
 }
 
 [node name="CurrentDir" type="Control" parent="PlayerDebugUI/MarginContainer/Panel/VBoxContainer"]
-margin_top = 33.0
+margin_top = 22.0
 margin_right = 131.0
-margin_bottom = 63.0
+margin_bottom = 40.0
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
@@ -981,6 +986,41 @@ margin_top = 13.0
 margin_right = 114.0
 margin_bottom = 27.0
 text = "Down"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrentCanControl" type="Control" parent="PlayerDebugUI/MarginContainer/Panel/VBoxContainer"]
+margin_top = 44.0
+margin_right = 131.0
+margin_bottom = 63.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerDebugUI/MarginContainer/Panel/VBoxContainer/CurrentCanControl"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PlayerDebugUI/MarginContainer/Panel/VBoxContainer/CurrentCanControl/HBoxContainer"]
+margin_top = 13.0
+margin_right = 77.0
+margin_bottom = 27.0
+text = "Can Control:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="canControl" type="Label" parent="PlayerDebugUI/MarginContainer/Panel/VBoxContainer/CurrentCanControl/HBoxContainer"]
+margin_left = 81.0
+margin_top = 13.0
+margin_right = 109.0
+margin_bottom = 27.0
+text = "True"
 __meta__ = {
 "_edit_use_anchors_": false
 }
