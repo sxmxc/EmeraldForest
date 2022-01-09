@@ -132,7 +132,7 @@ func _update_state_machine():
 			facing = Vector2.UP
 			
 		if velocity != Vector2.ZERO:
-			$StateMachine.move()
+			$StateMachine._update()
 			
 
 func _physics_process(delta):

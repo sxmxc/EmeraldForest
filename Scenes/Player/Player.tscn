@@ -815,10 +815,7 @@ extents = Vector2( 6, 6 )
 [sub_resource type="CircleShape2D" id=11]
 radius = 54.7682
 
-[node name="Player" type="KinematicBody2D" groups=[
-"Persist",
-"scene_manager_entity_nodes",
-]]
+[node name="Player" type="KinematicBody2D" groups=["Persist", "scene_manager_entity_nodes"]]
 position = Vector2( 681, 382 )
 scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 1 )
@@ -884,9 +881,7 @@ script = ExtResource( 8 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
 shape = SubResource( 11 )
 
-[node name="Light2D" type="Light2D" parent="." groups=[
-"Lights",
-]]
+[node name="Light2D" type="Light2D" parent="." groups=["Lights"]]
 show_behind_parent = true
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 9 )

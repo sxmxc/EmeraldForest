@@ -17,7 +17,9 @@ func _setup(b, a):
 func _process(_delta):
 	pass		
 	
-
+func _update():
+	move()
+	
 func move():
 	state.move()
 

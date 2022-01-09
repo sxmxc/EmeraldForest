@@ -173,46 +173,46 @@ margin_bottom = 112.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/GameClockUI/MarginContainer/VBoxContainer"]
 margin_right = 198.0
-margin_bottom = 33.0
+margin_bottom = 14.0
 alignment = 1
 
 [node name="Month" type="Label" parent="UI/GameClockUI/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_left = 48.0
-margin_right = 86.0
-margin_bottom = 33.0
+margin_left = 66.0
+margin_right = 84.0
+margin_bottom = 14.0
 text = "Jan"
 
 [node name="Day" type="Label" parent="UI/GameClockUI/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_left = 90.0
-margin_right = 98.0
-margin_bottom = 33.0
+margin_left = 88.0
+margin_right = 96.0
+margin_bottom = 14.0
 text = "1"
 
 [node name="Year" type="Label" parent="UI/GameClockUI/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_left = 102.0
-margin_right = 149.0
-margin_bottom = 33.0
+margin_left = 100.0
+margin_right = 132.0
+margin_bottom = 14.0
 text = "2021"
 align = 1
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="UI/GameClockUI/MarginContainer/VBoxContainer"]
-margin_top = 37.0
+margin_top = 18.0
 margin_right = 198.0
-margin_bottom = 70.0
+margin_bottom = 32.0
 custom_constants/separation = 5
 alignment = 1
 
 [node name="Weekday" type="Label" parent="UI/GameClockUI/MarginContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 55.0
-margin_right = 97.0
-margin_bottom = 33.0
+margin_left = 68.0
+margin_right = 96.0
+margin_bottom = 14.0
 text = "Mon"
 align = 3
 
 [node name="Time" type="Label" parent="UI/GameClockUI/MarginContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 102.0
-margin_right = 142.0
-margin_bottom = 33.0
+margin_left = 101.0
+margin_right = 129.0
+margin_bottom = 14.0
 text = "1:00"
 align = 1
 valign = 1
