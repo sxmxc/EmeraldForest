@@ -50,6 +50,9 @@ func _ready():
 	#accessory_sprite.texture = composite_sprites.accessory_spritesheets[0]
 	GameClock.connect("night", self, "_on_night")
 	GameClock.connect("morning", self, "_on_morning")
+	$StateMachine._setup(self, $AnimationPlayer)
+	$StateMachine.change_state("idle")
+	
 
 func _load_data(data):
 	current = data
@@ -71,7 +74,10 @@ func _save():
 	current["year"] = 0
 	current["cash"] = 100
 	return current
-
+	
+func _set_control(value = true):
+	can_control = value
+	
 func _get_input():
 	if can_control: 
 		velocity = Vector2.ZERO
@@ -102,14 +108,40 @@ func _get_input():
 			current_animation = "walk_" + direction
 		
 	
-	
+func _update_state_machine():
+	if can_control: 
+		velocity = Vector2.ZERO
+		if Input.is_action_pressed('right'):
+			velocity.x += 1
+			direction = "right"
+			facing = Vector2.RIGHT
+			
+		if Input.is_action_pressed('left'):
+			velocity.x -= 1
+			direction = "left"
+			facing = Vector2.LEFT
+			
+		if Input.is_action_pressed('down'):
+			velocity.y += 1
+			direction = "down"
+			facing = Vector2.DOWN
+			
+		if Input.is_action_pressed('up'):
+			velocity.y -= 1
+			direction = "up"
+			facing = Vector2.UP
+			
+		if velocity != Vector2.ZERO:
+			$StateMachine.move()
+			
 
 func _physics_process(delta):
-	_get_input()
+#	_get_input()
+	_update_state_machine()
 	_pickup_items()
-	if can_control:
-		$AnimationPlayer.play(current_animation)
-		velocity = move_and_slide(velocity) * delta
+#	if can_control:
+#		$AnimationPlayer.play(current_animation)
+#		velocity = move_and_slide(velocity) * delta
 
 func _pickup_items():
 	if $PickupArea.items_in_range.size() > 0:

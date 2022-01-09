@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Core/Player.gd" type="Script" id=1]
 [ext_resource path="res://Images/Assets/SpriteSheets/Player/Base/male_base_0.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Scenes/Player/CompositeSprites.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/Player/PickupArea.gd" type="Script" id=8]
 [ext_resource path="res://Images/Assets/light.png" type="Texture" id=9]
+[ext_resource path="res://Core/StateMachine/StateMachine.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/Player/PlayerDebugUI.gd" type="Script" id=11]
 
 [sub_resource type="Animation" id=53]
 length = 0.001
@@ -885,6 +887,93 @@ scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 9 )
 color = Color( 1, 1, 1, 0.52549 )
 energy = 0.75
+
+[node name="StateMachine" type="Node2D" parent="."]
+script = ExtResource( 10 )
+
+[node name="PlayerDebugUI" type="CanvasLayer" parent="."]
+script = ExtResource( 11 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerDebugUI"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -67.0
+margin_top = 193.0
+margin_right = 60.0
+margin_bottom = 264.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrentState" type="Control" parent="PlayerDebugUI/VBoxContainer"]
+margin_right = 127.0
+margin_bottom = 33.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerDebugUI/VBoxContainer/CurrentState"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PlayerDebugUI/VBoxContainer/CurrentState/HBoxContainer"]
+margin_top = 13.0
+margin_right = 87.0
+margin_bottom = 27.0
+text = "Current State:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="State" type="Label" parent="PlayerDebugUI/VBoxContainer/CurrentState/HBoxContainer"]
+margin_left = 91.0
+margin_top = 13.0
+margin_right = 116.0
+margin_bottom = 27.0
+text = "Idle"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CurrentDir" type="Control" parent="PlayerDebugUI/VBoxContainer"]
+margin_top = 37.0
+margin_right = 127.0
+margin_bottom = 71.0
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PlayerDebugUI/VBoxContainer/CurrentDir"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="PlayerDebugUI/VBoxContainer/CurrentDir/HBoxContainer"]
+margin_top = 13.0
+margin_right = 74.0
+margin_bottom = 27.0
+text = "Current Dir:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dir" type="Label" parent="PlayerDebugUI/VBoxContainer/CurrentDir/HBoxContainer"]
+margin_left = 78.0
+margin_top = 13.0
+margin_right = 114.0
+margin_bottom = 27.0
+text = "Down"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="body_entered" from="PickupArea" to="PickupArea" method="_on_PickupArea_body_entered"]
 [connection signal="body_exited" from="PickupArea" to="PickupArea" method="_on_PickupArea_body_exited"]
