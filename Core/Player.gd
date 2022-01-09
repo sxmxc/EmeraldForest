@@ -22,7 +22,8 @@ onready var current = {
 	"pants" : 0,
 	"shoes" : 0,
 	"facialhair" : 0,
-	"accessory": 0	
+	"accessory": 0,
+	"date" : GameClock.current_date
 }
 
 
@@ -41,7 +42,7 @@ const composite_sprites = preload("res://Scenes/Player/CompositeSprites.gd")
 
 
 func _ready():
-	body_sprite.texture = composite_sprites.body_spritesheets[current["body"] ][1]
+	body_sprite.texture = composite_sprites.body_spritesheets[current["body"]][1]
 	hair_sprite.texture = composite_sprites.hair_spritesheets[current["hair"]][1]
 	shirt_sprite.texture = composite_sprites.shirts_spritesheets[current["shirt"]][1]
 	pants_sprite.texture = composite_sprites.pants_spritesheets[current["pants"]][1]
@@ -56,58 +57,31 @@ func _ready():
 
 func _load_data(data):
 	current = data
-	body_sprite.texture = composite_sprites.body_spritesheets[current["body"] ][1]
-	hair_sprite.texture = composite_sprites.hair_spritesheets[current["hair"]][1]
-	shirt_sprite.texture = composite_sprites.shirts_spritesheets[current["shirt"]][1]
-	pants_sprite.texture = composite_sprites.pants_spritesheets[current["pants"]][1]
-	shoes_sprite.texture = composite_sprites.shoes_spritesheets[current["shoes"]][1]
+	body_sprite.texture = composite_sprites.body_spritesheets[int(current["body"])][1]
+	hair_sprite.texture = composite_sprites.hair_spritesheets[int(current["hair"])][1]
+	shirt_sprite.texture = composite_sprites.shirts_spritesheets[int(current["shirt"])][1]
+	pants_sprite.texture = composite_sprites.pants_spritesheets[int(current["pants"])][1]
+	shoes_sprite.texture = composite_sprites.shoes_spritesheets[int(current["shoes"])][1]
 	#facialhair_sprite.texture = composite_sprites.facialhair_spritesheets[0]
 	#accessory_sprite.texture = composite_sprites.accessory_spritesheets[0]
+	PlayerInventory._load(data["inventory"])
 
 func _save():
 	current["filename"] = get_filename()
 	current["spawn_parent"] = spawn_parent
 	current["spawn_point"] = spawn_point
-	current["day"] = "Monday"
-	current["week"] = 1
-	current["month"] = "Jan"
-	current["year"] = 0
+	current["inventory"] = PlayerInventory._save()
+	current["date"] = GameClock.current_date
 	current["cash"] = 100
 	return current
 	
 func _set_control(value = true):
 	can_control = value
-	
-func _get_input():
-	if can_control: 
-		velocity = Vector2.ZERO
-		if Input.is_action_pressed('right'):
-			velocity.x += 1
-			direction = "right"
-			facing = Vector2.RIGHT
-		if Input.is_action_pressed('left'):
-			velocity.x -= 1
-			direction = "left"
-			facing = Vector2.LEFT
-		if Input.is_action_pressed('down'):
-			velocity.y += 1
-			direction = "down"
-			facing = Vector2.DOWN
-		if Input.is_action_pressed('up'):
-			velocity.y -= 1
-			direction = "up"
-			facing = Vector2.UP
-		
-		# Make sure diagonal movement isn't faster
 
-		velocity = velocity.normalized() * speed
-	
-		if (velocity == Vector2.ZERO):
-			current_animation = "idle_" + direction
-		else:
-			current_animation = "walk_" + direction
-		
-	
+func _use_item(tile_map, active_tile):
+	PlayerInventory._use_active_item(tile_map, active_tile)
+	$StateMachine.change_state("usingTool")
+
 func _update_state_machine():
 	if can_control: 
 		velocity = Vector2.ZERO
@@ -136,7 +110,6 @@ func _update_state_machine():
 			
 
 func _physics_process(delta):
-#	_get_input()
 	_update_state_machine()
 	_pickup_items()
 #	if can_control:

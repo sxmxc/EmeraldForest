@@ -31,3 +31,7 @@ func _on_ExitButton_pressed():
 
 func _on_QuitButton_pressed():
 	Global._confirm("Quit and return to Main Menu?", "_return_to_main_menu", "Confirmation")
+
+
+func _on_SaveButton_pressed():
+	Global._save_game()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Core/Player.gd" type="Script" id=1]
 [ext_resource path="res://Images/Assets/SpriteSheets/Player/Base/male_base_0.png" type="Texture" id=2]
@@ -453,6 +453,258 @@ tracks/6/keys = {
 "values": [  ]
 }
 
+[sub_resource type="Animation" id=12]
+resource_name = "using_tool_down"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CompositeSprites/Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CompositeSprites/Hair:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CompositeSprites/Shirt:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CompositeSprites/Pants:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CompositeSprites/Shoes:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "using_tool_left"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CompositeSprites/Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 9 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CompositeSprites/Hair:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 9 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CompositeSprites/Shirt:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 9 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CompositeSprites/Pants:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 9 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CompositeSprites/Shoes:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 9 ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "using_tool_right"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CompositeSprites/Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CompositeSprites/Hair:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CompositeSprites/Shirt:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CompositeSprites/Pants:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CompositeSprites/Shoes:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "using_tool_up"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CompositeSprites/Body:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 8 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CompositeSprites/Hair:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 8 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CompositeSprites/Shirt:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 8 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CompositeSprites/Pants:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 8 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CompositeSprites/Shoes:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 8 ]
+}
+
 [sub_resource type="Animation" id=6]
 resource_name = "walk_down"
 length = 0.5
@@ -815,10 +1067,7 @@ extents = Vector2( 6, 6 )
 [sub_resource type="CircleShape2D" id=11]
 radius = 54.7682
 
-[node name="Player" type="KinematicBody2D" groups=[
-"Persist",
-"scene_manager_entity_nodes",
-]]
+[node name="Player" type="KinematicBody2D" groups=["Persist", "scene_manager_entity_nodes"]]
 position = Vector2( 681, 382 )
 scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 1 )
@@ -864,6 +1113,10 @@ anims/idle_down = SubResource( 2 )
 anims/idle_left = SubResource( 3 )
 anims/idle_right = SubResource( 4 )
 anims/idle_up = SubResource( 5 )
+anims/using_tool_down = SubResource( 12 )
+anims/using_tool_left = SubResource( 13 )
+anims/using_tool_right = SubResource( 14 )
+anims/using_tool_up = SubResource( 15 )
 anims/walk_down = SubResource( 6 )
 anims/walk_left = SubResource( 7 )
 anims/walk_right = SubResource( 8 )
@@ -874,7 +1127,7 @@ position = Vector2( 0, 10 )
 shape = SubResource( 10 )
 
 [node name="PlayerTileAnchor" type="Node2D" parent="."]
-position = Vector2( 0, 16 )
+position = Vector2( 0, 10 )
 
 [node name="PickupArea" type="Area2D" parent="."]
 collision_layer = 0
@@ -884,9 +1137,7 @@ script = ExtResource( 8 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
 shape = SubResource( 11 )
 
-[node name="Light2D" type="Light2D" parent="." groups=[
-"Lights",
-]]
+[node name="Light2D" type="Light2D" parent="." groups=["Lights"]]
 show_behind_parent = true
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 9 )
@@ -901,14 +1152,14 @@ script = ExtResource( 11 )
 
 [node name="MarginContainer" type="MarginContainer" parent="PlayerDebugUI"]
 margin_right = 131.0
-margin_bottom = 63.0
+margin_bottom = 94.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Panel" type="Panel" parent="PlayerDebugUI/MarginContainer"]
 margin_right = 131.0
-margin_bottom = 63.0
+margin_bottom = 94.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -923,7 +1174,7 @@ __meta__ = {
 
 [node name="CurrentState" type="Control" parent="PlayerDebugUI/MarginContainer/Panel/VBoxContainer"]
 margin_right = 131.0
-margin_bottom = 18.0
+margin_bottom = 28.0
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
@@ -956,9 +1207,9 @@ __meta__ = {
 }
 
 [node name="CurrentDir" type="Control" parent="PlayerDebugUI/MarginContainer/Panel/VBoxContainer"]
-margin_top = 22.0
+margin_top = 32.0
 margin_right = 131.0
-margin_bottom = 40.0
+margin_bottom = 61.0
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
@@ -991,9 +1242,9 @@ __meta__ = {
 }
 
 [node name="CurrentCanControl" type="Control" parent="PlayerDebugUI/MarginContainer/Panel/VBoxContainer"]
-margin_top = 44.0
+margin_top = 65.0
 margin_right = 131.0
-margin_bottom = 63.0
+margin_bottom = 94.0
 size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false

@@ -9,7 +9,11 @@ var velocity = Vector2.ZERO
 var current_dir = Vector2.DOWN
 var direction_string = {
 	Vector2.DOWN : "down",
+	Vector2(-1,-1) : "up",
+	Vector2(-1,1) : "down",
 	Vector2.UP : "up",
+	Vector2(1,-1) : "up",
+	Vector2(1,1) : "down",
 	Vector2.LEFT: "left",
 	Vector2.RIGHT: "right"
 }
@@ -18,12 +22,14 @@ var direction_string = {
 func _physics_process(delta):
 	persistent_state.move_and_slide(persistent_state.velocity,current_dir)
 
-func setup(change_state, animated_sprite, persistent_state):
-	self.change_state = change_state
-	self.animated_sprite = animated_sprite
-	self.persistent_state = persistent_state
+func setup(changeState, anim, persistState):
+	self.change_state = changeState
+	self.animated_sprite = anim
+	self.persistent_state = persistState
 
 func move():
 	pass
 
+func _get_input():
+	pass
 
