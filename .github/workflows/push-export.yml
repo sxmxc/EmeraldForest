@@ -6,7 +6,7 @@ on:
       - dev
 env:
   GODOT_VERSION: 3.4.2
-  EXPORT_NAME: godot-game-template
+  EXPORT_NAME: emerald-forest-build
   ITCH_IO: ${{ false }} #set to true if you want to enable automatic itch.io deploy
   RELEASE_ANDROID: ${{ false }} #set to  true if you want to enable automatic android release export
 
@@ -46,7 +46,7 @@ jobs:
           PACKAGE: itch.zip
 
   export-linux:
-    if: true
+    if: false
     name: Linux Export
     runs-on: ubuntu-latest
     container:
@@ -124,7 +124,7 @@ jobs:
           PACKAGE: itch.zip
 
   export-mac:
-    if: true
+    if: false
     name: Mac Export
     runs-on: ubuntu-latest
     container:
