@@ -5,7 +5,7 @@
 [ext_resource path="res://Images/Assets/SpriteSheets/Player/Base/male_base_0.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://addons/textalog/nodes/dialogue_base_node/dialogue_base_node.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Cutscenes/Cutscene.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/Cutscenes/Intro_Scene_1.gd" type="Script" id=6]
 
 [sub_resource type="Resource" id=6]
 resource_name = "Timeline"

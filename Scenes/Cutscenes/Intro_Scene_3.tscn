@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://addons/event_system_plugin/nodes/event_manager/event_manager.gd" type="Script" id=1]
+[ext_resource path="res://addons/event_system_plugin/resources/timeline_class/timeline_class.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Cutscenes/Intro_Scene_3.gd" type="Script" id=3]
+[ext_resource path="res://addons/textalog/nodes/dialogue_base_node/dialogue_base_node.tscn" type="PackedScene" id=5]
+
+[sub_resource type="Resource" id=6]
+resource_name = "Timeline"
+script = ExtResource( 2 )
+_events = [  ]
+
+[node name="Intro_Scene_3" type="Node"]
+script = ExtResource( 3 )
+
+[node name="Dialog" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="DialogNode" parent="Dialog" instance=ExtResource( 5 )]
+margin_top = -276.0
+margin_bottom = -276.0
+
+[node name="EventManager" type="Node" parent="Dialog"]
+script = ExtResource( 1 )
+timeline = SubResource( 6 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 1, 1, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[connection signal="timeline_finished" from="Dialog/EventManager" to="." method="_on_EventManager_timeline_finished"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

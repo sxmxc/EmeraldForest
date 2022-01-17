@@ -17,26 +17,29 @@ const CELL_SIZE = Vector2(16,16)
 export(bool) var debug = true
 
 var farm_map
+var world
 
 var player_name = "Steeb"
 var player
-onready var player_data = {
+var default_data = {
 	"playername" : player_name,
-	"inventory" : { 0: ["Copper Pickaxe", 1],\
-	1: ["Copper Axe", 1],\
-	2: ["Copper Ore", 97],\
-	3: ["Watering Can", 1],\
-	4: ["Seed Pack", 9]
-#--> slot_index: [item_name, quantity]
-},
 	"body" : 0,
 	"hair" : 0,
 	"shirt" : 0,
 	"pants" : 0,
 	"shoes" : 0,
 	"facialhair" : 0,
-	"accessory": 0	
+	"accessory": 0,
+	"inventory" : { 0: ["Copper Pickaxe", 1],
+	1: ["Copper Axe", 1],
+	2: ["Copper Ore", 97], #need to remove this from default 
+	3: ["Watering Can", 1],
+	4: ["Seed Pack", 9] #need to remove this from default
+#--> slot_index: [item_name, quantity]
 }
+}
+
+onready var player_data = default_data
 
 var tile_dict = {}
 var tile_properties = {}
@@ -76,14 +79,27 @@ func _start_day():
 func _get_input():
 	if Input.is_action_just_pressed("ui_player_menu") && !Console.is_console_shown:
 		emit_signal("player_menu_requested")
+
+func _register_world(wrld):
+	world = wrld
+	farm_map = wrld.farm_map
+	world.connect("world_loaded", self, "_on_world_loaded")
+	world.connect("map_changed", self, "_on_map_changed")
+	world.connect("player_loaded_into_world", self, "_on_player_loaded_into_world")
 	
 func _store_player(data):
+#	for key in data.keys():
+#		player_data[key] = data[key]
 	player_data = data
+	
+func _set_player(p):
+	player = p
 
 func _retrieve_player():
 	return player_data
 func _clear_player():
-	player_data = null
+	player_data = default_data
+	SceneManager.get_entity("Player").current = player_data
 	
 func _save_game():
 	var save_game = File.new()
@@ -118,13 +134,13 @@ func _load_game():
 	while save_game.get_position() < save_game.get_len():
 #		# Get the saved dictionary from the next line in the save file
 		var node_data = parse_json(save_game.get_line())
-		var player_data = {}
+		var p_data = {}
 #		# Now we set the remaining variables.
 		for i in node_data.keys():
 			if i == "filename" or i == "parent" or i == "pos_x" or i == "pos_y":
 				continue
-			player_data[i] = node_data[i]
-		_store_player(player_data)
+			p_data[i] = node_data[i]
+		_store_player(p_data)
 	save_game.close()
 	pass
 
@@ -138,7 +154,34 @@ func _quit():
 	
 func _on_quit_request():
 	get_tree().notification(MainLoop.NOTIFICATION_WM_QUIT_REQUEST)
+	
+func _on_world_loaded():
+	player = SceneManager.get_entity("Player")
+	var spawn_points = get_tree().get_nodes_in_group("spawn_points")
+	var target_location
+	for point in spawn_points:
+		if point.id == 0:
+			target_location = point.global_position
+	
+	if player != null:
+		Print.line(Print.GREEN, "Player present")
+		SceneManager.get_entity("Player")._load_data(Global.player_data)
+		SceneManager.get_entity("Player")._set_control(true)
+		SceneManager.get_entity("Player").get_node("Light2D").visible = false
+		SceneManager.get_entity("Player").get_node("Camera2D").make_current()
+		SceneManager.get_entity("Player").global_position = target_location
+		GameClock._resume_game_clock()
+		
+	Print.line(Print.GREEN, "World Loaded")
+	
+	pass
 
+func _on_map_changed():
+	pass
+
+func _on_player_loaded_into_world():
+	pass
+	
 func _return_to_main_menu():
 	SceneManager.change_scene('res://Scenes/Menus/StartScreen.tscn')
 	if get_tree().paused:
@@ -178,3 +221,5 @@ func _set_debug(value: bool):
 	
 func _get_debug():
 	return debug
+	
+

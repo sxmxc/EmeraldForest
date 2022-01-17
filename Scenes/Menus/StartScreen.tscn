@@ -363,6 +363,7 @@ anims/title_menu_transition_in = SubResource( 2 )
 [connection signal="pressed" from="Menu/MenuRoot/MainMenu/Panel/Buttons/HBoxContainer/VBoxContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="Menu/MenuRoot/MainMenu/Panel/Buttons/HBoxContainer/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="menu_closed" from="Menu/MenuRoot/CharacterCreator" to="." method="_on_CharacterCreator_menu_closed"]
+[connection signal="start_confirmed" from="Menu/MenuRoot/CharacterCreator" to="." method="_on_CharacterCreator_start_confirmed"]
 [connection signal="menu_closed" from="Menu/MenuRoot/SettingsMenu" to="." method="_on_SettingsMenu_menu_closed"]
 
 [editable path="Menu/MenuRoot/MainMenu"]

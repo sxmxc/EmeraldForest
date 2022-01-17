@@ -7,6 +7,6 @@ func _ready():
 	animated_sprite.play("using_tool_" + direction_string[current_dir])
 	state_name = "Using Tool"
 	
-func on_anim_finish(anim):
+func on_anim_finish(_anim):
 	change_state.call_func("idle")
 

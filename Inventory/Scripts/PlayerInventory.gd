@@ -79,11 +79,12 @@ func _remove_item_quantity(item_name, quantity_to_remove):
 	emit_signal('inventory_updated')
 
 func _update_slot_visual(slot_index,item_name, item_quantity ):
-	var slot = slots[slot_index]
-	if slot.item != null:
-		slot.item._set_item(item_name, item_quantity)
-	else:
-		slot._initialize_item(item_name, item_quantity)
+	if !slots.empty():
+		var slot = slots[slot_index]
+		if slot.item != null:
+			slot.item._set_item(item_name, item_quantity)
+		else:
+			slot._initialize_item(item_name, item_quantity)
 		
 func _use_active_item(tm, ft):
 	if(slots[current_active_slot].item != null):

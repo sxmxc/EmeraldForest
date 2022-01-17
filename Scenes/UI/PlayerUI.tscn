@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scenes/UI/GameClockUI.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/Menus/Default.tres" type="Theme" id=4]
+[ext_resource path="res://Scenes/UI/PlayerMenuUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Inventory/Scenes/Quickbar.tscn" type="PackedScene" id=6]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="GameClockUI" type="Control" parent="."]
+pause_mode = 2
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -158.0
+margin_top = 40.0
+margin_right = -48.0
+margin_bottom = 104.0
+theme = ExtResource( 4 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="GameClockUI"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -198.0
+margin_top = -32.0
+margin_bottom = 80.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameClockUI/MarginContainer"]
+margin_right = 198.0
+margin_bottom = 112.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameClockUI/MarginContainer/VBoxContainer"]
+margin_right = 198.0
+margin_bottom = 33.0
+alignment = 1
+
+[node name="Month" type="Label" parent="GameClockUI/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 53.0
+margin_right = 87.0
+margin_bottom = 33.0
+text = "Jan"
+
+[node name="Day" type="Label" parent="GameClockUI/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 91.0
+margin_right = 98.0
+margin_bottom = 33.0
+text = "1"
+
+[node name="Year" type="Label" parent="GameClockUI/MarginContainer/VBoxContainer/HBoxContainer"]
+margin_left = 102.0
+margin_right = 145.0
+margin_bottom = 33.0
+text = "2021"
+align = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="GameClockUI/MarginContainer/VBoxContainer"]
+margin_top = 37.0
+margin_right = 198.0
+margin_bottom = 70.0
+custom_constants/separation = 5
+alignment = 1
+
+[node name="Weekday" type="Label" parent="GameClockUI/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 59.0
+margin_right = 96.0
+margin_bottom = 33.0
+text = "Mon"
+align = 3
+
+[node name="Time" type="Label" parent="GameClockUI/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_left = 101.0
+margin_right = 138.0
+margin_bottom = 33.0
+text = "1:00"
+align = 1
+valign = 1
+
+[node name="PlayerMenuUI" parent="." instance=ExtResource( 5 )]
+visible = false
+theme = ExtResource( 4 )
+
+[node name="Quickbar" parent="." instance=ExtResource( 6 )]
+margin_left = -275.0
+margin_top = -128.0
+margin_bottom = -70.0

@@ -19,7 +19,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "boss_man_enters":
 		event_manager.go_to_next_event()	
 	if anim_name == "player_quits":
-		SceneManager.change_scene("res://Scenes/Levels/Dev.tscn")
+		SceneManager.change_scene("res://Scenes/Cutscenes/Intro_Scene_2.tscn")
 
 
 func _on_EventManager_event_finished(event):

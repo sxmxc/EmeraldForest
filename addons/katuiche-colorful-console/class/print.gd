@@ -62,51 +62,51 @@ const CYAN_BACKGROUND_BRIGHT = "[0;106m";
 const WHITE_BACKGROUND_BRIGHT = "[0;107m";
 
 static func clear_console():
-    match OS.get_name():
-        'Windows': printraw(ESCAPE + 'c')
-        _: printraw(ESCAPE + 'c')
+	match OS.get_name():
+		'Windows': printraw(ESCAPE + 'c')
+		_: printraw(ESCAPE + 'c')
 
 static func _get_string(what, divider = ""):
-    var string := ""
-    if what is Array:
-        for thing in what:
-            string += String(thing) + divider
-    elif what is String:
-        string = what
-    else:
-        string = String(what)
-    return string
+	var string := ""
+	if what is Array:
+		for thing in what:
+			string += String(thing) + divider
+	elif what is String:
+		string = what
+	else:
+		string = String(what)
+	return string
 
 
 static func line(color, what) -> void:
-    set_color(color)
-    print(_get_string(what))
-    reset()
+	set_color(color)
+	print(_get_string(what))
+	reset()
 
 
 static func raw(color, what) -> void:
-    set_color(color)
-    printraw(_get_string(what))
-    reset()
+	set_color(color)
+	printraw(_get_string(what))
+	reset()
 
 static func s(color, what) -> void:
-    set_color(color)
-    print(_get_string(what, " "))
-    reset()
+	set_color(color)
+	print(_get_string(what, " "))
+	reset()
 
 static func t(color, what) -> void:
-    set_color(color)
-    print(_get_string(what, "   "))
-    reset()
+	set_color(color)
+	print(_get_string(what, "   "))
+	reset()
 
 static func debug(color, what) -> void:
-    set_color(color)
-    print(_get_string(what))
-    print_stack()
-    reset()
+	set_color(color)
+	print(_get_string(what))
+	print_stack()
+	reset()
 
 static func set_color(color):
-    printraw(color)
+	printraw(color)
 
 static func reset():
-    printraw(ESCAPE + COLOR_RESET)
+	printraw(ESCAPE + COLOR_RESET)

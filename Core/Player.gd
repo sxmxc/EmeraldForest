@@ -6,6 +6,8 @@ var velocity = Vector2.ZERO
 var direction = "down"
 var facing = Vector2.DOWN
 
+onready var grid_helper = $GridHelper
+
 export var can_control = false
 
 var current_animation = "idle_" + direction
@@ -13,6 +15,8 @@ var current_animation = "idle_" + direction
 var pickup_radius
 
 var player_name = Global.player_name
+
+signal player_loaded
 
 onready var current = {
 	"playername" : player_name,
@@ -49,10 +53,15 @@ func _ready():
 	shoes_sprite.texture = composite_sprites.shoes_spritesheets[current["shoes"]][1]
 	#facialhair_sprite.texture = composite_sprites.facialhair_spritesheets[0]
 	#accessory_sprite.texture = composite_sprites.accessory_spritesheets[0]
+# warning-ignore:return_value_discarded
 	GameClock.connect("night", self, "_on_night")
+# warning-ignore:return_value_discarded
 	GameClock.connect("morning", self, "_on_morning")
+	grid_helper.connect("grid_helper_ready", self, "_setup_grid_helper")
 	$StateMachine._setup(self, $AnimationPlayer)
 	$StateMachine.change_state("idle")
+	Global._set_player(self)
+	emit_signal("player_loaded")
 	
 
 func _load_data(data):
@@ -64,7 +73,8 @@ func _load_data(data):
 	shoes_sprite.texture = composite_sprites.shoes_spritesheets[int(current["shoes"])][1]
 	#facialhair_sprite.texture = composite_sprites.facialhair_spritesheets[0]
 	#accessory_sprite.texture = composite_sprites.accessory_spritesheets[0]
-	PlayerInventory._load(data["inventory"])
+	if data.has("inventory"):
+		PlayerInventory._load(data["inventory"])
 
 func _save():
 	current["filename"] = get_filename()
@@ -77,50 +87,55 @@ func _save():
 	
 func _set_control(value = true):
 	can_control = value
+	grid_helper._set_active(value)
 
+func _setup_grid_helper():
+	grid_helper._set_player(self)
+	Print.line(Print.GREEN,"Grid Helper setup on Player")
+
+#need to decouple this more? maybe? too dependent on tilemaps
 func _use_item(tile_map, active_tile):
 	PlayerInventory._use_active_item(tile_map, active_tile)
 	$StateMachine.change_state("usingTool")
 
 func _update_state_machine():
-	if can_control: 
-		velocity = Vector2.ZERO
-		if Input.is_action_pressed('right'):
-			velocity.x += 1
-			direction = "right"
-			facing = Vector2.RIGHT
-			
-		if Input.is_action_pressed('left'):
-			velocity.x -= 1
-			direction = "left"
-			facing = Vector2.LEFT
-			
-		if Input.is_action_pressed('down'):
-			velocity.y += 1
-			direction = "down"
-			facing = Vector2.DOWN
-			
-		if Input.is_action_pressed('up'):
-			velocity.y -= 1
-			direction = "up"
-			facing = Vector2.UP
-			
-		if velocity != Vector2.ZERO:
-			$StateMachine._update()
+	velocity = Vector2.ZERO
+	if Input.is_action_pressed('right'):
+		velocity.x += 1
+		direction = "right"
+		facing = Vector2.RIGHT
+		
+	if Input.is_action_pressed('left'):
+		velocity.x -= 1
+		direction = "left"
+		facing = Vector2.LEFT
+		
+	if Input.is_action_pressed('down'):
+		velocity.y += 1
+		direction = "down"
+		facing = Vector2.DOWN
+		
+	if Input.is_action_pressed('up'):
+		velocity.y -= 1
+		direction = "up"
+		facing = Vector2.UP
+		
+	if velocity != Vector2.ZERO:
+		$StateMachine._update()
 			
 
+# warning-ignore:unused_argument
 func _physics_process(delta):
-	_update_state_machine()
-	_pickup_items()
-#	if can_control:
-#		$AnimationPlayer.play(current_animation)
-#		velocity = move_and_slide(velocity) * delta
+	if can_control:
+		_update_state_machine()
+		_pickup_items()
 
 func _pickup_items():
 	if $PickupArea.items_in_range.size() > 0:
 		var item = $PickupArea.items_in_range.values()[0]
 		item._pick_up_item(self)
 		$PickupArea.items_in_range.erase(item)
+		
 func _change_shirt(): 
 	current["shirt"] = (current["shirt"] + 1) % composite_sprites.shirts_spritesheets.size()
 	shirt_sprite.texture = composite_sprites.shirts_spritesheets[current["shirt"]][1]

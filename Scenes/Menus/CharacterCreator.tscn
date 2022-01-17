@@ -95,7 +95,7 @@ margin_right = 360.0
 margin_bottom = 33.0
 
 [node name="Label" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
-margin_right = 64.0
+margin_right = 57.0
 margin_bottom = 33.0
 theme = ExtResource( 3 )
 text = "Name:"
@@ -103,7 +103,7 @@ align = 1
 valign = 1
 
 [node name="TextEdit" type="TextEdit" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
-margin_left = 68.0
+margin_left = 61.0
 margin_right = 360.0
 margin_bottom = 33.0
 size_flags_horizontal = 3
@@ -155,15 +155,15 @@ margin_right = 360.0
 margin_bottom = 57.0
 
 [node name="Label" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Skin"]
-margin_right = 51.0
+margin_right = 47.0
 margin_bottom = 33.0
 theme = ExtResource( 3 )
 text = "Skin:"
 align = 1
 
 [node name="Panel" type="Panel" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Skin"]
-margin_left = 55.0
-margin_right = 80.0
+margin_left = 51.0
+margin_right = 76.0
 margin_bottom = 33.0
 rect_min_size = Vector2( 25, 25 )
 
@@ -490,7 +490,7 @@ margin_right = 360.0
 margin_bottom = 279.0
 
 [node name="Label" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Acc"]
-margin_right = 104.0
+margin_right = 95.0
 margin_bottom = 33.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -499,8 +499,8 @@ text = "Accesory:"
 align = 1
 
 [node name="AccPrev" type="TextureButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Acc"]
-margin_left = 108.0
-margin_right = 155.0
+margin_left = 99.0
+margin_right = 152.0
 margin_bottom = 33.0
 size_flags_horizontal = 3
 texture_normal = SubResource( 15 )
@@ -509,8 +509,8 @@ stretch_mode = 5
 flip_h = true
 
 [node name="Current" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Acc"]
-margin_left = 159.0
-margin_right = 257.0
+margin_left = 156.0
+margin_right = 245.0
 margin_bottom = 33.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -521,8 +521,8 @@ align = 3
 valign = 3
 
 [node name="AccNext" type="TextureButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Acc"]
-margin_left = 261.0
-margin_right = 308.0
+margin_left = 249.0
+margin_right = 302.0
 margin_bottom = 33.0
 size_flags_horizontal = 3
 texture_normal = SubResource( 15 )
@@ -530,7 +530,7 @@ expand = true
 stretch_mode = 5
 
 [node name="EmptyMargin" type="Control" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Acc"]
-margin_left = 312.0
+margin_left = 306.0
 margin_right = 360.0
 margin_bottom = 33.0
 size_flags_horizontal = 3

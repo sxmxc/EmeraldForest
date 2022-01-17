@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Core/Player.gd" type="Script" id=1]
 [ext_resource path="res://Images/Assets/SpriteSheets/Player/Base/male_base_0.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Images/Assets/light.png" type="Texture" id=9]
 [ext_resource path="res://Core/StateMachine/StateMachine.gd" type="Script" id=10]
 [ext_resource path="res://Scenes/Player/PlayerDebugUI.gd" type="Script" id=11]
+[ext_resource path="res://Scenes/UI/GridHelper.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -1069,7 +1070,8 @@ radius = 54.7682
 
 [node name="Player" type="KinematicBody2D" groups=["Persist", "scene_manager_entity_nodes"]]
 position = Vector2( 681, 382 )
-scale = Vector2( 1.5, 1.5 )
+collision_layer = 3
+collision_mask = 3
 script = ExtResource( 1 )
 __meta__ = {
 "entity_name": "Player"
@@ -1275,6 +1277,8 @@ text = "True"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="GridHelper" parent="." instance=ExtResource( 12 )]
 
 [connection signal="body_entered" from="PickupArea" to="PickupArea" method="_on_PickupArea_body_entered"]
 [connection signal="body_exited" from="PickupArea" to="PickupArea" method="_on_PickupArea_body_exited"]

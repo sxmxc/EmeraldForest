@@ -19,6 +19,7 @@ var direction_string = {
 }
 
 # Writing _delta instead of delta here prevents the unused variable warning.
+# warning-ignore:unused_argument
 func _physics_process(delta):
 	persistent_state.move_and_slide(persistent_state.velocity,current_dir)
 

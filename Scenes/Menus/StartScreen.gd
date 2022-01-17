@@ -25,13 +25,14 @@ func _ready():
 
 
 func _on_NewGameButton_pressed():
+	Global._clear_player()
 	mainMenu.visible = false
 	charCreator.visible = true
 
 
 func _on_ContinueButton_pressed():
 	Global._load_game()
-	SceneManager.change_scene("res://Scenes/Levels/Dev.tscn")
+	SceneManager.change_scene("res://Core/World.tscn")
 
 
 func _on_SettingsButton_pressed():
@@ -49,3 +50,8 @@ func _on_SettingsMenu_menu_closed():
 
 func _on_CharacterCreator_menu_closed():
 	mainMenu.visible=true
+
+
+func _on_CharacterCreator_start_confirmed():
+	Global._store_player(SceneManager.get_entity("Player").current)
+	SceneManager.change_scene("res://Core/World.tscn")

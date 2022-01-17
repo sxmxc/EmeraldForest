@@ -1,5 +1,19 @@
 {
     "maps": [
+        {
+            "fileName": "farm_outside_1.tmx",
+            "height": 480,
+            "width": 960,
+            "x": 0,
+            "y": -64
+        },
+        {
+            "fileName": "town_1.tmx",
+            "height": 1536,
+            "width": 2720,
+            "x": 960,
+            "y": 416
+        }
     ],
     "onlyShowAdjacentMaps": false,
     "type": "world"

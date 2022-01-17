@@ -557,7 +557,7 @@ func make_layer(layer, parent, root, data):
 				# Translate from Tiled bottom-left position to Godot top-left
 				sprite.centered = false
 				sprite.region_filter_clip = options.uv_clip
-				sprite.offset = Vector2(0, -texture_size.y)
+				sprite.offset = Vector2(0, 0)
 
 				if not has_collisions:
 					object_layer.add_child(sprite)
@@ -702,7 +702,7 @@ func build_tileset_for_scene(tilesets, source_path, options):
 				result.tile_set_texture(gid, image)
 				result.tile_set_region(gid, region)
 				if options.apply_offset:
-					result.tile_set_texture_offset(gid, Vector2(0, -tilesize.y))
+					result.tile_set_texture_offset(gid, Vector2(0, 0))
 			elif not rel_id in ts.tiles:
 				gid += 1
 				continue
@@ -714,7 +714,7 @@ func build_tileset_for_scene(tilesets, source_path, options):
 					return image
 				result.tile_set_texture(gid, image)
 				if options.apply_offset:
-					result.tile_set_texture_offset(gid, Vector2(0, -image.get_height()))
+					result.tile_set_texture_offset(gid, Vector2(0, 0))
 
 			if "tiles" in ts and rel_id in ts.tiles and "objectgroup" in ts.tiles[rel_id] \
 					and "objects" in ts.tiles[rel_id].objectgroup:

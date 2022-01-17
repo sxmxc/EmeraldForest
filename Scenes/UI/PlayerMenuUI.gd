@@ -15,11 +15,11 @@ func toggle_menu():
 	if (!visible):
 		GameClock._pause_game_clock()
 		visible = true
-		get_tree().paused = true
+		Global.get_tree().paused = true
 	else:
 		GameClock._resume_game_clock()
 		visible = false
-		get_tree().paused = false
+		Global.get_tree().paused = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

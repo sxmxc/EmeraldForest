@@ -8,7 +8,7 @@ func _ready():
 	# Make sure diagonal movement isn't faster
 	persistent_state.velocity = persistent_state.velocity.normalized() * persistent_state.speed
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if (persistent_state.velocity == Vector2.ZERO):
 		change_state.call_func("idle")
 	else:

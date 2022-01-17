@@ -7,6 +7,8 @@ extends "res://Scenes/Menus/Menu.gd"
 onready var player = $HBoxContainer/CenterContainer/CharPreview/Player
 onready var confirmation = $Notifications/Alert/ConfirmationDialog
 
+signal start_confirmed
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	confirmation.get_cancel().connect("pressed", self, "_on_dialog_cancel")
@@ -67,8 +69,7 @@ func _on_AccPrev_pressed():
 
 
 func _on_ConfirmationDialog_confirmed():
-	Global._store_player(player.current)
-	SceneManager.change_scene('res://Scenes/Cutscenes/Intro_Scene_1.tscn')
+	emit_signal("start_confirmed")
 
 func _on_dialog_cancel():
 	confirmation.hide()

@@ -8,9 +8,9 @@
 [ext_resource path="res://Images/Assets/TileSets/Terrain.tres" type="TileSet" id=6]
 [ext_resource path="res://Inventory/WorldItems/WorldItem.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/UI/GridHelper.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Levels/TileMapExtended.gd" type="Script" id=9]
+[ext_resource path="res://Core/TileMapExtended.gd" type="Script" id=9]
 [ext_resource path="res://Inventory/Scenes/Quickbar.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/Levels/DayNight.gd" type="Script" id=11]
+[ext_resource path="res://Core/DayNight.gd" type="Script" id=11]
 [ext_resource path="res://Scenes/Menus/Default.tres" type="Theme" id=12]
 
 [sub_resource type="Animation" id=1]
@@ -109,7 +109,6 @@ tile_data = PoolIntArray( 131077, 5, 0, 327685, 4, 0, 524308, 6, 0 )
 
 [node name="Player" parent="Buildings" instance=ExtResource( 1 )]
 position = Vector2( 170, 90 )
-scale = Vector2( 1, 1 )
 collision_mask = 2
 
 [node name="Camera2D" parent="Buildings/Player" index="0"]
