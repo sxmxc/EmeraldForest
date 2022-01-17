@@ -82,3 +82,7 @@ func _on_Begin_pressed():
 func _on_Back_pressed():
 	visible = false
 	emit_signal("menu_closed")
+
+
+func _on_TextEdit_text_changed():
+	pass # Replace with function body.

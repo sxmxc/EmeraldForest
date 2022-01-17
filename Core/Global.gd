@@ -2,15 +2,15 @@ extends Node2D
 
 
 # Declare member variables here. Examples:
-const GRASS_ID = 1
+const GRASS_ID = [1, 2, 3, 4, 9, 10, 12, 17, 18, 19, 20, 25, 26, 27, 28, 6, 7, 8, 14, 15, 16, 22, 23, 24]
 const GRASS_NAME = "GrassSingle"
-const SOIL_ID = 7
+const SOIL_ID = [11, 5, 13, 21, 29, 30, 31, 32]
 const SOIL_NAME = "FertileAuto"
-const TILLED_SOIL_ID = 2
+const TILLED_SOIL_ID = 0
 const TILLED_SOIL_NAME = "TilledSoilSingle" 
-const WET_SOIL_ID = 9 
+const WET_SOIL_ID = 0 
 const WET_SOIL_NAME = "WateredSoilAuto"
-const SEEDED_SOIL_ID = 10
+const SEEDED_SOIL_ID = 0
 const SEEDED_SOIL_NAME = "SeedSingle"
 const CELL_SIZE = Vector2(16,16)
 
@@ -20,9 +20,11 @@ var farm_map
 var world
 
 var player_name = "Steeb"
+var farm_name = "Tegridy Farms"
 var player
 var default_data = {
 	"playername" : player_name,
+	"farmname": farm_name,
 	"body" : 0,
 	"hair" : 0,
 	"shirt" : 0,
@@ -40,10 +42,6 @@ var default_data = {
 }
 
 onready var player_data = default_data
-
-var tile_dict = {}
-var tile_properties = {}
-
 
 signal player_menu_requested
 signal day_end
@@ -85,7 +83,7 @@ func _register_world(wrld):
 	farm_map = wrld.farm_map
 	world.connect("world_loaded", self, "_on_world_loaded")
 	world.connect("map_changed", self, "_on_map_changed")
-	world.connect("player_loaded_into_world", self, "_on_player_loaded_into_world")
+	world.connect("map_instanced", self, "_on_map_instanced")
 	
 func _store_player(data):
 #	for key in data.keys():
@@ -156,6 +154,7 @@ func _on_quit_request():
 	get_tree().notification(MainLoop.NOTIFICATION_WM_QUIT_REQUEST)
 	
 func _on_world_loaded():
+	Print.line(Print.GREEN, "World Loaded")
 	player = SceneManager.get_entity("Player")
 	var spawn_points = get_tree().get_nodes_in_group("spawn_points")
 	var target_location
@@ -166,21 +165,23 @@ func _on_world_loaded():
 	if player != null:
 		Print.line(Print.GREEN, "Player present")
 		SceneManager.get_entity("Player")._load_data(Global.player_data)
+		#SceneManager.get_entity("Player").grid_helper._set_tilemap(world.farm_map)
 		SceneManager.get_entity("Player")._set_control(true)
 		SceneManager.get_entity("Player").get_node("Light2D").visible = false
 		SceneManager.get_entity("Player").get_node("Camera2D").make_current()
 		SceneManager.get_entity("Player").global_position = target_location
 		GameClock._resume_game_clock()
 		
-	Print.line(Print.GREEN, "World Loaded")
+	
 	
 	pass
 
 func _on_map_changed():
 	pass
 
-func _on_player_loaded_into_world():
-	pass
+
+func _on_map_instanced():
+	Print.line(Print.GREEN, "Map instanced")
 	
 func _return_to_main_menu():
 	SceneManager.change_scene('res://Scenes/Menus/StartScreen.tscn')

@@ -10,7 +10,7 @@ script = ExtResource( 2 )
 
 [node name="TravelPoint" parent="." index="5"]
 destination = "Farm Inside"
-destination_spawn = 1
+destination_spawn = 0
 
 [node name="TravelPoint2" parent="." index="8"]
 destination = "Farm Outside"

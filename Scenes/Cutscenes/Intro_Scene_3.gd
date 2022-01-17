@@ -17,5 +17,5 @@ func _on_EventManager_event_finished(event):
 	pass # Replace with function body.
 
 func _on_EventManager_timeline_finished(timeline_resource):
-	SceneManager.change_scene("res://Scenes/Levels/Farm_1.tscn")
+	SceneManager.change_scene("res://Core/World.tscn")
 

@@ -54,4 +54,4 @@ func _on_CharacterCreator_menu_closed():
 
 func _on_CharacterCreator_start_confirmed():
 	Global._store_player(SceneManager.get_entity("Player").current)
-	SceneManager.change_scene("res://Core/World.tscn")
+	SceneManager.change_scene("res://Scenes/Cutscenes/Intro_Scene_1.tscn")

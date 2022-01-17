@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tileset version="1.5" tiledversion="1.7.2" name="farm_outside_2" tilewidth="16" tileheight="16" tilecount="32" columns="8">
  <image source="../../../Art/farm_outside_2.png" width="128" height="64"/>
- <tile id="0" probability="0.25">
+ <tile id="0" type="Grass" probability="0.25">
   <properties>
    <property name="buildable" type="bool" value="true"/>
    <property name="seeded" type="bool" value="false"/>
@@ -9,7 +9,7 @@
    <property name="watered" type="bool" value="false"/>
   </properties>
  </tile>
- <tile id="1">
+ <tile id="1" type="Grass">
   <properties>
    <property name="buildable" type="bool" value="false"/>
    <property name="seeded" type="bool" value="false"/>
@@ -17,7 +17,7 @@
    <property name="watered" type="bool" value="false"/>
   </properties>
  </tile>
- <tile id="2">
+ <tile id="2" type="Grass">
   <properties>
    <property name="buildable" type="bool" value="false"/>
    <property name="seeded" type="bool" value="false"/>
@@ -25,7 +25,7 @@
    <property name="watered" type="bool" value="false"/>
   </properties>
  </tile>
- <tile id="3">
+ <tile id="3" type="Grass">
   <properties>
    <property name="buildable" type="bool" value="false"/>
    <property name="seeded" type="bool" value="false"/>
@@ -33,7 +33,7 @@
    <property name="watered" type="bool" value="false"/>
   </properties>
  </tile>
- <tile id="4">
+ <tile id="4" type="Dirt">
   <properties>
    <property name="buildable" type="bool" value="false"/>
    <property name="seeded" type="bool" value="false"/>
@@ -41,7 +41,7 @@
    <property name="watered" type="bool" value="false"/>
   </properties>
  </tile>
- <tile id="5">
+ <tile id="5" type="Grass">
   <properties>
    <property name="buildable" type="bool" value="false"/>
    <property name="seeded" type="bool" value="false"/>
@@ -49,7 +49,7 @@
    <property name="watered" type="bool" value="false"/>
   </properties>
  </tile>
- <tile id="6">
+ <tile id="6" type="Grass">
   <properties>
    <property name="buildable" type="bool" value="false"/>
    <property name="seeded" type="bool" value="false"/>
@@ -57,7 +57,7 @@
    <property name="watered" type="bool" value="false"/>
   </properties>
  </tile>
- <tile id="7">
+ <tile id="7" type="Grass">
   <properties>
    <property name="buildable" type="bool" value="false"/>
    <property name="seeded" type="bool" value="false"/>
@@ -65,7 +65,7 @@
    <property name="watered" type="bool" value="false"/>
   </properties>
  </tile>
- <tile id="8" probability="0.25">
+ <tile id="8" type="Grass" probability="0.25">
   <properties>
    <property name="buildable" type="bool" value="true"/>
    <property name="seeded" type="bool" value="false"/>
@@ -73,7 +73,7 @@
    <property name="watered" type="bool" value="false"/>
   </properties>
  </tile>
- <tile id="9">
+ <tile id="9" type="Grass">
   <properties>
    <property name="buildable" type="bool" value="false"/>
    <property name="seeded" type="bool" value="false"/>
@@ -81,7 +81,7 @@
    <property name="watered" type="bool" value="false"/>
   </properties>
  </tile>
- <tile id="10">
+ <tile id="10" type="Dirt">
   <properties>
    <property name="buildable" type="bool" value="false"/>
    <property name="seeded" type="bool" value="false"/>
@@ -89,7 +89,7 @@
    <property name="watered" type="bool" value="false"/>
   </properties>
  </tile>
- <tile id="11">
+ <tile id="11" type="Grass">
   <properties>
    <property name="buildable" type="bool" value="false"/>
    <property name="seeded" type="bool" value="false"/>
@@ -97,71 +97,7 @@
    <property name="watered" type="bool" value="false"/>
   </properties>
  </tile>
- <tile id="12">
-  <properties>
-   <property name="buildable" type="bool" value="false"/>
-   <property name="seeded" type="bool" value="false"/>
-   <property name="tillable" type="bool" value="true"/>
-   <property name="watered" type="bool" value="false"/>
-  </properties>
- </tile>
- <tile id="13">
-  <properties>
-   <property name="buildable" type="bool" value="false"/>
-   <property name="seeded" type="bool" value="false"/>
-   <property name="tillable" type="bool" value="false"/>
-   <property name="watered" type="bool" value="false"/>
-  </properties>
- </tile>
- <tile id="14">
-  <properties>
-   <property name="buildable" type="bool" value="true"/>
-   <property name="seeded" type="bool" value="false"/>
-   <property name="tillable" type="bool" value="false"/>
-   <property name="watered" type="bool" value="false"/>
-  </properties>
- </tile>
- <tile id="15">
-  <properties>
-   <property name="buildable" type="bool" value="false"/>
-   <property name="seeded" type="bool" value="false"/>
-   <property name="tillable" type="bool" value="false"/>
-   <property name="watered" type="bool" value="false"/>
-  </properties>
- </tile>
- <tile id="16" probability="0.25">
-  <properties>
-   <property name="buildable" type="bool" value="true"/>
-   <property name="seeded" type="bool" value="false"/>
-   <property name="tillable" type="bool" value="false"/>
-   <property name="watered" type="bool" value="false"/>
-  </properties>
- </tile>
- <tile id="17">
-  <properties>
-   <property name="buildable" type="bool" value="false"/>
-   <property name="seeded" type="bool" value="false"/>
-   <property name="tillable" type="bool" value="false"/>
-   <property name="watered" type="bool" value="false"/>
-  </properties>
- </tile>
- <tile id="18">
-  <properties>
-   <property name="buildable" type="bool" value="false"/>
-   <property name="seeded" type="bool" value="false"/>
-   <property name="tillable" type="bool" value="false"/>
-   <property name="watered" type="bool" value="false"/>
-  </properties>
- </tile>
- <tile id="19">
-  <properties>
-   <property name="buildable" type="bool" value="false"/>
-   <property name="seeded" type="bool" value="false"/>
-   <property name="tillable" type="bool" value="false"/>
-   <property name="watered" type="bool" value="false"/>
-  </properties>
- </tile>
- <tile id="20">
+ <tile id="12" type="Dirt">
   <properties>
    <property name="buildable" type="bool" value="false"/>
    <property name="seeded" type="bool" value="false"/>
@@ -169,7 +105,7 @@
    <property name="watered" type="bool" value="false"/>
   </properties>
  </tile>
- <tile id="21">
+ <tile id="13" type="Grass">
   <properties>
    <property name="buildable" type="bool" value="false"/>
    <property name="seeded" type="bool" value="false"/>
@@ -177,7 +113,15 @@
    <property name="watered" type="bool" value="false"/>
   </properties>
  </tile>
- <tile id="22">
+ <tile id="14" type="Grass">
+  <properties>
+   <property name="buildable" type="bool" value="true"/>
+   <property name="seeded" type="bool" value="false"/>
+   <property name="tillable" type="bool" value="false"/>
+   <property name="watered" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="15" type="Grass">
   <properties>
    <property name="buildable" type="bool" value="false"/>
    <property name="seeded" type="bool" value="false"/>
@@ -185,7 +129,15 @@
    <property name="watered" type="bool" value="false"/>
   </properties>
  </tile>
- <tile id="23">
+ <tile id="16" type="Grass" probability="0.25">
+  <properties>
+   <property name="buildable" type="bool" value="true"/>
+   <property name="seeded" type="bool" value="false"/>
+   <property name="tillable" type="bool" value="false"/>
+   <property name="watered" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="17" type="Grass">
   <properties>
    <property name="buildable" type="bool" value="false"/>
    <property name="seeded" type="bool" value="false"/>
@@ -193,39 +145,23 @@
    <property name="watered" type="bool" value="false"/>
   </properties>
  </tile>
- <tile id="24" probability="0.25">
+ <tile id="18" type="Grass">
   <properties>
-   <property name="buildable" type="bool" value="true"/>
+   <property name="buildable" type="bool" value="false"/>
    <property name="seeded" type="bool" value="false"/>
    <property name="tillable" type="bool" value="false"/>
    <property name="watered" type="bool" value="false"/>
   </properties>
  </tile>
- <tile id="25">
+ <tile id="19" type="Grass">
   <properties>
-   <property name="buildable" type="bool" value="true"/>
+   <property name="buildable" type="bool" value="false"/>
    <property name="seeded" type="bool" value="false"/>
    <property name="tillable" type="bool" value="false"/>
    <property name="watered" type="bool" value="false"/>
   </properties>
  </tile>
- <tile id="26">
-  <properties>
-   <property name="buildable" type="bool" value="true"/>
-   <property name="seeded" type="bool" value="false"/>
-   <property name="tillable" type="bool" value="false"/>
-   <property name="watered" type="bool" value="false"/>
-  </properties>
- </tile>
- <tile id="27">
-  <properties>
-   <property name="buildable" type="bool" value="true"/>
-   <property name="seeded" type="bool" value="false"/>
-   <property name="tillable" type="bool" value="false"/>
-   <property name="watered" type="bool" value="false"/>
-  </properties>
- </tile>
- <tile id="28">
+ <tile id="20" type="Dirt">
   <properties>
    <property name="buildable" type="bool" value="false"/>
    <property name="seeded" type="bool" value="false"/>
@@ -233,7 +169,63 @@
    <property name="watered" type="bool" value="false"/>
   </properties>
  </tile>
- <tile id="29">
+ <tile id="21" type="Grass">
+  <properties>
+   <property name="buildable" type="bool" value="false"/>
+   <property name="seeded" type="bool" value="false"/>
+   <property name="tillable" type="bool" value="false"/>
+   <property name="watered" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="22" type="Grass">
+  <properties>
+   <property name="buildable" type="bool" value="false"/>
+   <property name="seeded" type="bool" value="false"/>
+   <property name="tillable" type="bool" value="false"/>
+   <property name="watered" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="23" type="Grass">
+  <properties>
+   <property name="buildable" type="bool" value="false"/>
+   <property name="seeded" type="bool" value="false"/>
+   <property name="tillable" type="bool" value="false"/>
+   <property name="watered" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="24" type="Grass" probability="0.25">
+  <properties>
+   <property name="buildable" type="bool" value="true"/>
+   <property name="seeded" type="bool" value="false"/>
+   <property name="tillable" type="bool" value="false"/>
+   <property name="watered" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="25" type="Grass">
+  <properties>
+   <property name="buildable" type="bool" value="true"/>
+   <property name="seeded" type="bool" value="false"/>
+   <property name="tillable" type="bool" value="false"/>
+   <property name="watered" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="26" type="Grass">
+  <properties>
+   <property name="buildable" type="bool" value="true"/>
+   <property name="seeded" type="bool" value="false"/>
+   <property name="tillable" type="bool" value="false"/>
+   <property name="watered" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="27" type="Grass">
+  <properties>
+   <property name="buildable" type="bool" value="true"/>
+   <property name="seeded" type="bool" value="false"/>
+   <property name="tillable" type="bool" value="false"/>
+   <property name="watered" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="28" type="Dirt">
   <properties>
    <property name="buildable" type="bool" value="false"/>
    <property name="seeded" type="bool" value="false"/>
@@ -241,7 +233,7 @@
    <property name="watered" type="bool" value="false"/>
   </properties>
  </tile>
- <tile id="30">
+ <tile id="29" type="Dirt">
   <properties>
    <property name="buildable" type="bool" value="false"/>
    <property name="seeded" type="bool" value="false"/>
@@ -249,7 +241,15 @@
    <property name="watered" type="bool" value="false"/>
   </properties>
  </tile>
- <tile id="31">
+ <tile id="30" type="Dirt">
+  <properties>
+   <property name="buildable" type="bool" value="false"/>
+   <property name="seeded" type="bool" value="false"/>
+   <property name="tillable" type="bool" value="true"/>
+   <property name="watered" type="bool" value="false"/>
+  </properties>
+ </tile>
+ <tile id="31" type="Dirt">
   <properties>
    <property name="buildable" type="bool" value="false"/>
    <property name="seeded" type="bool" value="false"/>

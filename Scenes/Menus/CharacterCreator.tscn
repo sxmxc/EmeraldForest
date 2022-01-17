@@ -88,36 +88,61 @@ margin_bottom = 434.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer"]
 margin_right = 360.0
-margin_bottom = 70.0
+margin_bottom = 107.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer"]
 margin_right = 360.0
 margin_bottom = 33.0
 
 [node name="Label" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
-margin_right = 57.0
+margin_right = 161.0
 margin_bottom = 33.0
 theme = ExtResource( 3 )
-text = "Name:"
+text = "Character Name:"
 align = 1
 valign = 1
 
 [node name="TextEdit" type="TextEdit" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
-margin_left = 61.0
+margin_left = 165.0
 margin_right = 360.0
 margin_bottom = 33.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/line_spacing = 0
 custom_fonts/font = ExtResource( 8 )
+text = "Steeb"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer"]
 margin_top = 37.0
 margin_right = 360.0
 margin_bottom = 70.0
+
+[node name="Label" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer3"]
+margin_right = 114.0
+margin_bottom = 33.0
+theme = ExtResource( 3 )
+text = "Farm Name:"
+align = 1
+valign = 1
+
+[node name="TextEdit" type="TextEdit" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer3"]
+margin_left = 118.0
+margin_right = 360.0
+margin_bottom = 33.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/line_spacing = 0
+custom_fonts/font = ExtResource( 8 )
+text = "Tegridy Farms"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer"]
+margin_top = 74.0
+margin_right = 360.0
+margin_bottom = 107.0
 custom_constants/separation = 32
 
 [node name="Label" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
+visible = false
 margin_right = 98.0
 margin_bottom = 33.0
 size_flags_horizontal = 3
@@ -125,8 +150,8 @@ theme = ExtResource( 3 )
 text = "Gender:"
 
 [node name="OptionButton" type="OptionButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 130.0
-margin_right = 229.0
+visible = false
+margin_right = 164.0
 margin_bottom = 33.0
 size_flags_horizontal = 3
 text = "Male"
@@ -136,23 +161,22 @@ items = [ "Male", null, false, 0, null, "Female", null, false, 1, null, "Other",
 selected = 0
 
 [node name="Button" type="Button" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 261.0
 margin_right = 360.0
 margin_bottom = 33.0
 size_flags_horizontal = 3
 text = "Random"
 
 [node name="HBoxContainer" type="VBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer"]
-margin_top = 74.0
+margin_top = 111.0
 margin_right = 360.0
 margin_bottom = 377.0
 size_flags_vertical = 3
 alignment = 1
 
 [node name="Skin" type="HBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_top = 24.0
+margin_top = 5.0
 margin_right = 360.0
-margin_bottom = 57.0
+margin_bottom = 38.0
 
 [node name="Label" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Skin"]
 margin_right = 47.0
@@ -189,9 +213,9 @@ __meta__ = {
 }
 
 [node name="Hair" type="HBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_top = 61.0
+margin_top = 42.0
 margin_right = 360.0
-margin_bottom = 94.0
+margin_bottom = 75.0
 
 [node name="Label" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Hair"]
 margin_right = 68.0
@@ -264,9 +288,9 @@ __meta__ = {
 }
 
 [node name="Beard" type="HBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_top = 98.0
+margin_top = 79.0
 margin_right = 360.0
-margin_bottom = 131.0
+margin_bottom = 112.0
 
 [node name="Label" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Beard"]
 margin_right = 68.0
@@ -340,9 +364,9 @@ __meta__ = {
 }
 
 [node name="Shirt" type="HBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_top = 135.0
+margin_top = 116.0
 margin_right = 360.0
-margin_bottom = 168.0
+margin_bottom = 149.0
 
 [node name="Label" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shirt"]
 margin_right = 68.0
@@ -387,9 +411,9 @@ margin_bottom = 33.0
 size_flags_horizontal = 3
 
 [node name="Pants" type="HBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_top = 172.0
+margin_top = 153.0
 margin_right = 360.0
-margin_bottom = 205.0
+margin_bottom = 186.0
 
 [node name="Label" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Pants"]
 margin_right = 68.0
@@ -436,9 +460,9 @@ margin_bottom = 33.0
 size_flags_horizontal = 3
 
 [node name="Shoes" type="HBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_top = 209.0
+margin_top = 190.0
 margin_right = 360.0
-margin_bottom = 242.0
+margin_bottom = 223.0
 
 [node name="Label" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shoes"]
 margin_right = 68.0
@@ -485,9 +509,9 @@ margin_bottom = 33.0
 size_flags_horizontal = 3
 
 [node name="Acc" type="HBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_top = 246.0
+margin_top = 227.0
 margin_right = 360.0
-margin_bottom = 279.0
+margin_bottom = 260.0
 
 [node name="Label" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Acc"]
 margin_right = 95.0
@@ -580,6 +604,7 @@ scale = Vector2( 3, 3 )
 visible = false
 
 [connection signal="confirmed" from="Notifications/Alert/ConfirmationDialog" to="." method="_on_ConfirmationDialog_confirmed"]
+[connection signal="text_changed" from="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/TextEdit" to="." method="_on_TextEdit_text_changed"]
 [connection signal="pressed" from="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Hair/HairPrev" to="." method="_on_HairPrev_pressed"]
 [connection signal="pressed" from="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Hair/HairNext" to="." method="_on_HairNext_pressed"]
 [connection signal="pressed" from="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Beard/BeardPrev" to="." method="_on_BeardPrev_pressed"]

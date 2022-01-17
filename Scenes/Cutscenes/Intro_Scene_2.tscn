@@ -85,7 +85,8 @@ layer = 4
 
 [node name="DialogNode" parent="Dialog" instance=ExtResource( 5 )]
 margin_top = -276.0
-margin_bottom = -276.0
+margin_right = 1366.0
+margin_bottom = 492.0
 
 [node name="EventManager" type="Node" parent="Dialog"]
 script = ExtResource( 1 )

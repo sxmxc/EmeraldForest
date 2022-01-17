@@ -15,11 +15,13 @@ var current_animation = "idle_" + direction
 var pickup_radius
 
 var player_name = Global.player_name
+var farm_name = Global.farm_name
 
 signal player_loaded
 
 onready var current = {
 	"playername" : player_name,
+	"farmname": farm_name,
 	"body" : 0,
 	"hair" : 0,
 	"shirt" : 0,
@@ -57,10 +59,10 @@ func _ready():
 	GameClock.connect("night", self, "_on_night")
 # warning-ignore:return_value_discarded
 	GameClock.connect("morning", self, "_on_morning")
-	grid_helper.connect("grid_helper_ready", self, "_setup_grid_helper")
 	$StateMachine._setup(self, $AnimationPlayer)
 	$StateMachine.change_state("idle")
 	Global._set_player(self)
+	_setup_grid_helper()
 	emit_signal("player_loaded")
 	
 
@@ -175,3 +177,9 @@ func _on_night():
 	var light = $Light2D
 	if light.visible == false:
 		light.visible = true
+
+func _set_player_name(value):
+	current.playername = value
+	
+func _set_farm_name(value):
+	current.farmname = value

@@ -14,10 +14,9 @@ signal grid_helper_ready
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	isActive = false
-	emit_signal("grid_helper_ready")
 	pass # Replace with function body.
 
-func _register_tilemap(tm):
+func _set_tilemap(tm):
 	tile_map = tm
 
 func _set_active(arg = true):
@@ -30,6 +29,7 @@ func _set_player(p):
 func _process(_delta):
 	if isActive:
 		visible = true
+		tile_map = Global.world.farm_map as TileMap
 		if tile_map:
 			global_position = _get_active_tile(tile_map) * 16
 	else:
