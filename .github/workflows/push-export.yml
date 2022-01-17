@@ -80,7 +80,7 @@ jobs:
           PACKAGE: itch.zip
 
   export-web:
-    if: true
+    if: false
     name: Web Export
     runs-on: ubuntu-latest
     container:
@@ -158,7 +158,7 @@ jobs:
           PACKAGE: itch.zip
 
   export-android:
-    if: true
+    if: false
     name: Android Export
     runs-on: ubuntu-latest
     container:
