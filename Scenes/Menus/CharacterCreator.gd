@@ -4,8 +4,8 @@ extends "res://Scenes/Menus/Menu.gd"
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-onready var player = $HBoxContainer/CenterContainer/CharPreview/Player
-onready var confirmation = $Notifications/Alert/ConfirmationDialog
+@onready var player = $HBoxContainer/CenterContainer/CharPreview/Player
+@onready var confirmation = $Notifications/Alert/ConfirmationDialog
 
 signal start_confirmed
 

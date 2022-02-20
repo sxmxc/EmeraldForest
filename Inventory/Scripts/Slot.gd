@@ -1,4 +1,5 @@
 extends Panel
+class_name Slot
 
 var default_tex = preload("res://Images/Assets/Aseprite/Container-Small.Container-Small.default.0.Atlas.res")
 var empty_tex = preload("res://Images/Assets/Aseprite/Container-Small-Dark.Container-Small-Dark.default.0.Atlas.res")

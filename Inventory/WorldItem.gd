@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends PhysicsBody
 
 var item_name
 const ACCELERATION = 460

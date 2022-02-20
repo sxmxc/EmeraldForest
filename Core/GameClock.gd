@@ -61,20 +61,18 @@ signal four_twenty_bb
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Console.add_command('pause_gameclock', self, '_set_gameclock_pause')\
-		.set_description('Pauses and unpauses gameclock')\
-		.add_argument('value', TYPE_BOOL)\
-		.register()
-	Console.add_command('end_day', self, '_end_day')\
-		.set_description('Ends the day')\
-		.register()
-	pause_mode = Node.PAUSE_MODE_PROCESS
+#	Console.add_command('pause_gameclock', self, '_set_gameclock_pause')\
+#		.set_description('Pauses and unpauses gameclock')\
+#		.add_argument('value', TYPE_BOOL)\
+#		.register()
+#	Console.add_command('end_day', self, '_end_day')\
+#		.set_description('Ends the day')\
+#		.register()
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	game_clock = Timer.new()
 	add_child(game_clock)
 	
-	var error = game_clock.connect("timeout", self, "_on_gameclock_tick")
-	if error: 
-		print_debug(error)
+	game_clock.timeout.connect(_on_gameclock_tick)
 	game_clock.set_wait_time(1.0)
 	game_clock.set_one_shot(false)
 	game_clock.start()
@@ -82,10 +80,10 @@ func _ready():
 
 func _set_gameclock_pause(value: bool = true):
 	if value == null:
-		Console.write_line("Please provide true or false as argument")
+#		Console.write_line("Please provide true or false as argument")
 		return
 	game_clock.set_paused(value)
-	Console.write_line("Gameclock Paused: " + str(game_clock.is_paused()))
+#	Console.write_line("Gameclock Paused: " + str(game_clock.is_paused()))
 	
 	
 func _reset_game_clock():

@@ -1,82 +1,102 @@
-extends Control
+extends Node
+class_name Inventory
 
-const slot_class = preload("res://Inventory/Scripts/Slot.gd")
-const item_class = preload("res://Inventory/Scripts/Item.gd")
-onready var inventory_slots = $GridContainer
-var holding_item = null
+signal active_item_updated
+signal inventory_updated
+
+
+
+
+
+const NUM_INVENTORY_SLOTS = 32
+const NUM_QUICKBAR_SLOTS = 12
+
+var slots = []
+var qb_slots = []
+
+var current_active_slot = 0
+
+var inventory = {
+}
+
+func _save():
+	return inventory
+	
+func _load(data):
+	inventory = {}
+	for item in data:
+		_add_item(data[item][0], data[item][1])
+	emit_signal('inventory_updated')
 
 func _ready():
-	var e = Global.connect("player_menu_requested", self, "_initialize_inventory")
-	if(e):
-		Print.line(Print.RED,str(e))
-	var slots = inventory_slots.get_children()
-	for i in range(slots.size()):
-		slots[i].connect("gui_input", self, "_slot_gui_input", [slots[i]])
-		slots[i].slot_idx = i
-		slots[i].slot_type = slot_class.SlotType.BACKPACK
-		PlayerInventory._register_slot(slots[i])
-	_initialize_inventory()
+	pass
+
+func _add_item(item_name, item_quantity):
+	for item in inventory:
+		if inventory[item][0] == item_name:
+			var stack_size = int(ItemImporter.item_data[item_name]["StackSize"])
+			var stack_capacity = stack_size - inventory[item][1]
+			if stack_capacity >= item_quantity:
+				inventory[item][1] += item_quantity
+				_update_slot_visual(item, inventory[item][0], inventory[item][1])
+				emit_signal('inventory_updated')
+				return
+			else:
+				inventory[item][1] += stack_capacity
+				_update_slot_visual(item, inventory[item][0], inventory[item][1])
+				item_quantity = item_quantity - stack_capacity
+				emit_signal('inventory_updated')
+
+	for i in range(NUM_INVENTORY_SLOTS):
+		if inventory.has(i) == false:
+			inventory[i] = [item_name, item_quantity]
+			_update_slot_visual(i, inventory[i][0], inventory[i][1])
+			emit_signal('inventory_updated')
+			return
+
+func _register_slot(slot):
+	slots.insert(slot.slot_idx,slot)
+
+func _register_quickbar_slot(slot):
+	qb_slots.insert(slot.slot_idx,slot)
+
+func _add_item_to_empty_slot(item, slot):
+	inventory[slot.slot_idx] = [item.item_name, item.item_quantity]
+	emit_signal('inventory_updated')
+
+func _remove_item(slot):
+	inventory.erase(slot.slot_idx)
+	emit_signal('inventory_updated')
+
+func _add_item_quantity(slot, quantity_to_add):
+	inventory[slot.slot_idx][1] += quantity_to_add
+	emit_signal('inventory_updated')
+	
+func _remove_item_quantity(item_name, quantity_to_remove):
+	for i in inventory:
+		if inventory[i][0] == item_name:
+			inventory[i][1] -= quantity_to_remove
+			if inventory[i][1] <= 0:
+				inventory.erase(i)
+				slots[i]._remove_item()
+	emit_signal('inventory_updated')
+
+func _update_slot_visual(slot_index,item_name, item_quantity ):
+	if !slots.empty():
+		var slot = slots[slot_index]
+		if slot.item != null:
+			slot.item._set_item(item_name, item_quantity)
+		else:
+			slot._initialize_item(item_name, item_quantity)
 		
-func _slot_gui_input(event: InputEvent, slot: slot_class):
-	if event is InputEventMouseButton:
-		if event.button_index == BUTTON_LEFT && event.pressed:
-			#holding item?
-			if holding_item != null:
-				if !slot.item:
-				#empty slot
-					_left_click_empty_slot(slot)
-				
-				else:
-				#something in slot
-					#different item
-					if holding_item.item_name != slot.item.item_name:
-						_left_click_dif_item(slot,event)
-					else:
-					#same item, try and merge
-						_left_click_same_item(slot)
-			elif slot.item:
-			#we aint holding shit
-				_left_click_no_item(slot)
-				
-func _input(_event):
-	if holding_item:
-		holding_item.global_position = get_global_mouse_position()
+func _use_active_item(tm, ft):
+	if(slots[current_active_slot].item != null):
+		slots[current_active_slot].item._use_item(tm, ft)
+		
+func _active_item_scroll_up():
+	current_active_slot = (current_active_slot + 1) % NUM_QUICKBAR_SLOTS
+	emit_signal("active_item_updated")
 
-func _initialize_inventory():
-	var slots = inventory_slots.get_children()
-	for i in range(slots.size()):
-		if PlayerInventory.inventory.has(i):
-			slots[i]._initialize_item(PlayerInventory.inventory[i][0], PlayerInventory.inventory[i][1])
-
-func _left_click_empty_slot(slot: slot_class):
-	PlayerInventory._add_item_to_empty_slot(holding_item,slot)
-	slot._put_into_slot(holding_item)
-	holding_item = null
-
-func _left_click_dif_item(slot: slot_class, event: InputEvent):
-	PlayerInventory._remove_item(slot)
-	PlayerInventory._add_item_to_empty_slot(holding_item,slot)
-	var temp_item = slot.item
-	slot._pick_from_slot()
-	temp_item.global_position = event.global_position
-	slot._put_into_slot(holding_item)
-	holding_item = temp_item
-
-func _left_click_same_item(slot: slot_class):
-	var stack_size = int(ItemImporter.item_data[slot.item.item_name]["StackSize"])
-	var stack_capacity = stack_size - slot.item.item_quantity
-	if stack_capacity >= holding_item.item_quantity:
-		PlayerInventory._add_item_quantity(slot, holding_item.item_quantity)
-		slot.item._add_item_quantity(holding_item.item_quantity)
-		holding_item.queue_free()
-		holding_item = null
-	else:
-		PlayerInventory._add_item_quantity(slot, stack_capacity)
-		slot.item._add_item_quantity(stack_capacity)
-		holding_item._decrease_item_quantity(stack_capacity)
-
-func _left_click_no_item(slot):
-	PlayerInventory._remove_item(slot)
-	holding_item = slot.item 
-	slot._pick_from_slot()
-	holding_item.global_position = get_global_mouse_position()
+func _active_item_scroll_down():
+	current_active_slot = NUM_QUICKBAR_SLOTS - 1 if current_active_slot == 0 else current_active_slot - 1
+	emit_signal("active_item_updated")

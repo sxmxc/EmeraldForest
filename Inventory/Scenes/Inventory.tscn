@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=6 format=3]
 
-[ext_resource path="res://Images/Assets/Aseprite/Container-Small.Container-Small.default.0.Atlas.res" type="Texture" id=1]
-[ext_resource path="res://Images/UI/Panel.png" type="Texture" id=2]
-[ext_resource path="res://Inventory/Scripts/Slot.gd" type="Script" id=3]
-[ext_resource path="res://Inventory/Scripts/Inventory.gd" type="Script" id=4]
+[ext_resource type="Texture" path="res://Images/Assets/Aseprite/Container-Small.Container-Small.default.0.Atlas.res" id="1"]
+[ext_resource type="Texture" uid="uid://c1sbctk71dtn4" path="res://Images/UI/Panel.png" id="2"]
+[ext_resource type="Script" path="res://Inventory/Scripts/Slot.gd" id="3"]
+[ext_resource type="Script" path="res://Inventory/Scripts/InventoryGUI.gd" id="4"]
+
 
 [sub_resource type="StyleBoxTexture" id=4]
 texture = ExtResource( 1 )

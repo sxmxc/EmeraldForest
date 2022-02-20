@@ -1,110 +1,102 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=16 format=3 uid="uid://cupcn62txotjt"]
 
-[ext_resource path="res://Images/Assets/Parallax Mountains/layers/parallax-mountain-foreground-trees.png" type="Texture" id=1]
-[ext_resource path="res://Scenes/Menus/MainMenu.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Menus/CharacterCreator.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Images/UI/StartScreen/WeedFarmTitleScreen.Midground.default.0.Atlas.res" type="Texture" id=4]
-[ext_resource path="res://Scenes/Menus/Settings.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Menus/StartScreen.gd" type="Script" id=6]
-[ext_resource path="res://Scenes/Menus/Default.tres" type="Theme" id=7]
-[ext_resource path="res://Images/Assets/Parallax Mountains/layers/parallax-mountain-bg.png" type="Texture" id=8]
-[ext_resource path="res://Images/Assets/Parallax Mountains/layers/parallax-mountain-trees.png" type="Texture" id=9]
-[ext_resource path="res://Images/Assets/Parallax Mountains/layers/parallax-mountain-montain-far.png" type="Texture" id=10]
-[ext_resource path="res://Images/Assets/Parallax Mountains/layers/parallax-mountain-mountains.png" type="Texture" id=11]
-[ext_resource path="res://Scenes/Menus/ParallaxBackground.gd" type="Script" id=12]
-[ext_resource path="res://Audio/GrooveyBeat2b.wav" type="AudioStream" id=13]
+[ext_resource type="Texture2D" uid="uid://cw6ft8s12yti3" path="res://Images/Assets/Parallax Mountains/layers/parallax-mountain-foreground-trees.png" id="1"]
+[ext_resource type="PackedScene" uid="uid://d3o2va27u15up" path="res://Scenes/Menus/MainMenu.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://Scenes/Menus/CharacterCreator.tscn" id="3"]
+[ext_resource type="Texture2D" path="res://Images/UI/StartScreen/WeedFarmTitleScreen.Midground.default.0.Atlas.res" id="4"]
+[ext_resource type="Script" path="res://Scenes/Menus/StartScreen.gd" id="6"]
+[ext_resource type="Theme" uid="uid://cxvi2u51orc0i" path="res://Scenes/Menus/Default.tres" id="7"]
+[ext_resource type="Texture2D" uid="uid://dhkwfvrfi5vbs" path="res://Images/Assets/Parallax Mountains/layers/parallax-mountain-bg.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://ctguwidnd64ib" path="res://Images/Assets/Parallax Mountains/layers/parallax-mountain-trees.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://ci0xjb2o3i72p" path="res://Images/Assets/Parallax Mountains/layers/parallax-mountain-montain-far.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://dle3xr4yxit1g" path="res://Images/Assets/Parallax Mountains/layers/parallax-mountain-mountains.png" id="11"]
+[ext_resource type="Script" path="res://Scenes/Menus/ParallaxBackground.gd" id="12"]
+[ext_resource type="Font" path="res://Fonts/Pixelade.tres" id="12_gio5q"]
+[ext_resource type="AudioStream" uid="uid://ntdhaq07hxay" path="res://Audio/GrooveyBeat2b.wav" id="13"]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id="1"]
 length = 0.001
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id="2"]
 resource_name = "title_menu_transition_in"
 
 [node name="StartScreen" type="CanvasLayer"]
-script = ExtResource( 6 )
+script = ExtResource( "6" )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxMidground" type="ParallaxBackground" parent="."]
 layer = -50
-scroll_limit_end = Vector2( 2732, 0 )
-script = ExtResource( 12 )
+scroll_limit_end = Vector2(2732, 0)
+script = ExtResource( "12" )
 
 [node name="Background" type="ParallaxLayer" parent="ParallaxMidground"]
-motion_scale = Vector2( 0.05, 1 )
-motion_mirroring = Vector2( 1366, 0 )
+motion_scale = Vector2(0.05, 1)
+motion_mirroring = Vector2(1366, 0)
 
 [node name="Background" type="TextureRect" parent="ParallaxMidground/Background"]
-margin_right = 1366.0
-margin_bottom = 768.0
-rect_min_size = Vector2( 1366, 768 )
-texture = ExtResource( 8 )
-expand = true
+rect_min_size = Vector2(1366, 768)
+texture = ExtResource( "8" )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Far" type="ParallaxLayer" parent="ParallaxMidground"]
 z_index = 1
-motion_scale = Vector2( 0.1, 1 )
-motion_mirroring = Vector2( 1366, 0 )
+motion_scale = Vector2(0.1, 1)
+motion_mirroring = Vector2(1366, 0)
 
 [node name="Far" type="TextureRect" parent="ParallaxMidground/Far"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_min_size = Vector2( 1366, 768 )
-texture = ExtResource( 10 )
-expand = true
+rect_min_size = Vector2(1366, 768)
+texture = ExtResource( "10" )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Near" type="ParallaxLayer" parent="ParallaxMidground"]
 z_index = 2
-motion_scale = Vector2( 0.3, 1 )
-motion_mirroring = Vector2( 2732, 0 )
+motion_scale = Vector2(0.3, 1)
+motion_mirroring = Vector2(2732, 0)
 
 [node name="Near" type="TextureRect" parent="ParallaxMidground/Near"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 1366.0
-rect_min_size = Vector2( 2732, 768 )
-texture = ExtResource( 11 )
-expand = true
+rect_min_size = Vector2(2732, 768)
+texture = ExtResource( "11" )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Trees" type="ParallaxLayer" parent="ParallaxMidground"]
 z_index = 3
-motion_scale = Vector2( 0.5, 1 )
-motion_mirroring = Vector2( 2732, 0 )
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(2732, 0)
 
 [node name="Trees" type="TextureRect" parent="ParallaxMidground/Trees"]
-self_modulate = Color( 0.0941176, 0.6, 0, 1 )
+self_modulate = Color(0.0941176, 0.6, 0, 1)
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 2732.0
-margin_bottom = 768.0
-texture = ExtResource( 9 )
-expand = true
+offset_right = 1022.0
+offset_bottom = 599.0
+texture = ExtResource( "9" )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ForegroundTrees" type="ParallaxLayer" parent="ParallaxMidground"]
 z_index = 4
-motion_offset = Vector2( 1, 0 )
-motion_mirroring = Vector2( 2732, 0 )
+motion_offset = Vector2(1, 0)
+motion_mirroring = Vector2(2732, 0)
 
 [node name="ForegroundTrees" type="TextureRect" parent="ParallaxMidground/ForegroundTrees"]
-self_modulate = Color( 0.0941176, 0.6, 0, 1 )
+self_modulate = Color(0.0941176, 0.6, 0, 1)
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 2732.0
-margin_bottom = 768.0
-texture = ExtResource( 1 )
-expand = true
+offset_right = 1022.0
+offset_bottom = 605.0
+texture = ExtResource( "1" )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -112,11 +104,10 @@ __meta__ = {
 [node name="Plant" type="CanvasLayer" parent="."]
 
 [node name="TextureRect2" type="TextureRect" parent="Plant"]
-modulate = Color( 0.243137, 1, 0, 1 )
+modulate = Color(0.243137, 1, 0, 1)
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 4 )
-expand = true
+texture = ExtResource( "4" )
 stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
@@ -128,250 +119,144 @@ layer = 2
 [node name="MenuRoot" type="MarginContainer" parent="Menu"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-theme = ExtResource( 7 )
+theme = ExtResource( "7" )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MainMenu" parent="Menu/MenuRoot" instance=ExtResource( 2 )]
+[node name="MainMenu" parent="Menu/MenuRoot" instance=ExtResource( "2" )]
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1366.0
-margin_bottom = 768.0
+offset_right = 1024.0
+offset_bottom = 600.0
 
-[node name="CharacterCreator" parent="Menu/MenuRoot" instance=ExtResource( 3 )]
+[node name="Panel" parent="Menu/MenuRoot/MainMenu" index="1"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = -59.0
+offset_right = 111.0
+offset_bottom = 213.0
+
+[node name="VBoxContainer" parent="Menu/MenuRoot/MainMenu/Panel/Buttons" index="0"]
+offset_left = 40.0
+offset_top = 46.0
+offset_right = 184.0
+offset_bottom = 226.0
+
+[node name="CharacterCreator" parent="Menu/MenuRoot" instance=ExtResource( "3" )]
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 1366.0
-margin_bottom = 768.0
+offset_right = 1024.0
+offset_bottom = 600.0
 
-[node name="VBoxContainer" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer" index="0"]
-margin_bottom = 32.0
+[node name="MarginContainer" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel" index="0"]
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_bottom = 100
 
-[node name="HBoxContainer" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer" index="0"]
-margin_bottom = 14.0
-
-[node name="Label" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer" index="0"]
-margin_right = 42.0
-margin_bottom = 14.0
+[node name="VBoxContainer" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer" index="0"]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 380.0
+offset_bottom = 400.0
 
 [node name="TextEdit" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer" index="1"]
-margin_left = 46.0
-margin_bottom = 14.0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource( "12_gio5q" )
+
+[node name="TextEdit" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer3" index="1"]
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource( "12_gio5q" )
 
 [node name="HBoxContainer2" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer" index="2"]
-margin_top = 18.0
-margin_bottom = 32.0
-
-[node name="Label" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2" index="0"]
-margin_bottom = 14.0
+theme_override_constants/separation = 32
 
 [node name="OptionButton" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2" index="1"]
-margin_bottom = 14.0
-items = [ "Male", null, false, 0, null, "Female", null, false, 1, null, "Other", null, false, 2, null ]
+selected = -1
 
-[node name="Button" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2" index="2"]
-margin_bottom = 14.0
+[node name="MarginContainer" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Skin/Panel" index="0"]
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_bottom = 1
 
-[node name="HBoxContainer" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer" index="1"]
-margin_top = 36.0
-margin_bottom = 396.0
-
-[node name="Skin" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer" index="0"]
-margin_top = 102.0
-margin_bottom = 127.0
-
-[node name="Label" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Skin" index="0"]
-margin_top = 5.0
-margin_right = 30.0
-margin_bottom = 19.0
-
-[node name="Panel" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Skin" index="1"]
-margin_left = 34.0
-margin_right = 59.0
-margin_bottom = 25.0
-
-[node name="Hair" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer" index="1"]
-margin_top = 131.0
-margin_bottom = 156.0
-
-[node name="Label" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Hair" index="0"]
-margin_top = 5.0
-margin_bottom = 19.0
-
-[node name="HairPrev" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Hair" index="1"]
-margin_bottom = 25.0
-
-[node name="Current" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Hair" index="2"]
-margin_top = 5.0
-margin_bottom = 19.0
-
-[node name="HairNext" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Hair" index="3"]
-margin_bottom = 25.0
-
-[node name="CenterContainer" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Hair" index="4"]
-margin_bottom = 25.0
+[node name="Skin Color" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Skin/Panel/MarginContainer" index="0"]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 24.0
+offset_bottom = 24.0
 
 [node name="Panel" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Hair/CenterContainer" index="0"]
-margin_top = 0.0
-margin_bottom = 25.0
+offset_right = 25.0
+offset_bottom = 25.0
 
-[node name="Beard" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer" index="2"]
-margin_top = 160.0
-margin_bottom = 185.0
+[node name="MarginContainer" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Hair/CenterContainer/Panel" index="0"]
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_bottom = 1
 
-[node name="Label" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Beard" index="0"]
-margin_bottom = 25.0
-
-[node name="BeardPrev" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Beard" index="1"]
-margin_bottom = 25.0
-
-[node name="Current" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Beard" index="2"]
-margin_top = 5.0
-margin_bottom = 19.0
-
-[node name="BeardNext" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Beard" index="3"]
-margin_bottom = 25.0
-
-[node name="CenterContainer" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Beard" index="4"]
-margin_bottom = 25.0
+[node name="Skin Color" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Hair/CenterContainer/Panel/MarginContainer" index="0"]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 24.0
+offset_bottom = 24.0
 
 [node name="Panel" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Beard/CenterContainer" index="0"]
-margin_top = 0.0
-margin_bottom = 25.0
+offset_right = 25.0
+offset_bottom = 25.0
 
-[node name="Shirt" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer" index="3"]
-margin_top = 189.0
-margin_bottom = 203.0
+[node name="MarginContainer" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Beard/CenterContainer/Panel" index="0"]
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_bottom = 1
 
-[node name="Label" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shirt" index="0"]
-margin_bottom = 14.0
+[node name="Skin Color" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Beard/CenterContainer/Panel/MarginContainer" index="0"]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 24.0
+offset_bottom = 24.0
 
-[node name="ShirtPrev" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shirt" index="1"]
-margin_bottom = 14.0
+[node name="Back" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HSplitContainer" index="0"]
+offset_right = 24.0
+offset_bottom = 17.0
 
-[node name="Current" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shirt" index="2"]
-margin_bottom = 14.0
+[node name="Begin" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HSplitContainer" index="1"]
+offset_left = 36.0
+offset_right = 62.0
+offset_bottom = 17.0
 
-[node name="ShirtNext" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shirt" index="3"]
-margin_bottom = 14.0
-
-[node name="EmptyMargin" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shirt" index="4"]
-margin_bottom = 14.0
-
-[node name="Pants" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer" index="4"]
-margin_top = 207.0
-margin_bottom = 221.0
-
-[node name="Label" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Pants" index="0"]
-margin_bottom = 14.0
-
-[node name="PantsPrev" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Pants" index="1"]
-margin_bottom = 14.0
-
-[node name="Current" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Pants" index="2"]
-margin_bottom = 14.0
-
-[node name="PantsNext" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Pants" index="3"]
-margin_bottom = 14.0
-
-[node name="EmptyMargin" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Pants" index="4"]
-margin_bottom = 14.0
-
-[node name="Shoes" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer" index="5"]
-margin_top = 225.0
-margin_bottom = 239.0
-
-[node name="Label" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shoes" index="0"]
-margin_bottom = 14.0
-
-[node name="ShoesPrev" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shoes" index="1"]
-margin_bottom = 14.0
-
-[node name="Current" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shoes" index="2"]
-margin_bottom = 14.0
-
-[node name="ShoesNext" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shoes" index="3"]
-margin_bottom = 14.0
-
-[node name="EmptyMargin" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shoes" index="4"]
-margin_bottom = 14.0
-
-[node name="Acc" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer" index="6"]
-margin_top = 243.0
-margin_bottom = 257.0
-
-[node name="Label" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Acc" index="0"]
-margin_right = 71.0
-margin_bottom = 14.0
-
-[node name="AccPrev" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Acc" index="1"]
-margin_left = 75.0
-margin_right = 147.0
-margin_bottom = 14.0
-
-[node name="Current" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Acc" index="2"]
-margin_left = 151.0
-margin_right = 209.0
-margin_bottom = 14.0
-
-[node name="AccNext" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Acc" index="3"]
-margin_left = 213.0
-margin_right = 284.0
-margin_bottom = 14.0
-
-[node name="EmptyMargin" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Acc" index="4"]
-margin_left = 288.0
-margin_bottom = 14.0
-
-[node name="HSplitContainer" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer" index="2"]
-margin_top = 400.0
-
-[node name="SettingsMenu" parent="Menu/MenuRoot" instance=ExtResource( 5 )]
-visible = false
-anchor_left = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 1366.0
-margin_bottom = 768.0
+[node name="CharPreview" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CenterContainer" index="0"]
+offset_right = 400.0
+offset_bottom = 250.0
 
 [node name="Notifications" type="CanvasLayer" parent="."]
-pause_mode = 2
 layer = 3
 
 [node name="Alert" type="Control" parent="Notifications"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-theme = ExtResource( 7 )
+theme = ExtResource( "7" )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/RESET = SubResource( 1 )
-anims/title_menu_transition_in = SubResource( 2 )
+anims/RESET = SubResource( "1" )
+anims/title_menu_transition_in = SubResource( "2" )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 13 )
+stream = ExtResource( "13" )
 pitch_scale = 0.9
 autoplay = true
-bus = "Music"
-
-[connection signal="pressed" from="Menu/MenuRoot/MainMenu/Panel/Buttons/HBoxContainer/VBoxContainer/NewGameButton" to="." method="_on_NewGameButton_pressed"]
-[connection signal="pressed" from="Menu/MenuRoot/MainMenu/Panel/Buttons/HBoxContainer/VBoxContainer/ContinueButton" to="." method="_on_ContinueButton_pressed"]
-[connection signal="pressed" from="Menu/MenuRoot/MainMenu/Panel/Buttons/HBoxContainer/VBoxContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
-[connection signal="pressed" from="Menu/MenuRoot/MainMenu/Panel/Buttons/HBoxContainer/VBoxContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
-[connection signal="menu_closed" from="Menu/MenuRoot/CharacterCreator" to="." method="_on_CharacterCreator_menu_closed"]
-[connection signal="start_confirmed" from="Menu/MenuRoot/CharacterCreator" to="." method="_on_CharacterCreator_start_confirmed"]
-[connection signal="menu_closed" from="Menu/MenuRoot/SettingsMenu" to="." method="_on_SettingsMenu_menu_closed"]
+bus = &"Music"
 
 [editable path="Menu/MenuRoot/MainMenu"]
 [editable path="Menu/MenuRoot/CharacterCreator"]

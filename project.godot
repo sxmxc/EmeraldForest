@@ -9,40 +9,35 @@
 config_version=5
 
 _global_script_classes=[{
-"base": "Node",
-"class": &"GGSUtils",
-"language": &"GDScript",
-"path": "res://addons/GGS/src/utils.gd"
-}, {
 "base": "State",
 "class": &"IdleState",
 "language": &"GDScript",
 "path": "res://Core/StateMachine/PlayerStates/IdleState.gd"
+}, {
+"base": "Node",
+"class": &"Inventory",
+"language": &"GDScript",
+"path": "res://Inventory/Scripts/Inventory.gd"
+}, {
+"base": "Control",
+"class": &"InventoryGUI",
+"language": &"GDScript",
+"path": "res://Inventory/Scripts/InventoryGUI.gd"
 }, {
 "base": "Node2D",
 "class": &"Item",
 "language": &"GDScript",
 "path": "res://Inventory/Scripts/Item.gd"
 }, {
-"base": "RefCounted",
-"class": &"JSONBeautifier",
-"language": &"GDScript",
-"path": "res://addons/GGS/_depedencies/json_beautifier/json_beautifier.gd"
-}, {
-"base": "Container",
-"class": &"OptionsManager",
-"language": &"GDScript",
-"path": "res://addons/textalog/nodes/dialogue_base_node/options_node/options_node.gd"
-}, {
 "base": "Node",
 "class": &"Print",
 "language": &"GDScript",
 "path": "res://addons/katuiche-colorful-console/class/print.gd"
 }, {
-"base": "Object",
-"class": &"SceneManagerConstants",
+"base": "Panel",
+"class": &"Slot",
 "language": &"GDScript",
-"path": "res://addons/scene_manager/SceneManagerConstants.gd"
+"path": "res://Inventory/Scripts/Slot.gd"
 }, {
 "base": "Node2D",
 "class": &"State",
@@ -75,13 +70,12 @@ _global_script_classes=[{
 "path": "res://Core/StateMachine/PlayerStates/WalkState.gd"
 }]
 _global_script_class_icons={
-"GGSUtils": "",
 "IdleState": "",
+"Inventory": "",
+"InventoryGUI": "",
 "Item": "",
-"JSONBeautifier": "",
-"OptionsManager": "",
 "Print": "res://addons/katuiche-colorful-console/class/icons/class.svg",
-"SceneManagerConstants": "",
+"Slot": "",
 "State": "",
 "StateFactory": "",
 "StateMachine": "",
@@ -95,6 +89,7 @@ _global_script_class_icons={
 config/name="SmokeyDew"
 run/main_scene="res://Scenes/Menus/StartScreen.tscn"
 boot_splash/image="res://Leaf-Icon.png"
+boot_splash/fullsize=false
 boot_splash/use_filter=false
 boot_splash/bg_color=Color(0.129412, 0.00392157, 0.298039, 1)
 config/icon="res://Leaf-Icon.png"
@@ -107,15 +102,12 @@ config/features=PackedStringArray("4.0")
 
 [autoload]
 
-ggsManager="*res://addons/GGS/src/ggs_manager.gd"
-SceneManager="*res://addons/scene_manager/SceneManager.tscn"
 Global="*res://Core/Global.gd"
 GameClock="*res://Core/GameClock.gd"
-Console="*res://addons/quentincaffeino/console/src/Console.tscn"
-CSharpConsole="*res://addons/quentincaffeino/console-csharp/src/Console.cs"
 ItemImporter="*res://Inventory/Data/ItemImporter.gd"
 PlantImporter="*res://Farming/Data/PlantImporter.gd"
-PlayerInventory="*res://Inventory/Scripts/PlayerInventory.gd"
+PlayerInventory="*res://Inventory/Scripts/Inventory.gd"
+InteractiveSceneChanger="*res://addons/interactive_scene_changer/InteractiveSceneChanger.gd"
 
 [display]
 
@@ -127,7 +119,7 @@ window/size/test_height=768.0
 
 [editor_plugins]
 
-enabled=PackedStringArray()
+enabled=PackedStringArray("res://addons/interactive_scene_changer/plugin.cfg")
 
 [gdnative]
 

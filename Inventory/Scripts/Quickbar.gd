@@ -1,18 +1,14 @@
-extends "res://Inventory/Scripts/PlayerInventory.gd"
+extends Inventory
 
 
-onready var hotbar = $HotbarSlots
+@onready var hotbar = $HotbarSlots
 
 func _ready():
 	self.slots = hotbar.get_children()
-	var e = Global.connect("player_menu_requested", self, "_initialize_quickbar")
-	e = PlayerInventory.connect("inventory_updated", self, "_update_quickbar")
-	if(e):
-		Print.line(Print.RED,str(e))
+	Global.player_menu_requested.connect(_initialize_quickbar)
+	PlayerInventory.inventory_updated.connect(_update_quickbar)
 	for i in range(slots.size()):
-		e = PlayerInventory.connect("active_item_updated", slots[i], "_refresh_style")
-		if e:
-			Print.line(Print.RED,str(e))
+		PlayerInventory.active_item_updated.connect(slots[i]._refresh_style)
 		slots[i].slot_idx = i
 		slots[i].slot_type = slot_class.SlotType.QUICKBAR
 		PlayerInventory._register_quickbar_slot(slots[i])

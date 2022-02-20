@@ -18,5 +18,5 @@ func _ready():
 
 func _on_Button_pressed():
 	visible=false
-	._on_menu_closed()
+	super._on_menu_closed()
 	

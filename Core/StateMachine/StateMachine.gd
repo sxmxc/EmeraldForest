@@ -28,7 +28,7 @@ func change_state(new_state_name):
 	if state != null:
 		state.queue_free()
 	state = state_factory.get_state(new_state_name).new()
-	state.setup(funcref(self, "change_state"), anim, body)
+	state.setup(change_state, anim, body)
 	state.name = "current_state"
 	state.current_dir = body.facing
 	add_child(state)

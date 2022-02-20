@@ -1,93 +1,93 @@
-[gd_resource type="Theme" load_steps=29 format=2]
+[gd_resource type="Theme" load_steps=29 format=3 uid="uid://cxvi2u51orc0i"]
 
-[ext_resource path="res://Images/UI/Panel.png" type="Texture" id=1]
-[ext_resource path="res://Images/UI/Buttons/ButtonBase.ButtonBase.Button Pressed.1.Atlas.res" type="Texture" id=2]
-[ext_resource path="res://Images/UI/Buttons/ButtonBase.ButtonBase.Disabled.0.Atlas.res" type="Texture" id=3]
-[ext_resource path="res://Images/UI/Buttons/ButtonBase.ButtonBase.Button Pressed.0.Atlas.res" type="Texture" id=4]
-[ext_resource path="res://Images/UI/Buttons/ButtonBase.ButtonBase.Hover.0.Atlas.res" type="Texture" id=5]
-[ext_resource path="res://Fonts/Pixelade.tres" type="DynamicFont" id=6]
+[ext_resource type="Texture2D" uid="uid://c1sbctk71dtn4" path="res://Images/UI/Panel.png" id="1"]
+[ext_resource type="Texture2D" path="res://Images/UI/Buttons/ButtonBase.ButtonBase.Button Pressed.1.Atlas.res" id="2"]
+[ext_resource type="Texture2D" path="res://Images/UI/Buttons/ButtonBase.ButtonBase.Disabled.0.Atlas.res" id="3"]
+[ext_resource type="Texture2D" path="res://Images/UI/Buttons/ButtonBase.ButtonBase.Button Pressed.0.Atlas.res" id="4"]
+[ext_resource type="Texture2D" path="res://Images/UI/Buttons/ButtonBase.ButtonBase.Hover.0.Atlas.res" id="5"]
+[ext_resource type="Font" path="res://Fonts/Pixelade.tres" id="6"]
 
-[sub_resource type="StyleBoxTexture" id=1]
-texture = ExtResource( 4 )
-region_rect = Rect2( 0, 0, 82, 20 )
+[sub_resource type="StyleBoxTexture" id="1"]
+texture = ExtResource( "4" )
+region_rect = Rect2(0, 0, 82, 20)
 
-[sub_resource type="StyleBoxTexture" id=2]
-texture = ExtResource( 5 )
-region_rect = Rect2( 0, 0, 82, 20 )
+[sub_resource type="StyleBoxTexture" id="2"]
+texture = ExtResource( "5" )
+region_rect = Rect2(0, 0, 82, 20)
 
-[sub_resource type="StyleBoxTexture" id=3]
-texture = ExtResource( 5 )
-region_rect = Rect2( 0, 0, 82, 20 )
+[sub_resource type="StyleBoxTexture" id="3"]
+texture = ExtResource( "5" )
+region_rect = Rect2(0, 0, 82, 20)
 
-[sub_resource type="StyleBoxTexture" id=4]
-texture = ExtResource( 2 )
-region_rect = Rect2( 0, 0, 82, 20 )
+[sub_resource type="StyleBoxTexture" id="4"]
+texture = ExtResource( "2" )
+region_rect = Rect2(0, 0, 82, 20)
 
-[sub_resource type="StyleBoxTexture" id=5]
-texture = ExtResource( 3 )
-region_rect = Rect2( 0, 0, 82, 20 )
+[sub_resource type="StyleBoxTexture" id="5"]
+texture = ExtResource( "3" )
+region_rect = Rect2(0, 0, 82, 20)
 
-[sub_resource type="StyleBoxEmpty" id=6]
+[sub_resource type="StyleBoxEmpty" id="6"]
 
-[sub_resource type="StyleBoxEmpty" id=7]
+[sub_resource type="StyleBoxEmpty" id="7"]
 
-[sub_resource type="StyleBoxEmpty" id=8]
+[sub_resource type="StyleBoxEmpty" id="8"]
 
-[sub_resource type="StyleBoxEmpty" id=9]
+[sub_resource type="StyleBoxEmpty" id="9"]
 
-[sub_resource type="StyleBoxEmpty" id=10]
+[sub_resource type="StyleBoxEmpty" id="10"]
 
-[sub_resource type="StyleBoxEmpty" id=11]
+[sub_resource type="StyleBoxEmpty" id="11"]
 
-[sub_resource type="StyleBoxEmpty" id=12]
+[sub_resource type="StyleBoxEmpty" id="12"]
 
-[sub_resource type="StyleBoxEmpty" id=13]
+[sub_resource type="StyleBoxEmpty" id="13"]
 
-[sub_resource type="StyleBoxEmpty" id=14]
+[sub_resource type="StyleBoxEmpty" id="14"]
 
-[sub_resource type="StyleBoxEmpty" id=15]
+[sub_resource type="StyleBoxEmpty" id="15"]
 
-[sub_resource type="StyleBoxEmpty" id=16]
+[sub_resource type="StyleBoxEmpty" id="16"]
 
-[sub_resource type="StyleBoxEmpty" id=17]
+[sub_resource type="StyleBoxEmpty" id="17"]
 
-[sub_resource type="StyleBoxEmpty" id=18]
+[sub_resource type="StyleBoxEmpty" id="18"]
 
-[sub_resource type="StyleBoxEmpty" id=19]
+[sub_resource type="StyleBoxEmpty" id="19"]
 
-[sub_resource type="StyleBoxEmpty" id=20]
+[sub_resource type="StyleBoxEmpty" id="20"]
 
-[sub_resource type="StyleBoxEmpty" id=21]
+[sub_resource type="StyleBoxEmpty" id="21"]
 
-[sub_resource type="StyleBoxTexture" id=22]
-texture = ExtResource( 1 )
-region_rect = Rect2( 0, 0, 90, 103 )
+[sub_resource type="StyleBoxTexture" id="22"]
+texture = ExtResource( "1" )
+region_rect = Rect2(0, 0, 90, 103)
 
 [resource]
-default_font = ExtResource( 6 )
-Button/colors/font_color = Color( 0, 0, 0, 1 )
-Button/colors/font_color_disabled = Color( 0.247059, 0.247059, 0.247059, 1 )
-Button/colors/font_color_focus = Color( 0.807843, 0.831373, 0.980392, 1 )
-Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
-Button/styles/disabled = SubResource( 1 )
-Button/styles/hover = SubResource( 2 )
-Button/styles/normal = SubResource( 3 )
-Button/styles/pressed = SubResource( 4 )
-CheckBox/styles/disabled = SubResource( 5 )
-CheckBox/styles/focus = SubResource( 6 )
-CheckBox/styles/hover = SubResource( 7 )
-CheckBox/styles/hover_pressed = SubResource( 8 )
-CheckBox/styles/normal = SubResource( 9 )
-CheckBox/styles/pressed = SubResource( 10 )
-CheckButton/styles/disabled = SubResource( 11 )
-CheckButton/styles/focus = SubResource( 12 )
-CheckButton/styles/hover = SubResource( 13 )
-CheckButton/styles/hover_pressed = SubResource( 14 )
-CheckButton/styles/normal = SubResource( 15 )
-CheckButton/styles/pressed = SubResource( 16 )
-OptionButton/styles/disabled = SubResource( 17 )
-OptionButton/styles/focus = SubResource( 18 )
-OptionButton/styles/hover = SubResource( 19 )
-OptionButton/styles/normal = SubResource( 20 )
-OptionButton/styles/pressed = SubResource( 21 )
-Panel/styles/panel = SubResource( 22 )
+default_font = ExtResource( "6" )
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_color_disabled = Color(0.247059, 0.247059, 0.247059, 1)
+Button/colors/font_color_focus = Color(0.807843, 0.831373, 0.980392, 1)
+Button/colors/font_color_hover = Color(0.94, 0.94, 0.94, 1)
+Button/styles/disabled = SubResource( "1" )
+Button/styles/hover = SubResource( "2" )
+Button/styles/normal = SubResource( "3" )
+Button/styles/pressed = SubResource( "4" )
+CheckBox/styles/disabled = SubResource( "5" )
+CheckBox/styles/focus = SubResource( "6" )
+CheckBox/styles/hover = SubResource( "7" )
+CheckBox/styles/hover_pressed = SubResource( "8" )
+CheckBox/styles/normal = SubResource( "9" )
+CheckBox/styles/pressed = SubResource( "10" )
+CheckButton/styles/disabled = SubResource( "11" )
+CheckButton/styles/focus = SubResource( "12" )
+CheckButton/styles/hover = SubResource( "13" )
+CheckButton/styles/hover_pressed = SubResource( "14" )
+CheckButton/styles/normal = SubResource( "15" )
+CheckButton/styles/pressed = SubResource( "16" )
+OptionButton/styles/disabled = SubResource( "17" )
+OptionButton/styles/focus = SubResource( "18" )
+OptionButton/styles/hover = SubResource( "19" )
+OptionButton/styles/normal = SubResource( "20" )
+OptionButton/styles/pressed = SubResource( "21" )
+Panel/styles/panel = SubResource( "22" )

@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 var speed = 100  # speed in pixels/sec
 
@@ -6,9 +6,9 @@ var velocity = Vector2.ZERO
 var direction = "down"
 var facing = Vector2.DOWN
 
-onready var grid_helper = $GridHelper
+@onready var grid_helper = $GridHelper
 
-export var can_control = false
+@export var can_control = false
 
 var current_animation = "idle_" + direction
 
@@ -19,7 +19,7 @@ var farm_name = Global.farm_name
 
 signal player_loaded
 
-onready var current = {
+@onready var current := {
 	"playername" : player_name,
 	"farmname": farm_name,
 	"body" : 0,
@@ -33,32 +33,32 @@ onready var current = {
 }
 
 
-onready var body_sprite = $CompositeSprites/Body
-onready var hair_sprite = $CompositeSprites/Hair
-onready var shirt_sprite = $CompositeSprites/Shirt
-onready var pants_sprite = $CompositeSprites/Pants
-onready var shoes_sprite = $CompositeSprites/Shoes
+@onready var body_sprite = $CompositeSprites/Body
+@onready var hair_sprite = $CompositeSprites/Hair
+@onready var shirt_sprite = $CompositeSprites/Shirt
+@onready var pants_sprite = $CompositeSprites/Pants
+@onready var shoes_sprite = $CompositeSprites/Shoes
 #onready var facialhair_sprite = $CompositeSprites/FacielHair
 #onready var accessory_sprite = $CompositeSprites/Accessory
 
-onready var spawn_parent = get_parent()
-onready var spawn_point = Vector2(0,0)
+@onready var spawn_parent = get_parent()
+@onready var spawn_point = Vector2(0,0)
 
-const composite_sprites = preload("res://Scenes/Player/CompositeSprites.gd")
+const COMPOSITE_SPRITES = preload("res://Scenes/Player/CompositeSprites.gd")
 
 
 func _ready():
-	body_sprite.texture = composite_sprites.body_spritesheets[current["body"]][1]
-	hair_sprite.texture = composite_sprites.hair_spritesheets[current["hair"]][1]
-	shirt_sprite.texture = composite_sprites.shirts_spritesheets[current["shirt"]][1]
-	pants_sprite.texture = composite_sprites.pants_spritesheets[current["pants"]][1]
-	shoes_sprite.texture = composite_sprites.shoes_spritesheets[current["shoes"]][1]
+	body_sprite.texture = COMPOSITE_SPRITES.BODY_SPRITESHEETS[current["body"]].texture
+	hair_sprite.texture = COMPOSITE_SPRITES.HAIR_SPRITESHEETS[current["hair"]].texture
+	shirt_sprite.texture = COMPOSITE_SPRITES.SHIRTS_SPRITESHEETS[current["shirt"]].texture
+	pants_sprite.texture = COMPOSITE_SPRITES.PANTS_SPRITESHEETS[current["pants"]].texture
+	shoes_sprite.texture = COMPOSITE_SPRITES.SHOES_SPRITESHEETS[current["shoes"]].texture
 	#facialhair_sprite.texture = composite_sprites.facialhair_spritesheets[0]
 	#accessory_sprite.texture = composite_sprites.accessory_spritesheets[0]
 # warning-ignore:return_value_discarded
-	GameClock.connect("night", self, "_on_night")
+	GameClock.night.connect(_on_night)
 # warning-ignore:return_value_discarded
-	GameClock.connect("morning", self, "_on_morning")
+	GameClock.morning.connect(_on_morning)
 	$StateMachine._setup(self, $AnimationPlayer)
 	$StateMachine.change_state("idle")
 	Global._set_player(self)
@@ -68,18 +68,18 @@ func _ready():
 
 func _load_data(data):
 	current = data
-	body_sprite.texture = composite_sprites.body_spritesheets[int(current["body"])][1]
-	hair_sprite.texture = composite_sprites.hair_spritesheets[int(current["hair"])][1]
-	shirt_sprite.texture = composite_sprites.shirts_spritesheets[int(current["shirt"])][1]
-	pants_sprite.texture = composite_sprites.pants_spritesheets[int(current["pants"])][1]
-	shoes_sprite.texture = composite_sprites.shoes_spritesheets[int(current["shoes"])][1]
+	body_sprite.texture = COMPOSITE_SPRITES.BODY_SPRITESHEETS[int(current["body"])][1]
+	hair_sprite.texture = COMPOSITE_SPRITES.HAIR_SPRITESHEETS[int(current["hair"])][1]
+	shirt_sprite.texture = COMPOSITE_SPRITES.SHIRTS_SPRITESHEETS[int(current["shirt"])][1]
+	pants_sprite.texture = COMPOSITE_SPRITES.PANTS_SPRITESHEETS[int(current["pants"])][1]
+	shoes_sprite.texture = COMPOSITE_SPRITES.SHOES_SPRITESHEETS[int(current["shoes"])][1]
 	#facialhair_sprite.texture = composite_sprites.facialhair_spritesheets[0]
 	#accessory_sprite.texture = composite_sprites.accessory_spritesheets[0]
 	if data.has("inventory"):
 		PlayerInventory._load(data["inventory"])
 
 func _save():
-	current["filename"] = get_filename()
+	current["filename"] = scene_file_path
 	current["spawn_parent"] = spawn_parent
 	current["spawn_point"] = spawn_point
 	current["inventory"] = PlayerInventory._save()
@@ -139,34 +139,34 @@ func _pickup_items():
 		$PickupArea.items_in_range.erase(item)
 		
 func _change_shirt(): 
-	current["shirt"] = (current["shirt"] + 1) % composite_sprites.shirts_spritesheets.size()
-	shirt_sprite.texture = composite_sprites.shirts_spritesheets[current["shirt"]][1]
+	current["shirt"] = (current["shirt"] + 1) % COMPOSITE_SPRITES.SHIRTS_SPRITESHEETS.size()
+	shirt_sprite.texture = COMPOSITE_SPRITES.SHIRTS_SPRITESHEETS[current["shirt"]][1]
 	
 func _change_hair():
-	hair_sprite.texture = composite_sprites.hair_spritesheets[current["hair"]][1]
+	hair_sprite.texture = COMPOSITE_SPRITES.HAIR_SPRITESHEETS[current["hair"]][1]
 	
 func _change_pants():
-	current["pants"] = (current["pants"] + 1) % composite_sprites.pants_spritesheets.size()
-	pants_sprite.texture = composite_sprites.pants_spritesheets[current["pants"]][1]
+	current["pants"] = (current["pants"] + 1) % COMPOSITE_SPRITES.PANTS_SPRITESHEETS.size()
+	pants_sprite.texture = COMPOSITE_SPRITES.PANTS_SPRITESHEETS[current["pants"]][1]
 	
 func _change_shoes():
-	current["shoes"] = (current["shoes"] + 1) % composite_sprites.shoes_spritesheets.size()
-	shoes_sprite.texture = composite_sprites.shoes_spritesheets[current["shoes"]][1]
+	current["shoes"] = (current["shoes"] + 1) % COMPOSITE_SPRITES.SHOES_SPRITESHEETS.size()
+	shoes_sprite.texture = COMPOSITE_SPRITES.SHOES_SPRITESHEETS[current["shoes"]][1]
 
 func _prev_shirt(): 
-	current["shirt"] = (current["shirt"] - 1) if (current["shirt"] - 1) >= 0 else composite_sprites.shirts_spritesheets.size() - 1
-	shirt_sprite.texture = composite_sprites.shirts_spritesheets[current["shirt"]][1]
+	current["shirt"] = (current["shirt"] - 1) if (current["shirt"] - 1) >= 0 else COMPOSITE_SPRITES.SHIRTS_SPRITESHEETS.size() - 1
+	shirt_sprite.texture = COMPOSITE_SPRITES.SHIRTS_SPRITESHEETS[current["shirt"]][1]
 	
 func _prev_hair():
-	hair_sprite.texture = composite_sprites.hair_spritesheets[current["hair"]][1]
+	hair_sprite.texture = COMPOSITE_SPRITES.HAIR_SPRITESHEETS[current["hair"]][1]
 	
 func _prev_pants():
-	current["pants"] = (current["pants"] - 1) if (current["pants"] - 1) >= 0 else composite_sprites.pants_spritesheets.size() - 1
-	pants_sprite.texture = composite_sprites.pants_spritesheets[current["pants"]][1]
+	current["pants"] = (current["pants"] - 1) if (current["pants"] - 1) >= 0 else COMPOSITE_SPRITES.PANTS_SPRITESHEETS.size() - 1
+	pants_sprite.texture = COMPOSITE_SPRITES.PANTS_SPRITESHEETS[current["pants"]][1]
 	
 func _prev_shoes():
-	current["shoes"] = (current["shoes"] - 1) if (current["shoes"] - 1) >= 0 else composite_sprites.shoes_spritesheets.size() - 1
-	shoes_sprite.texture = composite_sprites.shoes_spritesheets[current["shoes"]][1]
+	current["shoes"] = (current["shoes"] - 1) if (current["shoes"] - 1) >= 0 else COMPOSITE_SPRITES.SHOES_SPRITESHEETS.size() - 1
+	shoes_sprite.texture = COMPOSITE_SPRITES.SHOES_SPRITESHEETS[current["shoes"]][1]
 	
 func _on_morning():
 	var light = $Light2D
