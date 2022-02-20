@@ -12,6 +12,8 @@ output/
 data_*/
 mono_crash.*.json
 
+.vscode/
+
 
 # Created by https://www.gitignore.io/api/osx,linux,windows
 
