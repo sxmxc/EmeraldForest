@@ -245,7 +245,7 @@
   <properties>
    <property name="buildable" type="bool" value="false"/>
    <property name="seeded" type="bool" value="false"/>
-   <property name="tillable" type="bool" value="true"/>
+   <property name="tillable" type="bool" value="false"/>
    <property name="watered" type="bool" value="false"/>
   </properties>
  </tile>
@@ -253,7 +253,7 @@
   <properties>
    <property name="buildable" type="bool" value="false"/>
    <property name="seeded" type="bool" value="false"/>
-   <property name="tillable" type="bool" value="true"/>
+   <property name="tillable" type="bool" value="false"/>
    <property name="watered" type="bool" value="false"/>
   </properties>
  </tile>
@@ -287,10 +287,9 @@
    <wangtile tileid="23" wangid="1,2,2,2,2,2,1,1"/>
    <wangtile tileid="24" wangid="1,1,1,1,1,1,1,1"/>
    <wangtile tileid="25" wangid="1,1,1,1,1,1,1,1"/>
+   <wangtile tileid="26" wangid="1,1,1,1,1,1,1,1"/>
    <wangtile tileid="28" wangid="2,2,2,2,2,2,2,2"/>
    <wangtile tileid="29" wangid="2,2,2,2,2,2,2,2"/>
-   <wangtile tileid="30" wangid="2,2,2,2,2,2,2,2"/>
-   <wangtile tileid="31" wangid="2,2,2,2,2,2,2,2"/>
   </wangset>
  </wangsets>
 </tileset>

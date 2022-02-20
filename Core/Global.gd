@@ -3,15 +3,9 @@ extends Node2D
 
 # Declare member variables here. Examples:
 const GRASS_ID = [1, 2, 3, 4, 9, 10, 12, 17, 18, 19, 20, 25, 26, 27, 28, 6, 7, 8, 14, 15, 16, 22, 23, 24]
-const GRASS_NAME = "GrassSingle"
-const SOIL_ID = [11, 5, 13, 21, 29, 30, 31, 32]
-const SOIL_NAME = "FertileAuto"
-const TILLED_SOIL_ID = 0
-const TILLED_SOIL_NAME = "TilledSoilSingle" 
-const WET_SOIL_ID = 0 
-const WET_SOIL_NAME = "WateredSoilAuto"
-const SEEDED_SOIL_ID = 0
-const SEEDED_SOIL_NAME = "SeedSingle"
+const SOIL_ID = [11, 5, 13, 21, 29, 30]
+const TILLED_SOIL_ID = 31
+const WET_SOIL_ID = 32
 const CELL_SIZE = Vector2(16,16)
 
 export(bool) var debug = true
@@ -32,11 +26,11 @@ var default_data = {
 	"shoes" : 0,
 	"facialhair" : 0,
 	"accessory": 0,
-	"inventory" : { 0: ["Copper Pickaxe", 1],
-	1: ["Copper Axe", 1],
-	2: ["Copper Ore", 97], #need to remove this from default 
-	3: ["Watering Can", 1],
-	4: ["Seed Pack", 9] #need to remove this from default
+	"inventory" : { 0: ["Axe", 1],
+	1: ["Hoe", 1],
+	2: ["Pickaxe", 1],
+	3: ["WateringCan", 1],
+	4: ["SeedPack", 9] #need to remove this from default
 #--> slot_index: [item_name, quantity]
 }
 }

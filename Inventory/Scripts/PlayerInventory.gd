@@ -5,6 +5,8 @@ signal inventory_updated
 
 const slot_class = preload("res://Inventory/Scripts/Slot.gd")
 const item_class = preload("res://Inventory/Scripts/Item.gd")
+
+
 const NUM_INVENTORY_SLOTS = 32
 const NUM_QUICKBAR_SLOTS = 12
 
@@ -88,7 +90,6 @@ func _update_slot_visual(slot_index,item_name, item_quantity ):
 		
 func _use_active_item(tm, ft):
 	if(slots[current_active_slot].item != null):
-		Print.line(Print.BLUE, "Attempting to use an item " + slots[current_active_slot].item.item_name)
 		slots[current_active_slot].item._use_item(tm, ft)
 		
 func _active_item_scroll_up():

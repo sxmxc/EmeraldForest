@@ -110,6 +110,7 @@ tracks/0/keys = {
 }
 
 [node name="StaticBody2D" instance=ExtResource( 2 )]
+z_index = 1
 script = ExtResource( 3 )
 
 [node name="Sprite" parent="." index="0"]

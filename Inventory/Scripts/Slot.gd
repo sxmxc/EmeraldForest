@@ -10,7 +10,15 @@ var empty_style: StyleBoxTexture = null
 var locked_style: StyleBoxTexture = null
 var selected_style: StyleBoxTexture = null
 
-var item_class = preload("res://Inventory/Scenes/Item.tscn")
+#var item_class = preload("res://Inventory/Scenes/Item.tscn")
+const class_dict = {
+	"Hoe" : preload("res://Inventory/Scenes/Hoe.tscn"),
+	"Pickaxe" : preload("res://Inventory/Scenes/Pickaxe.tscn"),
+	"Axe": preload("res://Inventory/Scenes/Axe.tscn"),
+	"WateringCan": preload("res://Inventory/Scenes/WateringCan.tscn"),
+	"SeedPack": preload("res://Inventory/Scenes/SeedPack.tscn"), 
+	"Crafting": preload("res://Inventory/Scenes/Item.tscn")
+}
 var item = null
 
 var locked = false
@@ -78,6 +86,8 @@ func _remove_item():
 
 func _initialize_item(item_name, item_quantity):
 	if item == null:
+		var temp = ItemImporter.item_data[item_name]["Class"]
+		var item_class = class_dict[temp]
 		item = item_class.instance()
 		add_child(item)
 		item._set_item(item_name, item_quantity)

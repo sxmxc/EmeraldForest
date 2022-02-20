@@ -24,7 +24,7 @@ func move():
 	state.move()
 
 func change_state(new_state_name):
-	Print.line(Print.YELLOW, "Changing state to: " + new_state_name)
+	#Print.line(Print.YELLOW, "Changing state to: " + new_state_name)
 	if state != null:
 		state.queue_free()
 	state = state_factory.get_state(new_state_name).new()

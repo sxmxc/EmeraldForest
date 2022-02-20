@@ -1,37 +1,50 @@
 {
-  "Copper Pickaxe": {
+  "Pickaxe": {
     "ID": 0,
     "Type": "Tool",
+    "Class": "Pickaxe",
     "Texture": "CopperPick.png",
     "StackSize": 1,
     "Description": "Well, it's better than using your hand"
   },
-  "Copper Axe": {
+  "Hoe": {
     "ID": 1,
     "Type": "Tool",
+    "Class": "Hoe",
+    "Texture": "CopperHoe.png",
+    "StackSize": 1,
+    "Description": "Well, it's better than using your hand"
+  },
+  "Axe": {
+    "ID": 2,
+    "Type": "Tool",
+    "Class": "Axe",
     "Texture": "CopperAxe.png",
     "StackSize": 1,
     "Description": "Well, it's better than using your hand"
   },
   "Copper Ore": {
-    "ID": 2,
+    "ID": 3,
     "Type": "Resource",
+    "Class": "Crafting",
     "Texture": "CopperOre.png",
     "StackSize": 99,
     "Description": "Can be smelted at smelter"
   },
-  "Seed Pack": {
-    "ID": 3,
+  "SeedPack": {
+    "ID": 4,
     "Type": "Resource",
+    "Class": "SeedPack",
     "Texture": "SeedPack.png",
     "StackSize": 99,
     "Description": "Can be smelted at smelter"
   },
-  "Watering Can": {
-    "ID": 4,
-    "Type": "Resource",
+  "WateringCan": {
+    "ID": 5,
+    "Type": "Tool",
+    "Class": "WateringCan",
     "Texture": "WateringCan.png",
     "StackSize": 1,
-    "Description": "Can be smelted at smelter"
+    "Description": "Well, it's better than using your hand"
   }
 }

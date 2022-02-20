@@ -21,7 +21,7 @@ func _initialize(data, farm):
 
 func _check_dirt_status():
 	var dirt_pos = farm_map.world_to_map(global_position)
-	if farm_map.tile_properties[dirt_pos]["isWatered"] == true:
+	if Global.world.farm_meta[dirt_pos].watered == true:
 		crop_age += 1
 		day_of_current_phase += 1
 	else:

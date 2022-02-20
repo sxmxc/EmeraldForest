@@ -20,7 +20,7 @@
 			"bus_name": "Music"
 		},
 		"current": {
-			"value": 1,
+			"value": 0.3,
 			"bus_name": "Music"
 		},
 		"logic": "res://Settings/audio_slider.gd"

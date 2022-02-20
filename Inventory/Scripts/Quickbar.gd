@@ -40,9 +40,7 @@ func _update_slot_visual(slot_index,item_name, item_quantity ):
 func _input(event):
 	if event.is_action_pressed('quickbar_next'):
 			PlayerInventory._active_item_scroll_up()
-			if Global.debug:
-				Print.line(Print.RED,"Scroll up")
+			
 	if event.is_action_pressed("quickbar_prev"):
 			PlayerInventory._active_item_scroll_down()
-			if Global.debug:
-				Print.line(Print.RED,"Scroll down")
+			

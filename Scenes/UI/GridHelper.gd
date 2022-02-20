@@ -69,11 +69,11 @@ func _get_adjacent_tiles(tm):
 	return adjacent
 	
 #need to move this into tool specific
-#func _unhandled_input(_event):
-#	if isActive && player.can_control:
-#		if Input.is_action_pressed("player_use_tool"):
-#			player.facing = _get_active_tile(tile_map) - tile_map.world_to_map(player.get_node("PlayerTileAnchor").global_position)
-#			player._use_item(tile_map, _get_active_tile(tile_map))
+func _unhandled_input(_event):
+	if isActive && player.can_control:
+		if Input.is_action_pressed("player_use_tool"):
+			player.facing = _get_active_tile(tile_map) - tile_map.world_to_map(player.get_node("PlayerTileAnchor").global_position)
+			player._use_item(tile_map, _get_active_tile(tile_map))
 		
 		
 		

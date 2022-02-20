@@ -14,6 +14,8 @@ signal map_instanced
 
 signal world_registered
 
+export var farm_meta = {}
+
 var random = RandomNumberGenerator.new()
 							
 export var maps = {
@@ -54,6 +56,16 @@ func _ready():
 		.register()
 	yield(self, "world_registered")
 	Print.line(Print.GREEN, "World registered")
+	
+	var tile_meta = back_layer.tile_set.get_meta("tile_meta")
+	
+	for cell in back_layer.get_used_cells():
+		var tile_id = back_layer.get_cellv(cell)
+		farm_meta[cell] = tile_meta[tile_id]
+		farm_meta[cell]["id"] = tile_id
+		
+	
+	
 	self.call_deferred("emit_signal","world_loaded")
 
 func _register_with_global():
@@ -117,20 +129,14 @@ func _refresh_tiles():
 	Print.line(Print.GREEN, "Refreshing tiles...")
 	var map_instance_path = current_map_instance.get_path()
 	var back_layer = get_node(map_instance_path).get_child(0)
-	var used_cells
-	var tile_meta = back_layer.tile_set.get_meta("tile_meta")
-	used_cells = back_layer.get_used_cells_by_id(Global.WET_SOIL_ID)
+	var used_cells = back_layer.get_used_cells_by_id(Global.WET_SOIL_ID)
 	if (used_cells):
-		Print.line(Print.GREEN, used_cells)
 		for i in used_cells:
-			var tile_id = back_layer.get_cellv(i)
-			if tile_id == Global.WET_SOIL_ID:
-				if tile_meta.has(tile_id):
-					if tile_meta[tile_id].has("watered"):
-						if tile_meta[tile_id].watered == true:
-							tile_meta[tile_id].watered = false
-							#var random_tile = random.randi_range(0, Global.SOIL_ID.size() -1)
-							back_layer.set_cellv(i, Global.TILLED_SOIL_ID)
+			if farm_meta[i].watered == true:
+				farm_meta[i].watered = false
+				#var random_tile = random.randi_range(0, Global.SOIL_ID.size() -1)
+				back_layer.set_cellv(i, Global.TILLED_SOIL_ID)
+				farm_meta[i].id = Global.TILLED_SOIL_ID
 	else:
 		Print.line(Print.GREEN, "No Watered tiles found")
 	

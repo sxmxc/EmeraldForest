@@ -192,7 +192,7 @@ func _on_gameclock_tick():
 		if current_date.Hour == 16 && current_date.Minutes == 20:
 			emit_signal("safety_meeting")	
 	if Global.debug:
-		Print.line(Print.YELLOW,"game_clock tick")
+		Print.raw(Print.YELLOW,".")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
