@@ -1,0 +1,228 @@
+{
+	"events": [
+		{
+			"emit_signal": "start",
+			"event_id": "dialogic_040"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "In the city of blah blah our player slaves away at Big Tobacco Corp. \nThis is only the beginning...\n[nw=1]"
+		},
+		{
+			"emit_signal": "narration_finished",
+			"event_id": "dialogic_040"
+		},
+		{
+			"action": "join",
+			"character": "character-1645409671.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "Default",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"audio_bus": "Music",
+			"background-music": "play",
+			"event_id": "dialogic_031",
+			"event_name": "BackgroundMusic",
+			"fade_length": 1,
+			"file": "res://Audio/GroovyIntroBeat.wav",
+			"volume": 0
+		},
+		{
+			"character": "character-1645409671.json",
+			"event_id": "dialogic_001",
+			"portrait": "Angry",
+			"text": "You there! \nWhat's your name?"
+		},
+		{
+			"action": "join",
+			"character": "character-1645409694.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "Suprised",
+			"position": {
+				"0": false,
+				"1": true,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1645409694.json",
+			"event_id": "dialogic_001",
+			"portrait": "Suprised",
+			"text": "I'm ...[nw=0]"
+		},
+		{
+			"character": "character-1645409671.json",
+			"event_id": "dialogic_001",
+			"portrait": "Annoyed",
+			"text": "Doesn't matter. \nListen. We have a new acquisition. Small farm outside of this little stupid town. "
+		},
+		{
+			"character": "character-1645409671.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "Angry",
+			"question": "We need you to run the paper work. "
+		},
+		{
+			"choice": "Whaaa? ",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1645409694.json",
+			"event_id": "dialogic_001",
+			"portrait": "Angry",
+			"text": "But sir, that will take all night. "
+		},
+		{
+			"choice": "This fool tripn",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1645409694.json",
+			"event_id": "dialogic_001",
+			"portrait": "Angry",
+			"text": "You're crazy, there is no way ill finish tonight"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"character": "character-1645409671.json",
+			"event_id": "dialogic_001",
+			"portrait": "Angry",
+			"text": "I don't care. Get! It! Done!"
+		},
+		{
+			"character": "character-1645409746.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Am I really going to take that?"
+		},
+		{
+			"choice": "Fuck no!",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1645409694.json",
+			"event_id": "dialogic_001",
+			"portrait": "Annoyed",
+			"text": "Fuck this. \nAnd fuck you! \nI quit!"
+		},
+		{
+			"choice": "I really shouldn't",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1645409694.json",
+			"event_id": "dialogic_001",
+			"portrait": "Suprised",
+			"text": "Sir. \nI can not do this anymore.\nConsider this my resignation. "
+		},
+		{
+			"choice": "Yes",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1645409746.json",
+			"event_id": "dialogic_010",
+			"options": [
+
+			],
+			"portrait": "",
+			"question": "Really?"
+		},
+		{
+			"choice": "You're right",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1645409694.json",
+			"event_id": "dialogic_001",
+			"portrait": "Annoyed",
+			"text": "Fuck this. \nAnd fuck you! \nI quit!"
+		},
+		{
+			"choice": "On second thought",
+			"condition": "",
+			"definition": "",
+			"event_id": "dialogic_011",
+			"value": ""
+		},
+		{
+			"character": "character-1645409694.json",
+			"event_id": "dialogic_001",
+			"portrait": "Suprised",
+			"text": "Sir. \nI can not do this anymore.\nConsider this my resignation. "
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"event_id": "dialogic_013"
+		},
+		{
+			"emit_signal": "fade_out",
+			"event_id": "dialogic_040"
+		},
+		{
+			"audio_bus": "Master",
+			"background-music": "play",
+			"event_id": "dialogic_031",
+			"event_name": "BackgroundMusic",
+			"fade_length": 2,
+			"file": "res://Audio/GrooveyBeat2b.wav",
+			"volume": 0
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ah. So you've quit. \nYou've sold all of your possesions and cancelled the lease on your appartment. \nYou've have nothing left but a few bucks, a van, and a newly purchased title to a farm.\nThe city and the corporate world are fleeting in your rear view. \nThis is your story."
+		},
+		{
+			"emit_signal": "timeline_finish",
+			"event_id": "dialogic_040"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.3",
+		"file": "timeline-1645409662.json",
+		"name": "intro"
+	}
+}

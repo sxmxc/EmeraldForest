@@ -29,7 +29,8 @@ onready var current = {
 	"shoes" : 0,
 	"facialhair" : 0,
 	"accessory": 0,
-	"date" : GameClock.current_date
+	"date" : GameClock.current_date,
+	"inventory": Global.player_data.inventory
 }
 
 

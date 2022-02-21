@@ -1,25 +1,17 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Images/Assets/SpriteSheets/UI/brass_theme_1a.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Menus/Default.tres" type="Theme" id=3]
 [ext_resource path="res://Scenes/Menus/CharacterCreator.gd" type="Script" id=7]
-[ext_resource path="res://Fonts/Pixelade.tres" type="DynamicFont" id=8]
 
 [sub_resource type="AtlasTexture" id=15]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 464, 384, 32, 32 )
 
 [node name="CharacterCreator" type="Control"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -683.0
-margin_top = -384.0
-margin_right = 683.0
-margin_bottom = 384.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 theme = ExtResource( 3 )
 script = ExtResource( 7 )
 __meta__ = {
@@ -38,33 +30,26 @@ __meta__ = {
 }
 
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="Notifications/Alert"]
-margin_left = 583.0
-margin_top = 349.0
-margin_right = 783.0
-margin_bottom = 419.0
+margin_left = 220.0
+margin_top = 145.0
+margin_right = 420.0
+margin_bottom = 215.0
 popup_exclusive = true
 dialog_text = "Save character and begin?"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -402.0
-margin_top = -267.0
-margin_right = 402.0
-margin_bottom = 267.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 theme = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CreationPanel" type="Panel" parent="HBoxContainer"]
-margin_right = 400.0
-margin_bottom = 534.0
-rect_min_size = Vector2( 400, 500 )
+margin_right = 320.0
+margin_bottom = 360.0
+rect_min_size = Vector2( 320, 360 )
 size_flags_horizontal = 3
-size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -75,7 +60,7 @@ anchor_bottom = 1.0
 custom_constants/margin_right = 20
 custom_constants/margin_top = 20
 custom_constants/margin_left = 20
-custom_constants/margin_bottom = 100
+custom_constants/margin_bottom = 20
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -83,76 +68,78 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer"]
 margin_left = 20.0
 margin_top = 20.0
-margin_right = 380.0
-margin_bottom = 434.0
+margin_right = 300.0
+margin_bottom = 340.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer"]
-margin_right = 360.0
-margin_bottom = 107.0
+margin_right = 280.0
+margin_bottom = 90.0
+size_flags_vertical = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer"]
-margin_right = 360.0
-margin_bottom = 33.0
+margin_right = 280.0
+margin_bottom = 27.0
+size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
-margin_right = 161.0
-margin_bottom = 33.0
+margin_top = 9.0
+margin_right = 120.0
+margin_bottom = 17.0
 theme = ExtResource( 3 )
 text = "Character Name:"
 align = 1
 valign = 1
 
 [node name="TextEdit" type="TextEdit" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
-margin_left = 165.0
-margin_right = 360.0
-margin_bottom = 33.0
+margin_left = 124.0
+margin_right = 280.0
+margin_bottom = 27.0
 size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_constants/line_spacing = 0
-custom_fonts/font = ExtResource( 8 )
 text = "Steeb"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer"]
-margin_top = 37.0
-margin_right = 360.0
-margin_bottom = 70.0
+margin_top = 31.0
+margin_right = 280.0
+margin_bottom = 58.0
+size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer3"]
-margin_right = 114.0
-margin_bottom = 33.0
+margin_top = 9.0
+margin_right = 80.0
+margin_bottom = 17.0
 theme = ExtResource( 3 )
 text = "Farm Name:"
 align = 1
 valign = 1
 
 [node name="TextEdit" type="TextEdit" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer3"]
-margin_left = 118.0
-margin_right = 360.0
-margin_bottom = 33.0
+margin_left = 84.0
+margin_right = 280.0
+margin_bottom = 27.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/line_spacing = 0
-custom_fonts/font = ExtResource( 8 )
 text = "Tegridy Farms"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer"]
-margin_top = 74.0
-margin_right = 360.0
-margin_bottom = 107.0
+margin_top = 62.0
+margin_right = 280.0
+margin_bottom = 90.0
+size_flags_vertical = 3
 custom_constants/separation = 32
 
 [node name="Label" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
 visible = false
-margin_right = 98.0
-margin_bottom = 33.0
+margin_top = 10.0
+margin_right = 124.0
+margin_bottom = 18.0
 size_flags_horizontal = 3
 theme = ExtResource( 3 )
 text = "Gender:"
 
 [node name="OptionButton" type="OptionButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
 visible = false
-margin_right = 164.0
-margin_bottom = 33.0
+margin_right = 124.0
+margin_bottom = 28.0
 size_flags_horizontal = 3
 text = "Male"
 flat = true
@@ -161,37 +148,39 @@ items = [ "Male", null, false, 0, null, "Female", null, false, 1, null, "Other",
 selected = 0
 
 [node name="Button" type="Button" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2"]
-margin_right = 360.0
-margin_bottom = 33.0
+margin_right = 280.0
+margin_bottom = 28.0
 size_flags_horizontal = 3
 text = "Random"
 
-[node name="HBoxContainer" type="VBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer"]
-margin_top = 111.0
-margin_right = 360.0
-margin_bottom = 377.0
+[node name="HBoxContainer2" type="VBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer"]
+margin_top = 94.0
+margin_right = 280.0
+margin_bottom = 225.0
 size_flags_vertical = 3
 alignment = 1
 
-[node name="Skin" type="HBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_top = 5.0
-margin_right = 360.0
-margin_bottom = 38.0
+[node name="Skin" type="HBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_right = 280.0
+margin_bottom = 25.0
+size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Skin"]
-margin_right = 47.0
-margin_bottom = 33.0
+[node name="Label" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Skin"]
+margin_top = 8.0
+margin_right = 40.0
+margin_bottom = 16.0
+size_flags_vertical = 6
 theme = ExtResource( 3 )
 text = "Skin:"
 align = 1
 
-[node name="Panel" type="Panel" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Skin"]
-margin_left = 51.0
-margin_right = 76.0
-margin_bottom = 33.0
+[node name="Panel" type="Panel" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Skin"]
+margin_left = 44.0
+margin_right = 69.0
+margin_bottom = 25.0
 rect_min_size = Vector2( 25, 25 )
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Skin/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Skin/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/margin_right = 1
@@ -202,71 +191,74 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Skin Color" type="ColorPickerButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Skin/Panel/MarginContainer"]
+[node name="Skin Color" type="ColorPickerButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Skin/Panel/MarginContainer"]
 margin_left = 1.0
 margin_top = 1.0
 margin_right = 24.0
-margin_bottom = 34.0
+margin_bottom = 24.0
 rect_min_size = Vector2( 16, 16 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Hair" type="HBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_top = 42.0
-margin_right = 360.0
-margin_bottom = 75.0
+[node name="Hair" type="HBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_top = 29.0
+margin_right = 280.0
+margin_bottom = 54.0
+size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Hair"]
-margin_right = 68.0
-margin_bottom = 33.0
-size_flags_horizontal = 3
+[node name="Label" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Hair"]
+margin_top = 8.0
+margin_right = 40.0
+margin_bottom = 16.0
+size_flags_horizontal = 2
+size_flags_vertical = 6
 theme = ExtResource( 3 )
 text = "Hair:"
 align = 1
 
-[node name="HairPrev" type="TextureButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Hair"]
-margin_left = 72.0
-margin_right = 141.0
-margin_bottom = 33.0
+[node name="HairPrev" type="TextureButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Hair"]
+margin_left = 56.0
+margin_right = 109.0
+margin_bottom = 25.0
 size_flags_horizontal = 3
 texture_normal = SubResource( 15 )
 expand = true
 stretch_mode = 5
 flip_h = true
 
-[node name="Current" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Hair"]
-margin_left = 145.0
-margin_right = 214.0
-margin_bottom = 33.0
+[node name="Current" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Hair"]
+margin_left = 113.0
+margin_top = 8.0
+margin_right = 166.0
+margin_bottom = 16.0
 size_flags_horizontal = 3
 theme = ExtResource( 3 )
 text = "Hair"
 align = 1
 
-[node name="HairNext" type="TextureButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Hair"]
-margin_left = 218.0
-margin_right = 287.0
-margin_bottom = 33.0
+[node name="HairNext" type="TextureButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Hair"]
+margin_left = 170.0
+margin_right = 223.0
+margin_bottom = 25.0
 size_flags_horizontal = 3
 texture_normal = SubResource( 15 )
 expand = true
 stretch_mode = 5
 
-[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Hair"]
-margin_left = 291.0
-margin_right = 360.0
-margin_bottom = 33.0
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Hair"]
+margin_left = 227.0
+margin_right = 280.0
+margin_bottom = 25.0
 size_flags_horizontal = 3
 
-[node name="Panel" type="Panel" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Hair/CenterContainer"]
-margin_left = 22.0
-margin_top = 4.0
-margin_right = 47.0
-margin_bottom = 29.0
+[node name="Panel" type="Panel" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Hair/CenterContainer"]
+margin_left = 14.0
+margin_right = 39.0
+margin_bottom = 25.0
 rect_min_size = Vector2( 25, 25 )
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Hair/CenterContainer/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Hair/CenterContainer/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/margin_right = 1
@@ -277,72 +269,74 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Skin Color" type="ColorPickerButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Hair/CenterContainer/Panel/MarginContainer"]
+[node name="Skin Color" type="ColorPickerButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Hair/CenterContainer/Panel/MarginContainer"]
 margin_left = 1.0
 margin_top = 1.0
 margin_right = 24.0
-margin_bottom = 34.0
+margin_bottom = 24.0
 rect_min_size = Vector2( 16, 16 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Beard" type="HBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_top = 79.0
-margin_right = 360.0
-margin_bottom = 112.0
+[node name="Beard" type="HBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_top = 58.0
+margin_right = 280.0
+margin_bottom = 83.0
+size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Beard"]
-margin_right = 68.0
-margin_bottom = 33.0
+[node name="Label" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Beard"]
+margin_top = 8.0
+margin_right = 52.0
+margin_bottom = 16.0
 size_flags_horizontal = 3
-size_flags_vertical = 1
+size_flags_vertical = 6
 theme = ExtResource( 3 )
 text = "Beard:"
 align = 1
 
-[node name="BeardPrev" type="TextureButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Beard"]
-margin_left = 72.0
-margin_right = 141.0
-margin_bottom = 33.0
+[node name="BeardPrev" type="TextureButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Beard"]
+margin_left = 56.0
+margin_right = 109.0
+margin_bottom = 25.0
 size_flags_horizontal = 3
 texture_normal = SubResource( 15 )
 expand = true
 stretch_mode = 5
 flip_h = true
 
-[node name="Current" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Beard"]
-margin_left = 145.0
-margin_right = 214.0
-margin_bottom = 33.0
+[node name="Current" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Beard"]
+margin_left = 113.0
+margin_top = 8.0
+margin_right = 166.0
+margin_bottom = 16.0
 size_flags_horizontal = 3
 theme = ExtResource( 3 )
 text = "Beard"
 align = 1
 
-[node name="BeardNext" type="TextureButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Beard"]
-margin_left = 218.0
-margin_right = 287.0
-margin_bottom = 33.0
+[node name="BeardNext" type="TextureButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Beard"]
+margin_left = 170.0
+margin_right = 223.0
+margin_bottom = 25.0
 size_flags_horizontal = 3
 texture_normal = SubResource( 15 )
 expand = true
 stretch_mode = 5
 
-[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Beard"]
-margin_left = 291.0
-margin_right = 360.0
-margin_bottom = 33.0
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Beard"]
+margin_left = 227.0
+margin_right = 280.0
+margin_bottom = 25.0
 size_flags_horizontal = 3
 
-[node name="Panel" type="Panel" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Beard/CenterContainer"]
-margin_left = 22.0
-margin_top = 4.0
-margin_right = 47.0
-margin_bottom = 29.0
+[node name="Panel" type="Panel" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Beard/CenterContainer"]
+margin_left = 14.0
+margin_right = 39.0
+margin_bottom = 25.0
 rect_min_size = Vector2( 25, 25 )
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Beard/CenterContainer/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Beard/CenterContainer/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_constants/margin_right = 1
@@ -353,189 +347,197 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Skin Color" type="ColorPickerButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Beard/CenterContainer/Panel/MarginContainer"]
+[node name="Skin Color" type="ColorPickerButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Beard/CenterContainer/Panel/MarginContainer"]
 margin_left = 1.0
 margin_top = 1.0
 margin_right = 24.0
-margin_bottom = 34.0
+margin_bottom = 24.0
 rect_min_size = Vector2( 16, 16 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Shirt" type="HBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_top = 116.0
-margin_right = 360.0
-margin_bottom = 149.0
+[node name="Shirt" type="HBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_top = 87.0
+margin_right = 280.0
+margin_bottom = 95.0
+size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shirt"]
-margin_right = 68.0
-margin_bottom = 33.0
+[node name="Label" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Shirt"]
+margin_right = 52.0
+margin_bottom = 8.0
 size_flags_horizontal = 3
+size_flags_vertical = 6
 theme = ExtResource( 3 )
 text = "Shirt:"
 align = 1
 
-[node name="ShirtPrev" type="TextureButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shirt"]
-margin_left = 72.0
-margin_right = 141.0
-margin_bottom = 33.0
+[node name="ShirtPrev" type="TextureButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Shirt"]
+margin_left = 56.0
+margin_right = 109.0
+margin_bottom = 8.0
 size_flags_horizontal = 3
+size_flags_vertical = 3
 texture_normal = SubResource( 15 )
 expand = true
 stretch_mode = 5
 flip_h = true
 
-[node name="Current" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shirt"]
-margin_left = 145.0
-margin_right = 214.0
-margin_bottom = 33.0
+[node name="Current" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Shirt"]
+margin_left = 113.0
+margin_right = 166.0
+margin_bottom = 8.0
 size_flags_horizontal = 3
+size_flags_vertical = 6
 theme = ExtResource( 3 )
 text = "Shirt"
 align = 1
 
-[node name="ShirtNext" type="TextureButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shirt"]
-margin_left = 218.0
-margin_right = 287.0
-margin_bottom = 33.0
+[node name="ShirtNext" type="TextureButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Shirt"]
+margin_left = 170.0
+margin_right = 223.0
+margin_bottom = 8.0
 size_flags_horizontal = 3
+size_flags_vertical = 3
 texture_normal = SubResource( 15 )
 expand = true
 stretch_mode = 5
 
-[node name="EmptyMargin" type="Control" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shirt"]
-margin_left = 291.0
-margin_right = 360.0
-margin_bottom = 33.0
+[node name="EmptyMargin" type="Control" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Shirt"]
+margin_left = 227.0
+margin_right = 280.0
+margin_bottom = 8.0
 size_flags_horizontal = 3
 
-[node name="Pants" type="HBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_top = 153.0
-margin_right = 360.0
-margin_bottom = 186.0
+[node name="Pants" type="HBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_top = 99.0
+margin_right = 280.0
+margin_bottom = 107.0
+size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Pants"]
-margin_right = 68.0
-margin_bottom = 33.0
+[node name="Label" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Pants"]
+margin_right = 52.0
+margin_bottom = 8.0
 size_flags_horizontal = 3
-size_flags_vertical = 1
+size_flags_vertical = 6
 theme = ExtResource( 3 )
 text = "Pants:"
 align = 1
 
-[node name="PantsPrev" type="TextureButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Pants"]
-margin_left = 72.0
-margin_right = 141.0
-margin_bottom = 33.0
+[node name="PantsPrev" type="TextureButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Pants"]
+margin_left = 56.0
+margin_right = 109.0
+margin_bottom = 8.0
 size_flags_horizontal = 3
 texture_normal = SubResource( 15 )
 expand = true
 stretch_mode = 5
 flip_h = true
 
-[node name="Current" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Pants"]
-margin_left = 145.0
-margin_right = 214.0
-margin_bottom = 33.0
+[node name="Current" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Pants"]
+margin_left = 113.0
+margin_right = 166.0
+margin_bottom = 8.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme = ExtResource( 3 )
 text = "Pants"
 align = 1
 
-[node name="PantsNext" type="TextureButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Pants"]
-margin_left = 218.0
-margin_right = 287.0
-margin_bottom = 33.0
+[node name="PantsNext" type="TextureButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Pants"]
+margin_left = 170.0
+margin_right = 223.0
+margin_bottom = 8.0
 size_flags_horizontal = 3
 texture_normal = SubResource( 15 )
 expand = true
 stretch_mode = 5
 
-[node name="EmptyMargin" type="Control" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Pants"]
-margin_left = 291.0
-margin_right = 360.0
-margin_bottom = 33.0
+[node name="EmptyMargin" type="Control" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Pants"]
+margin_left = 227.0
+margin_right = 280.0
+margin_bottom = 8.0
 size_flags_horizontal = 3
 
-[node name="Shoes" type="HBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_top = 190.0
-margin_right = 360.0
-margin_bottom = 223.0
+[node name="Shoes" type="HBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_top = 111.0
+margin_right = 280.0
+margin_bottom = 119.0
+size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shoes"]
-margin_right = 68.0
-margin_bottom = 33.0
+[node name="Label" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Shoes"]
+margin_right = 52.0
+margin_bottom = 8.0
 size_flags_horizontal = 3
-size_flags_vertical = 1
+size_flags_vertical = 6
 theme = ExtResource( 3 )
 text = "Shoes:"
 align = 1
 
-[node name="ShoesPrev" type="TextureButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shoes"]
-margin_left = 72.0
-margin_right = 141.0
-margin_bottom = 33.0
+[node name="ShoesPrev" type="TextureButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Shoes"]
+margin_left = 56.0
+margin_right = 109.0
+margin_bottom = 8.0
 size_flags_horizontal = 3
 texture_normal = SubResource( 15 )
 expand = true
 stretch_mode = 5
 flip_h = true
 
-[node name="Current" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shoes"]
-margin_left = 145.0
-margin_right = 214.0
-margin_bottom = 33.0
+[node name="Current" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Shoes"]
+margin_left = 113.0
+margin_right = 166.0
+margin_bottom = 8.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 theme = ExtResource( 3 )
 text = "Shoes"
 align = 1
 
-[node name="ShoesNext" type="TextureButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shoes"]
-margin_left = 218.0
-margin_right = 287.0
-margin_bottom = 33.0
+[node name="ShoesNext" type="TextureButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Shoes"]
+margin_left = 170.0
+margin_right = 223.0
+margin_bottom = 8.0
 size_flags_horizontal = 3
 texture_normal = SubResource( 15 )
 expand = true
 stretch_mode = 5
 
-[node name="EmptyMargin" type="Control" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shoes"]
-margin_left = 291.0
-margin_right = 360.0
-margin_bottom = 33.0
+[node name="EmptyMargin" type="Control" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Shoes"]
+margin_left = 227.0
+margin_right = 280.0
+margin_bottom = 8.0
 size_flags_horizontal = 3
 
-[node name="Acc" type="HBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer"]
-margin_top = 227.0
-margin_right = 360.0
-margin_bottom = 260.0
+[node name="Acc" type="HBoxContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2"]
+margin_top = 123.0
+margin_right = 280.0
+margin_bottom = 131.0
+size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Acc"]
-margin_right = 95.0
-margin_bottom = 33.0
+[node name="Label" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Acc"]
+margin_right = 72.0
+margin_bottom = 8.0
 size_flags_horizontal = 3
-size_flags_vertical = 1
+size_flags_vertical = 6
 theme = ExtResource( 3 )
 text = "Accesory:"
 align = 1
 
-[node name="AccPrev" type="TextureButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Acc"]
-margin_left = 99.0
-margin_right = 152.0
-margin_bottom = 33.0
+[node name="AccPrev" type="TextureButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Acc"]
+margin_left = 76.0
+margin_right = 118.0
+margin_bottom = 8.0
 size_flags_horizontal = 3
 texture_normal = SubResource( 15 )
 expand = true
 stretch_mode = 5
 flip_h = true
 
-[node name="Current" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Acc"]
-margin_left = 156.0
-margin_right = 245.0
-margin_bottom = 33.0
+[node name="Current" type="Label" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Acc"]
+margin_left = 122.0
+margin_right = 186.0
+margin_bottom = 8.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 size_flags_stretch_ratio = 0.0
@@ -544,52 +546,54 @@ text = "Accesory"
 align = 3
 valign = 3
 
-[node name="AccNext" type="TextureButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Acc"]
-margin_left = 249.0
-margin_right = 302.0
-margin_bottom = 33.0
+[node name="AccNext" type="TextureButton" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Acc"]
+margin_left = 190.0
+margin_right = 233.0
+margin_bottom = 8.0
 size_flags_horizontal = 3
 texture_normal = SubResource( 15 )
 expand = true
 stretch_mode = 5
 
-[node name="EmptyMargin" type="Control" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Acc"]
-margin_left = 306.0
-margin_right = 360.0
-margin_bottom = 33.0
+[node name="EmptyMargin" type="Control" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Acc"]
+margin_left = 237.0
+margin_right = 280.0
+margin_bottom = 8.0
 size_flags_horizontal = 3
 
 [node name="HSplitContainer" type="HSplitContainer" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer"]
-margin_top = 381.0
-margin_right = 360.0
-margin_bottom = 414.0
+margin_top = 229.0
+margin_right = 280.0
+margin_bottom = 320.0
+size_flags_vertical = 3
 dragger_visibility = 1
 
 [node name="Back" type="Button" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HSplitContainer"]
-margin_right = 174.0
-margin_bottom = 33.0
+margin_right = 134.0
+margin_bottom = 91.0
 size_flags_horizontal = 3
-size_flags_vertical = 3
 text = "Back"
 
 [node name="Begin" type="Button" parent="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HSplitContainer"]
-margin_left = 186.0
-margin_right = 360.0
-margin_bottom = 33.0
+margin_left = 146.0
+margin_right = 280.0
+margin_bottom = 91.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Begin"
 
 [node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
-margin_left = 404.0
-margin_right = 804.0
-margin_bottom = 534.0
+margin_left = 324.0
+margin_right = 644.0
+margin_bottom = 360.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="CharPreview" type="Panel" parent="HBoxContainer/CenterContainer"]
-margin_top = 142.0
-margin_right = 400.0
-margin_bottom = 392.0
-rect_min_size = Vector2( 400, 250 )
+margin_top = 90.0
+margin_right = 320.0
+margin_bottom = 270.0
+rect_min_size = Vector2( 320, 180 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -597,7 +601,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="HBoxContainer/CenterContainer/CharPreview" instance=ExtResource( 1 )]
-position = Vector2( 188, 115 )
+position = Vector2( 156, 84 )
 scale = Vector2( 3, 3 )
 
 [node name="Camera2D" parent="HBoxContainer/CenterContainer/CharPreview/Player" index="0"]
@@ -605,18 +609,18 @@ visible = false
 
 [connection signal="confirmed" from="Notifications/Alert/ConfirmationDialog" to="." method="_on_ConfirmationDialog_confirmed"]
 [connection signal="text_changed" from="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/TextEdit" to="." method="_on_TextEdit_text_changed"]
-[connection signal="pressed" from="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Hair/HairPrev" to="." method="_on_HairPrev_pressed"]
-[connection signal="pressed" from="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Hair/HairNext" to="." method="_on_HairNext_pressed"]
-[connection signal="pressed" from="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Beard/BeardPrev" to="." method="_on_BeardPrev_pressed"]
-[connection signal="pressed" from="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Beard/BeardNext" to="." method="_on_BeardNext_pressed"]
-[connection signal="pressed" from="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shirt/ShirtPrev" to="." method="_on_ShirtPrev_pressed"]
-[connection signal="pressed" from="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shirt/ShirtNext" to="." method="_on_ShirtNext_pressed"]
-[connection signal="pressed" from="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Pants/PantsPrev" to="." method="_on_PantsPrev_pressed"]
-[connection signal="pressed" from="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Pants/PantsNext" to="." method="_on_PantsNext_pressed"]
-[connection signal="pressed" from="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shoes/ShoesPrev" to="." method="_on_ShoesPrev_pressed"]
-[connection signal="pressed" from="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Shoes/ShoesNext" to="." method="_on_ShoesNext_pressed"]
-[connection signal="pressed" from="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Acc/AccPrev" to="." method="_on_AccPrev_pressed"]
-[connection signal="pressed" from="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer/Acc/AccNext" to="." method="_on_AccNext_pressed"]
+[connection signal="pressed" from="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Hair/HairPrev" to="." method="_on_HairPrev_pressed"]
+[connection signal="pressed" from="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Hair/HairNext" to="." method="_on_HairNext_pressed"]
+[connection signal="pressed" from="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Beard/BeardPrev" to="." method="_on_BeardPrev_pressed"]
+[connection signal="pressed" from="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Beard/BeardNext" to="." method="_on_BeardNext_pressed"]
+[connection signal="pressed" from="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Shirt/ShirtPrev" to="." method="_on_ShirtPrev_pressed"]
+[connection signal="pressed" from="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Shirt/ShirtNext" to="." method="_on_ShirtNext_pressed"]
+[connection signal="pressed" from="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Pants/PantsPrev" to="." method="_on_PantsPrev_pressed"]
+[connection signal="pressed" from="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Pants/PantsNext" to="." method="_on_PantsNext_pressed"]
+[connection signal="pressed" from="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Shoes/ShoesPrev" to="." method="_on_ShoesPrev_pressed"]
+[connection signal="pressed" from="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Shoes/ShoesNext" to="." method="_on_ShoesNext_pressed"]
+[connection signal="pressed" from="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Acc/AccPrev" to="." method="_on_AccPrev_pressed"]
+[connection signal="pressed" from="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HBoxContainer2/Acc/AccNext" to="." method="_on_AccNext_pressed"]
 [connection signal="pressed" from="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HSplitContainer/Back" to="." method="_on_Back_pressed"]
 [connection signal="pressed" from="HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/HSplitContainer/Begin" to="." method="_on_Begin_pressed"]
 

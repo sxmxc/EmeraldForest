@@ -40,9 +40,7 @@ func _ready():
 	Global.connect("new_day_start", self, '_refresh_tiles')
 	self._instance_map(STARTING_MAP)
 	yield (self,"map_instanced")
-	var map_instance_path = current_map_instance.get_path()
-	var back_layer = get_node(map_instance_path).get_child(0)
-	farm_map = back_layer
+	
 	random.randomize()
 	_register_with_global()
 	Console.add_command('tile_details', self, '_get_tile_props')\
@@ -56,7 +54,9 @@ func _ready():
 		.register()
 	yield(self, "world_registered")
 	Print.line(Print.GREEN, "World registered")
-	
+	var map_instance_path = current_map_instance.get_path()
+	var back_layer = get_tree().get_nodes_in_group("back")[0]
+	farm_map = back_layer
 	var tile_meta = back_layer.tile_set.get_meta("tile_meta")
 	
 	for cell in back_layer.get_used_cells():

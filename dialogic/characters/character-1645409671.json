@@ -1,0 +1,32 @@
+{
+	"color": "#ffff0000",
+	"description": "",
+	"display_name": "Big Boss Man",
+	"display_name_bool": true,
+	"id": "character-1645409671.json",
+	"mirror_portraits": false,
+	"name": "big_boss_man",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 200,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Images/Char Portraits/Masculine_A_default.png"
+		},
+		{
+			"name": "Angry",
+			"path": "res://Images/Char Portraits/Masculine_A_angry.png"
+		},
+		{
+			"name": "Annoyed",
+			"path": "res://Images/Char Portraits/Masculine_A_annoyed.png"
+		},
+		{
+			"name": "Suprised",
+			"path": "res://Images/Char Portraits/Masculine_A_surprised.png"
+		}
+	],
+	"scale": 50
+}

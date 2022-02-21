@@ -19,7 +19,7 @@ const class_dict = {
 	"SeedPack": preload("res://Inventory/Scenes/SeedPack.tscn"), 
 	"Crafting": preload("res://Inventory/Scenes/Item.tscn")
 }
-var item = null
+var item: Item = null
 
 var locked = false
 
@@ -86,11 +86,15 @@ func _remove_item():
 
 func _initialize_item(item_name, item_quantity):
 	if item == null:
+		Console.write_line("Intializing item %s in null slot" % item_name)
 		var temp = ItemImporter.item_data[item_name]["Class"]
 		var item_class = class_dict[temp]
-		item = item_class.instance()
+		item = item_class.instance() as Item
 		add_child(item)
 		item._set_item(item_name, item_quantity)
+		Console.write_line("Done")
 	else:
+		Console.write_line("Intializing item %s in non null slot" % item_name)
 		item._set_item(item_name,item_quantity)
+		Console.write_line("Done")
 	_refresh_style()

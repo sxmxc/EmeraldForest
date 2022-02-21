@@ -29,7 +29,7 @@ func _set_player(p):
 func _process(_delta):
 	if isActive:
 		visible = true
-		tile_map = Global.world.farm_map as TileMap
+		tile_map = get_tree().get_nodes_in_group("back")[0]
 		if tile_map:
 			global_position = _get_active_tile(tile_map) * 16
 	else:

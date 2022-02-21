@@ -26,10 +26,11 @@ var default_data = {
 	"shoes" : 0,
 	"facialhair" : 0,
 	"accessory": 0,
-	"inventory" : { 0: ["Axe", 1],
+	"inventory" : { 
+	0: ["Axe", 1],
 	1: ["Hoe", 1],
 	2: ["Pickaxe", 1],
-	3: ["WateringCan", 1],
+#	3: ["WateringCan", 1],
 	4: ["SeedPack", 9] #need to remove this from default
 #--> slot_index: [item_name, quantity]
 }
@@ -89,9 +90,11 @@ func _set_player(p):
 
 func _retrieve_player():
 	return player_data
+	
 func _clear_player():
 	player_data = default_data
 	SceneManager.get_entity("Player").current = player_data
+	PlayerInventory.inventory = player_data.inventory
 	
 func _save_game():
 	var save_game = File.new()

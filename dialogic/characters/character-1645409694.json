@@ -1,0 +1,32 @@
+{
+	"color": "#ff26ff00",
+	"description": "",
+	"display_name": "Randy",
+	"display_name_bool": true,
+	"id": "character-1645409694.json",
+	"mirror_portraits": false,
+	"name": "player",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": 0,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Images/Char Portraits/Masculine_B_default.png"
+		},
+		{
+			"name": "Angry",
+			"path": "res://Images/Char Portraits/Masculine_B_angry.png"
+		},
+		{
+			"name": "Suprised",
+			"path": "res://Images/Char Portraits/Masculine_B_surprised.png"
+		},
+		{
+			"name": "Annoyed",
+			"path": "res://Images/Char Portraits/Masculine_B_annoyed.png"
+		}
+	],
+	"scale": 50
+}
