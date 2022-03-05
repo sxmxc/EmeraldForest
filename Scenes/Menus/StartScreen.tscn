@@ -147,6 +147,7 @@ margin_bottom = 14.0
 
 [node name="OptionButton" parent="Menu/MenuRoot/CharacterCreator/HBoxContainer/CreationPanel/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2" index="1"]
 margin_bottom = 14.0
+items = [ "Male", null, false, 0, null, "Female", null, false, 1, null, "Other", null, false, 2, null ]
 
 [node name="SettingsMenu" parent="Menu/MenuRoot" instance=ExtResource( 5 )]
 visible = false

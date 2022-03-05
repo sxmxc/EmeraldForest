@@ -12,15 +12,25 @@ script = ExtResource( 2 )
 
 [node name="Back" parent="." index="0" groups=["back"]]
 
+[node name="Buildings" parent="." index="2"]
+z_index = 5
+show_collision = true
+centered_textures = true
+tile_data = PoolIntArray( 65559, 39, 0, 852006, 39, 0, 917507, 39, 0 )
+
 [node name="Player" parent="Buildings" index="0" instance=ExtResource( 4 )]
 position = Vector2( 491, 195 )
 can_control = true
 
 [node name="Camera2D" parent="Buildings/Player" index="0"]
+z_index = 14
 current = true
 
 [node name="MarginContainer" parent="Buildings/Player/PlayerDebugUI" index="0"]
 visible = true
+
+[node name="Paths" parent="." index="4"]
+tile_data = PoolIntArray( 196619, 39, 0, 524315, 37, 0, 589851, 38, 0, 720923, 38, 0, 720929, 38, 0, 720930, 37, 0 )
 
 [node name="WorldItem" parent="." index="10" instance=ExtResource( 3 )]
 position = Vector2( 408, 240 )
